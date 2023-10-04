@@ -173,7 +173,8 @@ class Inference(object):
             a.axis('off')
         
         if save:
-            fig.savefig('predicted.png', transparent=False)
+            fig.savefig('predicted.png', transparent=False,
+                        bbox_inches='tight', pad_inches=0)
         
         plt.tight_layout()
         plt.show()
@@ -251,6 +252,7 @@ if __name__ == '__main__':
     parser.add_argument('--cpu', action='store_true',default=False )
     parser.add_argument('--type', type=str, default='animation',
                         help='inference types: prediction, plot, animation, metrics')
+    parser.add_argument('--save', action='store_true', default=False)
 
     args = parser.parse_args()
 
@@ -266,14 +268,14 @@ if __name__ == '__main__':
         image_file = files[random.randint(0, len(files))]
 
         inference = Inference(model, args.checkpoint)
-        inference.plot(image_file)
+        inference.plot(image_file, args.save)
     
     elif args.type == 'animation':
         random.seed(args.seed)
         image_file = files[random.randint(0, len(files))]
 
         inference = Inference(model, args.checkpoint)
-        inference.plot_animation(image_file)
+        inference.plot_animation(image_file, args.save)
     
     elif args.type == 'metrics':
 
