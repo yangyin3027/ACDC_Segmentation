@@ -13,7 +13,6 @@ python ./src/inference.py --plot
 ```
 # Examples
 ![Alt text](https://github.com/yangyin3027/ACDC_Segmentation/blob/main/src/examples/predicted.png)
-![Alt text](https://github.com/yangyin3027/ACDC_Segmentation/blob/main/src/examples/seg.mp4)
 
 # License
 MIT License
