@@ -12,8 +12,8 @@ python ./src/main.py --data [data_root_dir] --model-type attenunet --lr 0.001 --
 python ./src/inference.py --plot
 ```
 # Examples
-(https://github.com/yangyin3027/ACDC_Segmentation/blob/main/src/examples/predicted_seg.png)
-(https://github.com/yangyin3027/ACDC_Segmentation/blob/main/src/examples/seg.mp4)
+![Alt text](https://github.com/yangyin3027/ACDC_Segmentation/blob/main/src/examples/predicted_seg.png)
+![Alt text](https://github.com/yangyin3027/ACDC_Segmentation/blob/main/src/examples/seg.mp4)
 
 # License
 MIT License
