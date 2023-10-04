@@ -1,0 +1,1782 @@
+/home/tmhzxy3/scratch
+cn009
+Sat Sep 30 23:07:28 CDT 2023
+Running the Attenunet batch32 lr1e-3 combinedloss adam pad0 re-weight rv/lv
+2023-09-30 23:07:33,542 | [MainThread] | INFO | AttenUnetTrainer -> Training started @ Sat Sep 30 23:07:33 2023
+initialize network with kaiming
+2023-09-30 23:07:33,708 | [MainThread] | INFO | AttenUnetTrainer -> data loaded with 1902 training data and 1076 val data
+2023-09-30 23:07:35,119 | [MainThread] | INFO | AttenUnetTrainer -> cuda device is used for training
+Epoch: [0][ 0/59]|Loss: 1.2135e+00	|DiceScore_bg:  0.830	|DiceScore_rv:  0.013	|DiceScore_myo:  0.008	|DiceScore_lv:  0.034	
+Epoch: [0][10/59]|Loss: 1.0678e+00	|DiceScore_bg:  0.715	|DiceScore_rv:  0.068	|DiceScore_myo:  0.046	|DiceScore_lv:  0.020	
+Epoch: [0][20/59]|Loss: 1.0463e+00	|DiceScore_bg:  0.684	|DiceScore_rv:  0.065	|DiceScore_myo:  0.048	|DiceScore_lv:  0.017	
+Epoch: [0][30/59]|Loss: 1.0366e+00	|DiceScore_bg:  0.670	|DiceScore_rv:  0.062	|DiceScore_myo:  0.052	|DiceScore_lv:  0.013	
+Epoch: [0][40/59]|Loss: 1.0282e+00	|DiceScore_bg:  0.665	|DiceScore_rv:  0.062	|DiceScore_myo:  0.056	|DiceScore_lv:  0.013	
+Epoch: [0][50/59]|Loss: 1.0217e+00	|DiceScore_bg:  0.669	|DiceScore_rv:  0.061	|DiceScore_myo:  0.060	|DiceScore_lv:  0.011	
+Epoch: [0][ 0/33]|DiceScore_rv:  0.057	|DiceScore_myo:  0.062	|DiceScore_lv:  0.000	
+Epoch: [0][10/33]|DiceScore_rv:  0.070	|DiceScore_myo:  0.075	|DiceScore_lv:  0.000	
+Epoch: [0][20/33]|DiceScore_rv:  0.067	|DiceScore_myo:  0.073	|DiceScore_lv:  0.000	
+Epoch: [0][30/33]|DiceScore_rv:  0.069	|DiceScore_myo:  0.073	|DiceScore_lv:  0.000	
+2023-09-30 23:09:18,670 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.9855548131756505
+2023-09-30 23:09:18,671 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [1][ 0/59]|Loss: 9.8957e-01	|DiceScore_bg:  0.702	|DiceScore_rv:  0.052	|DiceScore_myo:  0.084	|DiceScore_lv:  0.000	
+Epoch: [1][10/59]|Loss: 9.8419e-01	|DiceScore_bg:  0.715	|DiceScore_rv:  0.066	|DiceScore_myo:  0.093	|DiceScore_lv:  0.001	
+Epoch: [1][20/59]|Loss: 9.8388e-01	|DiceScore_bg:  0.720	|DiceScore_rv:  0.063	|DiceScore_myo:  0.092	|DiceScore_lv:  0.027	
+Epoch: [1][30/59]|Loss: 9.7453e-01	|DiceScore_bg:  0.720	|DiceScore_rv:  0.068	|DiceScore_myo:  0.093	|DiceScore_lv:  0.065	
+Epoch: [1][40/59]|Loss: 9.7168e-01	|DiceScore_bg:  0.723	|DiceScore_rv:  0.068	|DiceScore_myo:  0.094	|DiceScore_lv:  0.082	
+Epoch: [1][50/59]|Loss: 9.6470e-01	|DiceScore_bg:  0.720	|DiceScore_rv:  0.067	|DiceScore_myo:  0.096	|DiceScore_lv:  0.109	
+Epoch: [1][ 0/33]|DiceScore_rv:  0.063	|DiceScore_myo:  0.092	|DiceScore_lv:  0.313	
+Epoch: [1][10/33]|DiceScore_rv:  0.065	|DiceScore_myo:  0.095	|DiceScore_lv:  0.375	
+Epoch: [1][20/33]|DiceScore_rv:  0.069	|DiceScore_myo:  0.097	|DiceScore_lv:  0.366	
+Epoch: [1][30/33]|DiceScore_rv:  0.069	|DiceScore_myo:  0.097	|DiceScore_lv:  0.370	
+2023-09-30 23:10:59,310 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.9146610372512569
+2023-09-30 23:10:59,310 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [2][ 0/59]|Loss: 8.9483e-01	|DiceScore_bg:  0.765	|DiceScore_rv:  0.083	|DiceScore_myo:  0.144	|DiceScore_lv:  0.333	
+Epoch: [2][10/59]|Loss: 8.9146e-01	|DiceScore_bg:  0.748	|DiceScore_rv:  0.074	|DiceScore_myo:  0.128	|DiceScore_lv:  0.363	
+Epoch: [2][20/59]|Loss: 8.8847e-01	|DiceScore_bg:  0.755	|DiceScore_rv:  0.071	|DiceScore_myo:  0.129	|DiceScore_lv:  0.396	
+Epoch: [2][30/59]|Loss: 8.7592e-01	|DiceScore_bg:  0.767	|DiceScore_rv:  0.074	|DiceScore_myo:  0.147	|DiceScore_lv:  0.449	
+Epoch: [2][40/59]|Loss: 8.6776e-01	|DiceScore_bg:  0.775	|DiceScore_rv:  0.073	|DiceScore_myo:  0.162	|DiceScore_lv:  0.479	
+Epoch: [2][50/59]|Loss: 8.6323e-01	|DiceScore_bg:  0.779	|DiceScore_rv:  0.072	|DiceScore_myo:  0.179	|DiceScore_lv:  0.498	
+Epoch: [2][ 0/33]|DiceScore_rv:  0.077	|DiceScore_myo:  0.213	|DiceScore_lv:  0.535	
+Epoch: [2][10/33]|DiceScore_rv:  0.100	|DiceScore_myo:  0.283	|DiceScore_lv:  0.653	
+Epoch: [2][20/33]|DiceScore_rv:  0.097	|DiceScore_myo:  0.276	|DiceScore_lv:  0.658	
+Epoch: [2][30/33]|DiceScore_rv:  0.094	|DiceScore_myo:  0.280	|DiceScore_lv:  0.674	
+2023-09-30 23:12:44,312 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.8336373437284788
+2023-09-30 23:12:44,312 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [3][ 0/59]|Loss: 7.9896e-01	|DiceScore_bg:  0.845	|DiceScore_rv:  0.108	|DiceScore_myo:  0.296	|DiceScore_lv:  0.666	
+Epoch: [3][10/59]|Loss: 8.0828e-01	|DiceScore_bg:  0.850	|DiceScore_rv:  0.093	|DiceScore_myo:  0.285	|DiceScore_lv:  0.680	
+Epoch: [3][20/59]|Loss: 8.0354e-01	|DiceScore_bg:  0.853	|DiceScore_rv:  0.091	|DiceScore_myo:  0.314	|DiceScore_lv:  0.692	
+Epoch: [3][30/59]|Loss: 7.9981e-01	|DiceScore_bg:  0.860	|DiceScore_rv:  0.092	|DiceScore_myo:  0.328	|DiceScore_lv:  0.716	
+Epoch: [3][40/59]|Loss: 7.9918e-01	|DiceScore_bg:  0.864	|DiceScore_rv:  0.094	|DiceScore_myo:  0.333	|DiceScore_lv:  0.705	
+Epoch: [3][50/59]|Loss: 7.9620e-01	|DiceScore_bg:  0.867	|DiceScore_rv:  0.097	|DiceScore_myo:  0.346	|DiceScore_lv:  0.703	
+Epoch: [3][ 0/33]|DiceScore_rv:  0.139	|DiceScore_myo:  0.390	|DiceScore_lv:  0.777	
+Epoch: [3][10/33]|DiceScore_rv:  0.125	|DiceScore_myo:  0.412	|DiceScore_lv:  0.780	
+Epoch: [3][20/33]|DiceScore_rv:  0.120	|DiceScore_myo:  0.404	|DiceScore_lv:  0.769	
+Epoch: [3][30/33]|DiceScore_rv:  0.127	|DiceScore_myo:  0.406	|DiceScore_lv:  0.776	
+2023-09-30 23:14:35,734 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.7796054203867991
+2023-09-30 23:14:35,734 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [4][ 0/59]|Loss: 7.8562e-01	|DiceScore_bg:  0.874	|DiceScore_rv:  0.098	|DiceScore_myo:  0.378	|DiceScore_lv:  0.784	
+Epoch: [4][10/59]|Loss: 7.9061e-01	|DiceScore_bg:  0.878	|DiceScore_rv:  0.095	|DiceScore_myo:  0.357	|DiceScore_lv:  0.780	
+Epoch: [4][20/59]|Loss: 7.8562e-01	|DiceScore_bg:  0.878	|DiceScore_rv:  0.101	|DiceScore_myo:  0.364	|DiceScore_lv:  0.774	
+Epoch: [4][30/59]|Loss: 7.8126e-01	|DiceScore_bg:  0.882	|DiceScore_rv:  0.108	|DiceScore_myo:  0.368	|DiceScore_lv:  0.772	
+Epoch: [4][40/59]|Loss: 7.8508e-01	|DiceScore_bg:  0.880	|DiceScore_rv:  0.107	|DiceScore_myo:  0.362	|DiceScore_lv:  0.747	
+Epoch: [4][50/59]|Loss: 7.8508e-01	|DiceScore_bg:  0.879	|DiceScore_rv:  0.103	|DiceScore_myo:  0.371	|DiceScore_lv:  0.755	
+Epoch: [4][ 0/33]|DiceScore_rv:  0.107	|DiceScore_myo:  0.481	|DiceScore_lv:  0.650	
+Epoch: [4][10/33]|DiceScore_rv:  0.103	|DiceScore_myo:  0.465	|DiceScore_lv:  0.581	
+Epoch: [4][20/33]|DiceScore_rv:  0.102	|DiceScore_myo:  0.452	|DiceScore_lv:  0.559	
+Epoch: [4][30/33]|DiceScore_rv:  0.099	|DiceScore_myo:  0.453	|DiceScore_lv:  0.567	
+2023-09-30 23:16:27,879 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [5][ 0/59]|Loss: 7.3872e-01	|DiceScore_bg:  0.922	|DiceScore_rv:  0.161	|DiceScore_myo:  0.460	|DiceScore_lv:  0.869	
+Epoch: [5][10/59]|Loss: 7.4461e-01	|DiceScore_bg:  0.910	|DiceScore_rv:  0.137	|DiceScore_myo:  0.502	|DiceScore_lv:  0.833	
+Epoch: [5][20/59]|Loss: 7.5516e-01	|DiceScore_bg:  0.904	|DiceScore_rv:  0.128	|DiceScore_myo:  0.460	|DiceScore_lv:  0.804	
+Epoch: [5][30/59]|Loss: 7.5967e-01	|DiceScore_bg:  0.907	|DiceScore_rv:  0.128	|DiceScore_myo:  0.445	|DiceScore_lv:  0.800	
+Epoch: [5][40/59]|Loss: 7.6406e-01	|DiceScore_bg:  0.900	|DiceScore_rv:  0.122	|DiceScore_myo:  0.428	|DiceScore_lv:  0.797	
+Epoch: [5][50/59]|Loss: 7.6402e-01	|DiceScore_bg:  0.898	|DiceScore_rv:  0.119	|DiceScore_myo:  0.437	|DiceScore_lv:  0.791	
+Epoch: [5][ 0/33]|DiceScore_rv:  0.132	|DiceScore_myo:  0.638	|DiceScore_lv:  0.802	
+Epoch: [5][10/33]|DiceScore_rv:  0.168	|DiceScore_myo:  0.613	|DiceScore_lv:  0.773	
+Epoch: [5][20/33]|DiceScore_rv:  0.170	|DiceScore_myo:  0.623	|DiceScore_lv:  0.803	
+Epoch: [5][30/33]|DiceScore_rv:  0.174	|DiceScore_myo:  0.618	|DiceScore_lv:  0.798	
+2023-09-30 23:18:22,097 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.7456617601249915
+2023-09-30 23:18:22,097 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [6][ 0/59]|Loss: 7.3159e-01	|DiceScore_bg:  0.925	|DiceScore_rv:  0.170	|DiceScore_myo:  0.452	|DiceScore_lv:  0.880	
+Epoch: [6][10/59]|Loss: 7.4159e-01	|DiceScore_bg:  0.917	|DiceScore_rv:  0.140	|DiceScore_myo:  0.515	|DiceScore_lv:  0.811	
+Epoch: [6][20/59]|Loss: 7.5227e-01	|DiceScore_bg:  0.908	|DiceScore_rv:  0.133	|DiceScore_myo:  0.471	|DiceScore_lv:  0.783	
+Epoch: [6][30/59]|Loss: 7.5987e-01	|DiceScore_bg:  0.905	|DiceScore_rv:  0.132	|DiceScore_myo:  0.441	|DiceScore_lv:  0.750	
+Epoch: [6][40/59]|Loss: 7.6203e-01	|DiceScore_bg:  0.901	|DiceScore_rv:  0.125	|DiceScore_myo:  0.442	|DiceScore_lv:  0.751	
+Epoch: [6][50/59]|Loss: 7.6124e-01	|DiceScore_bg:  0.903	|DiceScore_rv:  0.127	|DiceScore_myo:  0.441	|DiceScore_lv:  0.756	
+Epoch: [6][ 0/33]|DiceScore_rv:  0.198	|DiceScore_myo:  0.644	|DiceScore_lv:  0.789	
+Epoch: [6][10/33]|DiceScore_rv:  0.152	|DiceScore_myo:  0.634	|DiceScore_lv:  0.823	
+Epoch: [6][20/33]|DiceScore_rv:  0.153	|DiceScore_myo:  0.635	|DiceScore_lv:  0.831	
+Epoch: [6][30/33]|DiceScore_rv:  0.151	|DiceScore_myo:  0.641	|DiceScore_lv:  0.839	
+2023-09-30 23:20:17,729 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.7290584895053063
+2023-09-30 23:20:17,729 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [7][ 0/59]|Loss: 7.2795e-01	|DiceScore_bg:  0.931	|DiceScore_rv:  0.158	|DiceScore_myo:  0.591	|DiceScore_lv:  0.748	
+Epoch: [7][10/59]|Loss: 7.2641e-01	|DiceScore_bg:  0.937	|DiceScore_rv:  0.171	|DiceScore_myo:  0.538	|DiceScore_lv:  0.821	
+Epoch: [7][20/59]|Loss: 7.2514e-01	|DiceScore_bg:  0.939	|DiceScore_rv:  0.171	|DiceScore_myo:  0.560	|DiceScore_lv:  0.810	
+Epoch: [7][30/59]|Loss: 7.2971e-01	|DiceScore_bg:  0.935	|DiceScore_rv:  0.166	|DiceScore_myo:  0.546	|DiceScore_lv:  0.794	
+Epoch: [7][40/59]|Loss: 7.3411e-01	|DiceScore_bg:  0.931	|DiceScore_rv:  0.162	|DiceScore_myo:  0.527	|DiceScore_lv:  0.792	
+Epoch: [7][50/59]|Loss: 7.3906e-01	|DiceScore_bg:  0.927	|DiceScore_rv:  0.158	|DiceScore_myo:  0.504	|DiceScore_lv:  0.784	
+Epoch: [7][ 0/33]|DiceScore_rv:  0.157	|DiceScore_myo:  0.573	|DiceScore_lv:  0.743	
+Epoch: [7][10/33]|DiceScore_rv:  0.137	|DiceScore_myo:  0.584	|DiceScore_lv:  0.796	
+Epoch: [7][20/33]|DiceScore_rv:  0.132	|DiceScore_myo:  0.580	|DiceScore_lv:  0.789	
+Epoch: [7][30/33]|DiceScore_rv:  0.129	|DiceScore_myo:  0.570	|DiceScore_lv:  0.776	
+2023-09-30 23:22:14,810 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [8][ 0/59]|Loss: 7.2690e-01	|DiceScore_bg:  0.944	|DiceScore_rv:  0.209	|DiceScore_myo:  0.486	|DiceScore_lv:  0.701	
+Epoch: [8][10/59]|Loss: 7.2766e-01	|DiceScore_bg:  0.939	|DiceScore_rv:  0.187	|DiceScore_myo:  0.534	|DiceScore_lv:  0.760	
+Epoch: [8][20/59]|Loss: 7.3019e-01	|DiceScore_bg:  0.934	|DiceScore_rv:  0.175	|DiceScore_myo:  0.537	|DiceScore_lv:  0.763	
+Epoch: [8][30/59]|Loss: 7.3535e-01	|DiceScore_bg:  0.929	|DiceScore_rv:  0.165	|DiceScore_myo:  0.504	|DiceScore_lv:  0.775	
+Epoch: [8][40/59]|Loss: 7.3379e-01	|DiceScore_bg:  0.933	|DiceScore_rv:  0.172	|DiceScore_myo:  0.504	|DiceScore_lv:  0.771	
+Epoch: [8][50/59]|Loss: 7.3450e-01	|DiceScore_bg:  0.928	|DiceScore_rv:  0.164	|DiceScore_myo:  0.513	|DiceScore_lv:  0.788	
+Epoch: [8][ 0/33]|DiceScore_rv:  0.127	|DiceScore_myo:  0.427	|DiceScore_lv:  0.711	
+Epoch: [8][10/33]|DiceScore_rv:  0.136	|DiceScore_myo:  0.422	|DiceScore_lv:  0.742	
+Epoch: [8][20/33]|DiceScore_rv:  0.134	|DiceScore_myo:  0.418	|DiceScore_lv:  0.740	
+Epoch: [8][30/33]|DiceScore_rv:  0.134	|DiceScore_myo:  0.421	|DiceScore_lv:  0.740	
+2023-09-30 23:24:11,063 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [9][ 0/59]|Loss: 7.3728e-01	|DiceScore_bg:  0.929	|DiceScore_rv:  0.153	|DiceScore_myo:  0.500	|DiceScore_lv:  0.773	
+Epoch: [9][10/59]|Loss: 7.4017e-01	|DiceScore_bg:  0.919	|DiceScore_rv:  0.144	|DiceScore_myo:  0.501	|DiceScore_lv:  0.780	
+Epoch: [9][20/59]|Loss: 7.3612e-01	|DiceScore_bg:  0.925	|DiceScore_rv:  0.152	|DiceScore_myo:  0.502	|DiceScore_lv:  0.799	
+Epoch: [9][30/59]|Loss: 7.3240e-01	|DiceScore_bg:  0.928	|DiceScore_rv:  0.157	|DiceScore_myo:  0.515	|DiceScore_lv:  0.807	
+Epoch: [9][40/59]|Loss: 7.3266e-01	|DiceScore_bg:  0.927	|DiceScore_rv:  0.156	|DiceScore_myo:  0.518	|DiceScore_lv:  0.805	
+Epoch: [9][50/59]|Loss: 7.3193e-01	|DiceScore_bg:  0.927	|DiceScore_rv:  0.155	|DiceScore_myo:  0.525	|DiceScore_lv:  0.805	
+Epoch: [9][ 0/33]|DiceScore_rv:  0.152	|DiceScore_myo:  0.554	|DiceScore_lv:  0.822	
+Epoch: [9][10/33]|DiceScore_rv:  0.172	|DiceScore_myo:  0.569	|DiceScore_lv:  0.859	
+Epoch: [9][20/33]|DiceScore_rv:  0.170	|DiceScore_myo:  0.572	|DiceScore_lv:  0.857	
+Epoch: [9][30/33]|DiceScore_rv:  0.166	|DiceScore_myo:  0.571	|DiceScore_lv:  0.856	
+2023-09-30 23:26:07,969 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.7245716697998504
+2023-09-30 23:26:07,969 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [10][ 0/59]|Loss: 6.8045e-01	|DiceScore_bg:  0.945	|DiceScore_rv:  0.223	|DiceScore_myo:  0.604	|DiceScore_lv:  0.891	
+Epoch: [10][10/59]|Loss: 7.1403e-01	|DiceScore_bg:  0.940	|DiceScore_rv:  0.172	|DiceScore_myo:  0.586	|DiceScore_lv:  0.860	
+Epoch: [10][20/59]|Loss: 7.1958e-01	|DiceScore_bg:  0.937	|DiceScore_rv:  0.171	|DiceScore_myo:  0.548	|DiceScore_lv:  0.852	
+Epoch: [10][30/59]|Loss: 7.1743e-01	|DiceScore_bg:  0.940	|DiceScore_rv:  0.187	|DiceScore_myo:  0.542	|DiceScore_lv:  0.826	
+Epoch: [10][40/59]|Loss: 7.1963e-01	|DiceScore_bg:  0.940	|DiceScore_rv:  0.183	|DiceScore_myo:  0.543	|DiceScore_lv:  0.816	
+Epoch: [10][50/59]|Loss: 7.2311e-01	|DiceScore_bg:  0.940	|DiceScore_rv:  0.183	|DiceScore_myo:  0.527	|DiceScore_lv:  0.808	
+Epoch: [10][ 0/33]|DiceScore_rv:  0.356	|DiceScore_myo:  0.553	|DiceScore_lv:  0.837	
+Epoch: [10][10/33]|DiceScore_rv:  0.374	|DiceScore_myo:  0.540	|DiceScore_lv:  0.827	
+Epoch: [10][20/33]|DiceScore_rv:  0.377	|DiceScore_myo:  0.548	|DiceScore_lv:  0.835	
+Epoch: [10][30/33]|DiceScore_rv:  0.371	|DiceScore_myo:  0.540	|DiceScore_lv:  0.825	
+2023-09-30 23:28:05,732 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.683741439460686
+2023-09-30 23:28:05,733 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [11][ 0/59]|Loss: 6.8272e-01	|DiceScore_bg:  0.959	|DiceScore_rv:  0.265	|DiceScore_myo:  0.572	|DiceScore_lv:  0.872	
+Epoch: [11][10/59]|Loss: 7.0168e-01	|DiceScore_bg:  0.951	|DiceScore_rv:  0.217	|DiceScore_myo:  0.577	|DiceScore_lv:  0.836	
+Epoch: [11][20/59]|Loss: 6.9928e-01	|DiceScore_bg:  0.954	|DiceScore_rv:  0.226	|DiceScore_myo:  0.583	|DiceScore_lv:  0.824	
+Epoch: [11][30/59]|Loss: 7.0073e-01	|DiceScore_bg:  0.953	|DiceScore_rv:  0.226	|DiceScore_myo:  0.568	|DiceScore_lv:  0.821	
+Epoch: [11][40/59]|Loss: 7.0124e-01	|DiceScore_bg:  0.952	|DiceScore_rv:  0.219	|DiceScore_myo:  0.578	|DiceScore_lv:  0.822	
+Epoch: [11][50/59]|Loss: 7.0495e-01	|DiceScore_bg:  0.950	|DiceScore_rv:  0.212	|DiceScore_myo:  0.573	|DiceScore_lv:  0.819	
+Epoch: [11][ 0/33]|DiceScore_rv:  0.120	|DiceScore_myo:  0.610	|DiceScore_lv:  0.804	
+Epoch: [11][10/33]|DiceScore_rv:  0.140	|DiceScore_myo:  0.573	|DiceScore_lv:  0.806	
+Epoch: [11][20/33]|DiceScore_rv:  0.148	|DiceScore_myo:  0.576	|DiceScore_lv:  0.814	
+Epoch: [11][30/33]|DiceScore_rv:  0.144	|DiceScore_myo:  0.581	|DiceScore_lv:  0.808	
+2023-09-30 23:30:03,943 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [12][ 0/59]|Loss: 7.3989e-01	|DiceScore_bg:  0.926	|DiceScore_rv:  0.150	|DiceScore_myo:  0.470	|DiceScore_lv:  0.734	
+Epoch: [12][10/59]|Loss: 7.1784e-01	|DiceScore_bg:  0.941	|DiceScore_rv:  0.178	|DiceScore_myo:  0.573	|DiceScore_lv:  0.808	
+Epoch: [12][20/59]|Loss: 7.1898e-01	|DiceScore_bg:  0.940	|DiceScore_rv:  0.181	|DiceScore_myo:  0.563	|DiceScore_lv:  0.798	
+Epoch: [12][30/59]|Loss: 7.1432e-01	|DiceScore_bg:  0.943	|DiceScore_rv:  0.185	|DiceScore_myo:  0.575	|DiceScore_lv:  0.809	
+Epoch: [12][40/59]|Loss: 7.1216e-01	|DiceScore_bg:  0.946	|DiceScore_rv:  0.197	|DiceScore_myo:  0.563	|DiceScore_lv:  0.807	
+Epoch: [12][50/59]|Loss: 7.0867e-01	|DiceScore_bg:  0.947	|DiceScore_rv:  0.203	|DiceScore_myo:  0.569	|DiceScore_lv:  0.817	
+Epoch: [12][ 0/33]|DiceScore_rv:  0.235	|DiceScore_myo:  0.664	|DiceScore_lv:  0.897	
+Epoch: [12][10/33]|DiceScore_rv:  0.223	|DiceScore_myo:  0.672	|DiceScore_lv:  0.815	
+Epoch: [12][20/33]|DiceScore_rv:  0.225	|DiceScore_myo:  0.654	|DiceScore_lv:  0.802	
+Epoch: [12][30/33]|DiceScore_rv:  0.218	|DiceScore_myo:  0.659	|DiceScore_lv:  0.805	
+2023-09-30 23:32:02,346 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [13][ 0/59]|Loss: 7.0726e-01	|DiceScore_bg:  0.937	|DiceScore_rv:  0.196	|DiceScore_myo:  0.555	|DiceScore_lv:  0.867	
+Epoch: [13][10/59]|Loss: 7.3823e-01	|DiceScore_bg:  0.920	|DiceScore_rv:  0.149	|DiceScore_myo:  0.445	|DiceScore_lv:  0.851	
+Epoch: [13][20/59]|Loss: 7.4321e-01	|DiceScore_bg:  0.922	|DiceScore_rv:  0.158	|DiceScore_myo:  0.428	|DiceScore_lv:  0.785	
+Epoch: [13][30/59]|Loss: 7.3036e-01	|DiceScore_bg:  0.930	|DiceScore_rv:  0.175	|DiceScore_myo:  0.467	|DiceScore_lv:  0.802	
+Epoch: [13][40/59]|Loss: 7.2539e-01	|DiceScore_bg:  0.933	|DiceScore_rv:  0.175	|DiceScore_myo:  0.499	|DiceScore_lv:  0.814	
+Epoch: [13][50/59]|Loss: 7.1913e-01	|DiceScore_bg:  0.937	|DiceScore_rv:  0.186	|DiceScore_myo:  0.516	|DiceScore_lv:  0.821	
+Epoch: [13][ 0/33]|DiceScore_rv:  0.308	|DiceScore_myo:  0.609	|DiceScore_lv:  0.737	
+Epoch: [13][10/33]|DiceScore_rv:  0.281	|DiceScore_myo:  0.613	|DiceScore_lv:  0.746	
+Epoch: [13][20/33]|DiceScore_rv:  0.281	|DiceScore_myo:  0.617	|DiceScore_lv:  0.743	
+Epoch: [13][30/33]|DiceScore_rv:  0.280	|DiceScore_myo:  0.611	|DiceScore_lv:  0.736	
+2023-09-30 23:34:01,394 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [14][ 0/59]|Loss: 7.0231e-01	|DiceScore_bg:  0.951	|DiceScore_rv:  0.204	|DiceScore_myo:  0.598	|DiceScore_lv:  0.796	
+Epoch: [14][10/59]|Loss: 6.9646e-01	|DiceScore_bg:  0.957	|DiceScore_rv:  0.243	|DiceScore_myo:  0.559	|DiceScore_lv:  0.800	
+Epoch: [14][20/59]|Loss: 6.9989e-01	|DiceScore_bg:  0.957	|DiceScore_rv:  0.248	|DiceScore_myo:  0.529	|DiceScore_lv:  0.794	
+Epoch: [14][30/59]|Loss: 6.9640e-01	|DiceScore_bg:  0.956	|DiceScore_rv:  0.239	|DiceScore_myo:  0.564	|DiceScore_lv:  0.813	
+Epoch: [14][40/59]|Loss: 6.8544e-01	|DiceScore_bg:  0.960	|DiceScore_rv:  0.258	|DiceScore_myo:  0.594	|DiceScore_lv:  0.825	
+Epoch: [14][50/59]|Loss: 6.8580e-01	|DiceScore_bg:  0.959	|DiceScore_rv:  0.256	|DiceScore_myo:  0.597	|DiceScore_lv:  0.820	
+Epoch: [14][ 0/33]|DiceScore_rv:  0.240	|DiceScore_myo:  0.561	|DiceScore_lv:  0.717	
+Epoch: [14][10/33]|DiceScore_rv:  0.335	|DiceScore_myo:  0.661	|DiceScore_lv:  0.832	
+Epoch: [14][20/33]|DiceScore_rv:  0.353	|DiceScore_myo:  0.661	|DiceScore_lv:  0.833	
+Epoch: [14][30/33]|DiceScore_rv:  0.358	|DiceScore_myo:  0.663	|DiceScore_lv:  0.837	
+2023-09-30 23:36:01,901 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.6575581737154659
+2023-09-30 23:36:01,901 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [15][ 0/59]|Loss: 6.8948e-01	|DiceScore_bg:  0.958	|DiceScore_rv:  0.214	|DiceScore_myo:  0.652	|DiceScore_lv:  0.867	
+Epoch: [15][10/59]|Loss: 6.6904e-01	|DiceScore_bg:  0.962	|DiceScore_rv:  0.270	|DiceScore_myo:  0.663	|DiceScore_lv:  0.854	
+Epoch: [15][20/59]|Loss: 6.7982e-01	|DiceScore_bg:  0.959	|DiceScore_rv:  0.256	|DiceScore_myo:  0.638	|DiceScore_lv:  0.828	
+Epoch: [15][30/59]|Loss: 6.8026e-01	|DiceScore_bg:  0.960	|DiceScore_rv:  0.253	|DiceScore_myo:  0.637	|DiceScore_lv:  0.839	
+Epoch: [15][40/59]|Loss: 6.8126e-01	|DiceScore_bg:  0.959	|DiceScore_rv:  0.251	|DiceScore_myo:  0.631	|DiceScore_lv:  0.844	
+Epoch: [15][50/59]|Loss: 6.8563e-01	|DiceScore_bg:  0.957	|DiceScore_rv:  0.241	|DiceScore_myo:  0.617	|DiceScore_lv:  0.847	
+Epoch: [15][ 0/33]|DiceScore_rv:  0.249	|DiceScore_myo:  0.516	|DiceScore_lv:  0.719	
+Epoch: [15][10/33]|DiceScore_rv:  0.251	|DiceScore_myo:  0.500	|DiceScore_lv:  0.678	
+Epoch: [15][20/33]|DiceScore_rv:  0.251	|DiceScore_myo:  0.497	|DiceScore_lv:  0.679	
+Epoch: [15][30/33]|DiceScore_rv:  0.253	|DiceScore_myo:  0.493	|DiceScore_lv:  0.677	
+2023-09-30 23:38:01,339 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [16][ 0/59]|Loss: 7.2295e-01	|DiceScore_bg:  0.947	|DiceScore_rv:  0.225	|DiceScore_myo:  0.495	|DiceScore_lv:  0.672	
+Epoch: [16][10/59]|Loss: 7.1913e-01	|DiceScore_bg:  0.947	|DiceScore_rv:  0.205	|DiceScore_myo:  0.500	|DiceScore_lv:  0.785	
+Epoch: [16][20/59]|Loss: 7.2440e-01	|DiceScore_bg:  0.946	|DiceScore_rv:  0.194	|DiceScore_myo:  0.517	|DiceScore_lv:  0.788	
+Epoch: [16][30/59]|Loss: 7.2242e-01	|DiceScore_bg:  0.945	|DiceScore_rv:  0.193	|DiceScore_myo:  0.525	|DiceScore_lv:  0.793	
+Epoch: [16][40/59]|Loss: 7.2250e-01	|DiceScore_bg:  0.944	|DiceScore_rv:  0.193	|DiceScore_myo:  0.518	|DiceScore_lv:  0.800	
+Epoch: [16][50/59]|Loss: 7.2486e-01	|DiceScore_bg:  0.941	|DiceScore_rv:  0.192	|DiceScore_myo:  0.502	|DiceScore_lv:  0.791	
+Epoch: [16][ 0/33]|DiceScore_rv:  0.142	|DiceScore_myo:  0.648	|DiceScore_lv:  0.775	
+Epoch: [16][10/33]|DiceScore_rv:  0.153	|DiceScore_myo:  0.576	|DiceScore_lv:  0.747	
+Epoch: [16][20/33]|DiceScore_rv:  0.160	|DiceScore_myo:  0.586	|DiceScore_lv:  0.760	
+Epoch: [16][30/33]|DiceScore_rv:  0.160	|DiceScore_myo:  0.581	|DiceScore_lv:  0.755	
+2023-09-30 23:39:59,758 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [17][ 0/59]|Loss: 7.1010e-01	|DiceScore_bg:  0.950	|DiceScore_rv:  0.209	|DiceScore_myo:  0.494	|DiceScore_lv:  0.845	
+Epoch: [17][10/59]|Loss: 7.0411e-01	|DiceScore_bg:  0.953	|DiceScore_rv:  0.234	|DiceScore_myo:  0.545	|DiceScore_lv:  0.782	
+Epoch: [17][20/59]|Loss: 6.9311e-01	|DiceScore_bg:  0.956	|DiceScore_rv:  0.240	|DiceScore_myo:  0.572	|DiceScore_lv:  0.826	
+Epoch: [17][30/59]|Loss: 6.9663e-01	|DiceScore_bg:  0.954	|DiceScore_rv:  0.229	|DiceScore_myo:  0.570	|DiceScore_lv:  0.836	
+Epoch: [17][40/59]|Loss: 6.9915e-01	|DiceScore_bg:  0.953	|DiceScore_rv:  0.228	|DiceScore_myo:  0.568	|DiceScore_lv:  0.820	
+Epoch: [17][50/59]|Loss: 7.0447e-01	|DiceScore_bg:  0.952	|DiceScore_rv:  0.219	|DiceScore_myo:  0.556	|DiceScore_lv:  0.818	
+Epoch: [17][ 0/33]|DiceScore_rv:  0.458	|DiceScore_myo:  0.723	|DiceScore_lv:  0.865	
+Epoch: [17][10/33]|DiceScore_rv:  0.399	|DiceScore_myo:  0.759	|DiceScore_lv:  0.893	
+Epoch: [17][20/33]|DiceScore_rv:  0.395	|DiceScore_myo:  0.747	|DiceScore_lv:  0.890	
+Epoch: [17][30/33]|DiceScore_rv:  0.390	|DiceScore_myo:  0.747	|DiceScore_lv:  0.891	
+2023-09-30 23:41:59,981 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.6333260282888846
+2023-09-30 23:41:59,981 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [18][ 0/59]|Loss: 6.8583e-01	|DiceScore_bg:  0.968	|DiceScore_rv:  0.254	|DiceScore_myo:  0.632	|DiceScore_lv:  0.824	
+Epoch: [18][10/59]|Loss: 6.7413e-01	|DiceScore_bg:  0.966	|DiceScore_rv:  0.271	|DiceScore_myo:  0.641	|DiceScore_lv:  0.851	
+Epoch: [18][20/59]|Loss: 6.8710e-01	|DiceScore_bg:  0.956	|DiceScore_rv:  0.235	|DiceScore_myo:  0.611	|DiceScore_lv:  0.861	
+Epoch: [18][30/59]|Loss: 6.8343e-01	|DiceScore_bg:  0.957	|DiceScore_rv:  0.241	|DiceScore_myo:  0.619	|DiceScore_lv:  0.869	
+Epoch: [18][40/59]|Loss: 6.8793e-01	|DiceScore_bg:  0.954	|DiceScore_rv:  0.230	|DiceScore_myo:  0.614	|DiceScore_lv:  0.866	
+Epoch: [18][50/59]|Loss: 6.9770e-01	|DiceScore_bg:  0.945	|DiceScore_rv:  0.210	|DiceScore_myo:  0.598	|DiceScore_lv:  0.858	
+Epoch: [18][ 0/33]|DiceScore_rv:  0.183	|DiceScore_myo:  0.552	|DiceScore_lv:  0.849	
+Epoch: [18][10/33]|DiceScore_rv:  0.191	|DiceScore_myo:  0.562	|DiceScore_lv:  0.819	
+Epoch: [18][20/33]|DiceScore_rv:  0.189	|DiceScore_myo:  0.551	|DiceScore_lv:  0.820	
+Epoch: [18][30/33]|DiceScore_rv:  0.190	|DiceScore_myo:  0.551	|DiceScore_lv:  0.824	
+2023-09-30 23:43:59,153 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [19][ 0/59]|Loss: 7.0593e-01	|DiceScore_bg:  0.946	|DiceScore_rv:  0.211	|DiceScore_myo:  0.499	|DiceScore_lv:  0.860	
+Epoch: [19][10/59]|Loss: 7.0829e-01	|DiceScore_bg:  0.950	|DiceScore_rv:  0.217	|DiceScore_myo:  0.525	|DiceScore_lv:  0.815	
+Epoch: [19][20/59]|Loss: 6.9940e-01	|DiceScore_bg:  0.955	|DiceScore_rv:  0.234	|DiceScore_myo:  0.542	|DiceScore_lv:  0.823	
+Epoch: [19][30/59]|Loss: 6.9602e-01	|DiceScore_bg:  0.956	|DiceScore_rv:  0.241	|DiceScore_myo:  0.551	|DiceScore_lv:  0.820	
+Epoch: [19][40/59]|Loss: 6.9813e-01	|DiceScore_bg:  0.955	|DiceScore_rv:  0.236	|DiceScore_myo:  0.544	|DiceScore_lv:  0.819	
+Epoch: [19][50/59]|Loss: 6.9334e-01	|DiceScore_bg:  0.957	|DiceScore_rv:  0.250	|DiceScore_myo:  0.546	|DiceScore_lv:  0.818	
+Epoch: [19][ 0/33]|DiceScore_rv:  0.341	|DiceScore_myo:  0.747	|DiceScore_lv:  0.876	
+Epoch: [19][10/33]|DiceScore_rv:  0.360	|DiceScore_myo:  0.705	|DiceScore_lv:  0.846	
+Epoch: [19][20/33]|DiceScore_rv:  0.367	|DiceScore_myo:  0.715	|DiceScore_lv:  0.858	
+Epoch: [19][30/33]|DiceScore_rv:  0.353	|DiceScore_myo:  0.714	|DiceScore_lv:  0.856	
+2023-09-30 23:45:59,289 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [20][ 0/59]|Loss: 7.3633e-01	|DiceScore_bg:  0.949	|DiceScore_rv:  0.156	|DiceScore_myo:  0.487	|DiceScore_lv:  0.782	
+Epoch: [20][10/59]|Loss: 6.8443e-01	|DiceScore_bg:  0.962	|DiceScore_rv:  0.265	|DiceScore_myo:  0.569	|DiceScore_lv:  0.820	
+Epoch: [20][20/59]|Loss: 6.6718e-01	|DiceScore_bg:  0.967	|DiceScore_rv:  0.301	|DiceScore_myo:  0.601	|DiceScore_lv:  0.837	
+Epoch: [20][30/59]|Loss: 6.6028e-01	|DiceScore_bg:  0.968	|DiceScore_rv:  0.306	|DiceScore_myo:  0.636	|DiceScore_lv:  0.847	
+Epoch: [20][40/59]|Loss: 6.6036e-01	|DiceScore_bg:  0.968	|DiceScore_rv:  0.303	|DiceScore_myo:  0.644	|DiceScore_lv:  0.851	
+Epoch: [20][50/59]|Loss: 6.5818e-01	|DiceScore_bg:  0.969	|DiceScore_rv:  0.305	|DiceScore_myo:  0.648	|DiceScore_lv:  0.861	
+Epoch: [20][ 0/33]|DiceScore_rv:  0.105	|DiceScore_myo:  0.524	|DiceScore_lv:  0.760	
+Epoch: [20][10/33]|DiceScore_rv:  0.135	|DiceScore_myo:  0.492	|DiceScore_lv:  0.787	
+Epoch: [20][20/33]|DiceScore_rv:  0.135	|DiceScore_myo:  0.502	|DiceScore_lv:  0.804	
+Epoch: [20][30/33]|DiceScore_rv:  0.135	|DiceScore_myo:  0.508	|DiceScore_lv:  0.805	
+2023-09-30 23:47:59,696 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [21][ 0/59]|Loss: 7.4261e-01	|DiceScore_bg:  0.932	|DiceScore_rv:  0.154	|DiceScore_myo:  0.472	|DiceScore_lv:  0.738	
+Epoch: [21][10/59]|Loss: 7.3171e-01	|DiceScore_bg:  0.941	|DiceScore_rv:  0.177	|DiceScore_myo:  0.492	|DiceScore_lv:  0.755	
+Epoch: [21][20/59]|Loss: 7.1718e-01	|DiceScore_bg:  0.944	|DiceScore_rv:  0.192	|DiceScore_myo:  0.532	|DiceScore_lv:  0.796	
+Epoch: [21][30/59]|Loss: 6.9933e-01	|DiceScore_bg:  0.951	|DiceScore_rv:  0.223	|DiceScore_myo:  0.576	|DiceScore_lv:  0.820	
+Epoch: [21][40/59]|Loss: 6.9704e-01	|DiceScore_bg:  0.953	|DiceScore_rv:  0.233	|DiceScore_myo:  0.569	|DiceScore_lv:  0.815	
+Epoch: [21][50/59]|Loss: 6.9522e-01	|DiceScore_bg:  0.953	|DiceScore_rv:  0.236	|DiceScore_myo:  0.581	|DiceScore_lv:  0.812	
+Epoch: [21][ 0/33]|DiceScore_rv:  0.180	|DiceScore_myo:  0.583	|DiceScore_lv:  0.867	
+Epoch: [21][10/33]|DiceScore_rv:  0.174	|DiceScore_myo:  0.588	|DiceScore_lv:  0.826	
+Epoch: [21][20/33]|DiceScore_rv:  0.180	|DiceScore_myo:  0.595	|DiceScore_lv:  0.833	
+Epoch: [21][30/33]|DiceScore_rv:  0.179	|DiceScore_myo:  0.599	|DiceScore_lv:  0.838	
+2023-09-30 23:49:58,069 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [22][ 0/59]|Loss: 7.3227e-01	|DiceScore_bg:  0.943	|DiceScore_rv:  0.199	|DiceScore_myo:  0.398	|DiceScore_lv:  0.780	
+Epoch: [22][10/59]|Loss: 7.0051e-01	|DiceScore_bg:  0.952	|DiceScore_rv:  0.222	|DiceScore_myo:  0.547	|DiceScore_lv:  0.845	
+Epoch: [22][20/59]|Loss: 6.9695e-01	|DiceScore_bg:  0.955	|DiceScore_rv:  0.222	|DiceScore_myo:  0.598	|DiceScore_lv:  0.815	
+Epoch: [22][30/59]|Loss: 6.9398e-01	|DiceScore_bg:  0.956	|DiceScore_rv:  0.237	|DiceScore_myo:  0.583	|DiceScore_lv:  0.815	
+Epoch: [22][40/59]|Loss: 6.9539e-01	|DiceScore_bg:  0.955	|DiceScore_rv:  0.234	|DiceScore_myo:  0.572	|DiceScore_lv:  0.821	
+Epoch: [22][50/59]|Loss: 6.9275e-01	|DiceScore_bg:  0.956	|DiceScore_rv:  0.235	|DiceScore_myo:  0.578	|DiceScore_lv:  0.831	
+Epoch: [22][ 0/33]|DiceScore_rv:  0.264	|DiceScore_myo:  0.762	|DiceScore_lv:  0.890	
+Epoch: [22][10/33]|DiceScore_rv:  0.256	|DiceScore_myo:  0.728	|DiceScore_lv:  0.871	
+Epoch: [22][20/33]|DiceScore_rv:  0.238	|DiceScore_myo:  0.720	|DiceScore_lv:  0.867	
+Epoch: [22][30/33]|DiceScore_rv:  0.238	|DiceScore_myo:  0.714	|DiceScore_lv:  0.863	
+2023-09-30 23:51:57,023 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [23][ 0/59]|Loss: 6.6153e-01	|DiceScore_bg:  0.957	|DiceScore_rv:  0.232	|DiceScore_myo:  0.748	|DiceScore_lv:  0.902	
+Epoch: [23][10/59]|Loss: 6.6267e-01	|DiceScore_bg:  0.962	|DiceScore_rv:  0.265	|DiceScore_myo:  0.679	|DiceScore_lv:  0.890	
+Epoch: [23][20/59]|Loss: 6.7569e-01	|DiceScore_bg:  0.961	|DiceScore_rv:  0.257	|DiceScore_myo:  0.628	|DiceScore_lv:  0.848	
+Epoch: [23][30/59]|Loss: 6.7415e-01	|DiceScore_bg:  0.961	|DiceScore_rv:  0.258	|DiceScore_myo:  0.638	|DiceScore_lv:  0.850	
+Epoch: [23][40/59]|Loss: 6.6965e-01	|DiceScore_bg:  0.964	|DiceScore_rv:  0.271	|DiceScore_myo:  0.642	|DiceScore_lv:  0.851	
+Epoch: [23][50/59]|Loss: 6.6847e-01	|DiceScore_bg:  0.965	|DiceScore_rv:  0.283	|DiceScore_myo:  0.630	|DiceScore_lv:  0.843	
+Epoch: [23][ 0/33]|DiceScore_rv:  0.470	|DiceScore_myo:  0.698	|DiceScore_lv:  0.913	
+Epoch: [23][10/33]|DiceScore_rv:  0.438	|DiceScore_myo:  0.699	|DiceScore_lv:  0.891	
+Epoch: [23][20/33]|DiceScore_rv:  0.434	|DiceScore_myo:  0.699	|DiceScore_lv:  0.896	
+Epoch: [23][30/33]|DiceScore_rv:  0.438	|DiceScore_myo:  0.702	|DiceScore_lv:  0.897	
+2023-09-30 23:53:57,264 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.6232929360907573
+2023-09-30 23:53:57,264 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [24][ 0/59]|Loss: 6.7543e-01	|DiceScore_bg:  0.962	|DiceScore_rv:  0.259	|DiceScore_myo:  0.599	|DiceScore_lv:  0.881	
+Epoch: [24][10/59]|Loss: 6.6019e-01	|DiceScore_bg:  0.968	|DiceScore_rv:  0.303	|DiceScore_myo:  0.623	|DiceScore_lv:  0.871	
+Epoch: [24][20/59]|Loss: 6.5069e-01	|DiceScore_bg:  0.970	|DiceScore_rv:  0.320	|DiceScore_myo:  0.658	|DiceScore_lv:  0.875	
+Epoch: [24][30/59]|Loss: 6.5577e-01	|DiceScore_bg:  0.969	|DiceScore_rv:  0.306	|DiceScore_myo:  0.655	|DiceScore_lv:  0.866	
+Epoch: [24][40/59]|Loss: 6.5396e-01	|DiceScore_bg:  0.970	|DiceScore_rv:  0.314	|DiceScore_myo:  0.652	|DiceScore_lv:  0.863	
+Epoch: [24][50/59]|Loss: 6.5561e-01	|DiceScore_bg:  0.970	|DiceScore_rv:  0.314	|DiceScore_myo:  0.645	|DiceScore_lv:  0.859	
+Epoch: [24][ 0/33]|DiceScore_rv:  0.295	|DiceScore_myo:  0.694	|DiceScore_lv:  0.831	
+Epoch: [24][10/33]|DiceScore_rv:  0.341	|DiceScore_myo:  0.688	|DiceScore_lv:  0.832	
+Epoch: [24][20/33]|DiceScore_rv:  0.346	|DiceScore_myo:  0.685	|DiceScore_lv:  0.846	
+Epoch: [24][30/33]|DiceScore_rv:  0.342	|DiceScore_myo:  0.694	|DiceScore_lv:  0.846	
+2023-09-30 23:55:57,523 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [25][ 0/59]|Loss: 6.1170e-01	|DiceScore_bg:  0.977	|DiceScore_rv:  0.427	|DiceScore_myo:  0.715	|DiceScore_lv:  0.825	
+Epoch: [25][10/59]|Loss: 6.4962e-01	|DiceScore_bg:  0.972	|DiceScore_rv:  0.324	|DiceScore_myo:  0.672	|DiceScore_lv:  0.857	
+Epoch: [25][20/59]|Loss: 6.7929e-01	|DiceScore_bg:  0.953	|DiceScore_rv:  0.249	|DiceScore_myo:  0.638	|DiceScore_lv:  0.843	
+Epoch: [25][30/59]|Loss: 6.9223e-01	|DiceScore_bg:  0.945	|DiceScore_rv:  0.222	|DiceScore_myo:  0.621	|DiceScore_lv:  0.822	
+Epoch: [25][40/59]|Loss: 6.9348e-01	|DiceScore_bg:  0.948	|DiceScore_rv:  0.228	|DiceScore_myo:  0.606	|DiceScore_lv:  0.811	
+Epoch: [25][50/59]|Loss: 6.8874e-01	|DiceScore_bg:  0.951	|DiceScore_rv:  0.234	|DiceScore_myo:  0.620	|DiceScore_lv:  0.819	
+Epoch: [25][ 0/33]|DiceScore_rv:  0.393	|DiceScore_myo:  0.734	|DiceScore_lv:  0.910	
+Epoch: [25][10/33]|DiceScore_rv:  0.402	|DiceScore_myo:  0.728	|DiceScore_lv:  0.887	
+Epoch: [25][20/33]|DiceScore_rv:  0.395	|DiceScore_myo:  0.710	|DiceScore_lv:  0.867	
+Epoch: [25][30/33]|DiceScore_rv:  0.397	|DiceScore_myo:  0.698	|DiceScore_lv:  0.866	
+2023-09-30 23:57:57,068 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [26][ 0/59]|Loss: 6.3879e-01	|DiceScore_bg:  0.972	|DiceScore_rv:  0.367	|DiceScore_myo:  0.603	|DiceScore_lv:  0.880	
+Epoch: [26][10/59]|Loss: 6.8276e-01	|DiceScore_bg:  0.959	|DiceScore_rv:  0.248	|DiceScore_myo:  0.600	|DiceScore_lv:  0.849	
+Epoch: [26][20/59]|Loss: 6.7940e-01	|DiceScore_bg:  0.958	|DiceScore_rv:  0.235	|DiceScore_myo:  0.649	|DiceScore_lv:  0.866	
+Epoch: [26][30/59]|Loss: 6.7423e-01	|DiceScore_bg:  0.963	|DiceScore_rv:  0.260	|DiceScore_myo:  0.645	|DiceScore_lv:  0.860	
+Epoch: [26][40/59]|Loss: 6.6989e-01	|DiceScore_bg:  0.964	|DiceScore_rv:  0.272	|DiceScore_myo:  0.649	|DiceScore_lv:  0.856	
+Epoch: [26][50/59]|Loss: 6.6856e-01	|DiceScore_bg:  0.965	|DiceScore_rv:  0.281	|DiceScore_myo:  0.640	|DiceScore_lv:  0.853	
+Epoch: [26][ 0/33]|DiceScore_rv:  0.246	|DiceScore_myo:  0.692	|DiceScore_lv:  0.843	
+Epoch: [26][10/33]|DiceScore_rv:  0.243	|DiceScore_myo:  0.685	|DiceScore_lv:  0.873	
+Epoch: [26][20/33]|DiceScore_rv:  0.255	|DiceScore_myo:  0.694	|DiceScore_lv:  0.882	
+Epoch: [26][30/33]|DiceScore_rv:  0.254	|DiceScore_myo:  0.692	|DiceScore_lv:  0.885	
+2023-09-30 23:59:56,844 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [27][ 0/59]|Loss: 6.9206e-01	|DiceScore_bg:  0.962	|DiceScore_rv:  0.225	|DiceScore_myo:  0.558	|DiceScore_lv:  0.866	
+Epoch: [27][10/59]|Loss: 6.6937e-01	|DiceScore_bg:  0.966	|DiceScore_rv:  0.285	|DiceScore_myo:  0.618	|DiceScore_lv:  0.841	
+Epoch: [27][20/59]|Loss: 6.8152e-01	|DiceScore_bg:  0.959	|DiceScore_rv:  0.250	|DiceScore_myo:  0.613	|DiceScore_lv:  0.836	
+Epoch: [27][30/59]|Loss: 6.8655e-01	|DiceScore_bg:  0.958	|DiceScore_rv:  0.250	|DiceScore_myo:  0.587	|DiceScore_lv:  0.811	
+Epoch: [27][40/59]|Loss: 6.7327e-01	|DiceScore_bg:  0.963	|DiceScore_rv:  0.284	|DiceScore_myo:  0.607	|DiceScore_lv:  0.817	
+Epoch: [27][50/59]|Loss: 6.6697e-01	|DiceScore_bg:  0.965	|DiceScore_rv:  0.292	|DiceScore_myo:  0.628	|DiceScore_lv:  0.833	
+Epoch: [27][ 0/33]|DiceScore_rv:  0.320	|DiceScore_myo:  0.627	|DiceScore_lv:  0.827	
+Epoch: [27][10/33]|DiceScore_rv:  0.357	|DiceScore_myo:  0.643	|DiceScore_lv:  0.815	
+Epoch: [27][20/33]|DiceScore_rv:  0.356	|DiceScore_myo:  0.644	|DiceScore_lv:  0.806	
+Epoch: [27][30/33]|DiceScore_rv:  0.353	|DiceScore_myo:  0.643	|DiceScore_lv:  0.799	
+2023-10-01 00:01:57,752 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [28][ 0/59]|Loss: 7.1116e-01	|DiceScore_bg:  0.964	|DiceScore_rv:  0.264	|DiceScore_myo:  0.486	|DiceScore_lv:  0.706	
+Epoch: [28][10/59]|Loss: 6.9577e-01	|DiceScore_bg:  0.957	|DiceScore_rv:  0.253	|DiceScore_myo:  0.567	|DiceScore_lv:  0.803	
+Epoch: [28][20/59]|Loss: 7.0427e-01	|DiceScore_bg:  0.952	|DiceScore_rv:  0.230	|DiceScore_myo:  0.542	|DiceScore_lv:  0.817	
+Epoch: [28][30/59]|Loss: 7.0021e-01	|DiceScore_bg:  0.953	|DiceScore_rv:  0.227	|DiceScore_myo:  0.568	|DiceScore_lv:  0.833	
+Epoch: [28][40/59]|Loss: 7.0033e-01	|DiceScore_bg:  0.952	|DiceScore_rv:  0.224	|DiceScore_myo:  0.569	|DiceScore_lv:  0.837	
+Epoch: [28][50/59]|Loss: 6.9968e-01	|DiceScore_bg:  0.953	|DiceScore_rv:  0.224	|DiceScore_myo:  0.576	|DiceScore_lv:  0.829	
+Epoch: [28][ 0/33]|DiceScore_rv:  0.219	|DiceScore_myo:  0.497	|DiceScore_lv:  0.658	
+Epoch: [28][10/33]|DiceScore_rv:  0.204	|DiceScore_myo:  0.534	|DiceScore_lv:  0.737	
+Epoch: [28][20/33]|DiceScore_rv:  0.209	|DiceScore_myo:  0.541	|DiceScore_lv:  0.749	
+Epoch: [28][30/33]|DiceScore_rv:  0.209	|DiceScore_myo:  0.534	|DiceScore_lv:  0.745	
+2023-10-01 00:03:57,535 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [29][ 0/59]|Loss: 7.0968e-01	|DiceScore_bg:  0.953	|DiceScore_rv:  0.242	|DiceScore_myo:  0.490	|DiceScore_lv:  0.750	
+Epoch: [29][10/59]|Loss: 6.9638e-01	|DiceScore_bg:  0.956	|DiceScore_rv:  0.264	|DiceScore_myo:  0.524	|DiceScore_lv:  0.752	
+Epoch: [29][20/59]|Loss: 6.9627e-01	|DiceScore_bg:  0.956	|DiceScore_rv:  0.249	|DiceScore_myo:  0.569	|DiceScore_lv:  0.766	
+Epoch: [29][30/59]|Loss: 6.9447e-01	|DiceScore_bg:  0.955	|DiceScore_rv:  0.244	|DiceScore_myo:  0.570	|DiceScore_lv:  0.788	
+Epoch: [29][40/59]|Loss: 6.8862e-01	|DiceScore_bg:  0.957	|DiceScore_rv:  0.248	|DiceScore_myo:  0.587	|DiceScore_lv:  0.810	
+Epoch: [29][50/59]|Loss: 6.8183e-01	|DiceScore_bg:  0.960	|DiceScore_rv:  0.263	|DiceScore_myo:  0.600	|DiceScore_lv:  0.823	
+Epoch: [29][ 0/33]|DiceScore_rv:  0.208	|DiceScore_myo:  0.698	|DiceScore_lv:  0.886	
+Epoch: [29][10/33]|DiceScore_rv:  0.218	|DiceScore_myo:  0.640	|DiceScore_lv:  0.852	
+Epoch: [29][20/33]|DiceScore_rv:  0.211	|DiceScore_myo:  0.634	|DiceScore_lv:  0.852	
+Epoch: [29][30/33]|DiceScore_rv:  0.213	|DiceScore_myo:  0.633	|DiceScore_lv:  0.853	
+2023-10-01 00:05:58,883 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.001
+Epoch: [30][ 0/59]|Loss: 6.8307e-01	|DiceScore_bg:  0.955	|DiceScore_rv:  0.267	|DiceScore_myo:  0.527	|DiceScore_lv:  0.852	
+Epoch: [30][10/59]|Loss: 6.9419e-01	|DiceScore_bg:  0.954	|DiceScore_rv:  0.225	|DiceScore_myo:  0.565	|DiceScore_lv:  0.836	
+Epoch: [30][20/59]|Loss: 6.8923e-01	|DiceScore_bg:  0.956	|DiceScore_rv:  0.234	|DiceScore_myo:  0.584	|DiceScore_lv:  0.835	
+Epoch: [30][30/59]|Loss: 6.8375e-01	|DiceScore_bg:  0.958	|DiceScore_rv:  0.244	|DiceScore_myo:  0.595	|DiceScore_lv:  0.838	
+Epoch: [30][40/59]|Loss: 6.7938e-01	|DiceScore_bg:  0.960	|DiceScore_rv:  0.251	|DiceScore_myo:  0.609	|DiceScore_lv:  0.844	
+Epoch: [30][50/59]|Loss: 6.7120e-01	|DiceScore_bg:  0.962	|DiceScore_rv:  0.268	|DiceScore_myo:  0.625	|DiceScore_lv:  0.852	
+Epoch: [30][ 0/33]|DiceScore_rv:  0.322	|DiceScore_myo:  0.709	|DiceScore_lv:  0.887	
+Epoch: [30][10/33]|DiceScore_rv:  0.343	|DiceScore_myo:  0.699	|DiceScore_lv:  0.884	
+Epoch: [30][20/33]|DiceScore_rv:  0.336	|DiceScore_myo:  0.692	|DiceScore_lv:  0.876	
+Epoch: [30][30/33]|DiceScore_rv:  0.349	|DiceScore_myo:  0.696	|DiceScore_lv:  0.881	
+2023-10-01 00:07:58,671 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [31][ 0/59]|Loss: 6.5678e-01	|DiceScore_bg:  0.974	|DiceScore_rv:  0.304	|DiceScore_myo:  0.675	|DiceScore_lv:  0.843	
+Epoch: [31][10/59]|Loss: 6.3637e-01	|DiceScore_bg:  0.975	|DiceScore_rv:  0.351	|DiceScore_myo:  0.682	|DiceScore_lv:  0.876	
+Epoch: [31][20/59]|Loss: 6.3171e-01	|DiceScore_bg:  0.976	|DiceScore_rv:  0.364	|DiceScore_myo:  0.686	|DiceScore_lv:  0.874	
+Epoch: [31][30/59]|Loss: 6.2906e-01	|DiceScore_bg:  0.976	|DiceScore_rv:  0.371	|DiceScore_myo:  0.693	|DiceScore_lv:  0.872	
+Epoch: [31][40/59]|Loss: 6.2957e-01	|DiceScore_bg:  0.977	|DiceScore_rv:  0.368	|DiceScore_myo:  0.695	|DiceScore_lv:  0.875	
+Epoch: [31][50/59]|Loss: 6.3260e-01	|DiceScore_bg:  0.976	|DiceScore_rv:  0.359	|DiceScore_myo:  0.692	|DiceScore_lv:  0.872	
+Epoch: [31][ 0/33]|DiceScore_rv:  0.374	|DiceScore_myo:  0.653	|DiceScore_lv:  0.847	
+Epoch: [31][10/33]|DiceScore_rv:  0.383	|DiceScore_myo:  0.682	|DiceScore_lv:  0.877	
+Epoch: [31][20/33]|DiceScore_rv:  0.383	|DiceScore_myo:  0.673	|DiceScore_lv:  0.872	
+Epoch: [31][30/33]|DiceScore_rv:  0.377	|DiceScore_myo:  0.680	|DiceScore_lv:  0.870	
+2023-10-01 00:09:59,216 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [32][ 0/59]|Loss: 6.3182e-01	|DiceScore_bg:  0.976	|DiceScore_rv:  0.365	|DiceScore_myo:  0.656	|DiceScore_lv:  0.861	
+Epoch: [32][10/59]|Loss: 6.2640e-01	|DiceScore_bg:  0.977	|DiceScore_rv:  0.388	|DiceScore_myo:  0.666	|DiceScore_lv:  0.864	
+Epoch: [32][20/59]|Loss: 6.2348e-01	|DiceScore_bg:  0.978	|DiceScore_rv:  0.387	|DiceScore_myo:  0.686	|DiceScore_lv:  0.879	
+Epoch: [32][30/59]|Loss: 6.1929e-01	|DiceScore_bg:  0.978	|DiceScore_rv:  0.394	|DiceScore_myo:  0.699	|DiceScore_lv:  0.882	
+Epoch: [32][40/59]|Loss: 6.2009e-01	|DiceScore_bg:  0.978	|DiceScore_rv:  0.391	|DiceScore_myo:  0.702	|DiceScore_lv:  0.878	
+Epoch: [32][50/59]|Loss: 6.2208e-01	|DiceScore_bg:  0.978	|DiceScore_rv:  0.384	|DiceScore_myo:  0.707	|DiceScore_lv:  0.878	
+Epoch: [32][ 0/33]|DiceScore_rv:  0.439	|DiceScore_myo:  0.792	|DiceScore_lv:  0.942	
+Epoch: [32][10/33]|DiceScore_rv:  0.396	|DiceScore_myo:  0.748	|DiceScore_lv:  0.904	
+Epoch: [32][20/33]|DiceScore_rv:  0.404	|DiceScore_myo:  0.748	|DiceScore_lv:  0.894	
+Epoch: [32][30/33]|DiceScore_rv:  0.401	|DiceScore_myo:  0.746	|DiceScore_lv:  0.897	
+2023-10-01 00:12:00,143 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.6185115546933454
+2023-10-01 00:12:00,144 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [33][ 0/59]|Loss: 6.0748e-01	|DiceScore_bg:  0.981	|DiceScore_rv:  0.430	|DiceScore_myo:  0.713	|DiceScore_lv:  0.885	
+Epoch: [33][10/59]|Loss: 5.9860e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.442	|DiceScore_myo:  0.749	|DiceScore_lv:  0.882	
+Epoch: [33][20/59]|Loss: 6.0186e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.432	|DiceScore_myo:  0.746	|DiceScore_lv:  0.893	
+Epoch: [33][30/59]|Loss: 5.9820e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.443	|DiceScore_myo:  0.746	|DiceScore_lv:  0.893	
+Epoch: [33][40/59]|Loss: 5.9842e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.442	|DiceScore_myo:  0.746	|DiceScore_lv:  0.896	
+Epoch: [33][50/59]|Loss: 5.9954e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.439	|DiceScore_myo:  0.744	|DiceScore_lv:  0.895	
+Epoch: [33][ 0/33]|DiceScore_rv:  0.391	|DiceScore_myo:  0.791	|DiceScore_lv:  0.913	
+Epoch: [33][10/33]|DiceScore_rv:  0.452	|DiceScore_myo:  0.760	|DiceScore_lv:  0.903	
+Epoch: [33][20/33]|DiceScore_rv:  0.448	|DiceScore_myo:  0.760	|DiceScore_lv:  0.900	
+Epoch: [33][30/33]|DiceScore_rv:  0.437	|DiceScore_myo:  0.761	|DiceScore_lv:  0.903	
+2023-10-01 00:14:01,686 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.6052634797690989
+2023-10-01 00:14:01,687 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [34][ 0/59]|Loss: 6.1798e-01	|DiceScore_bg:  0.981	|DiceScore_rv:  0.417	|DiceScore_myo:  0.681	|DiceScore_lv:  0.876	
+Epoch: [34][10/59]|Loss: 6.0594e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.418	|DiceScore_myo:  0.748	|DiceScore_lv:  0.900	
+Epoch: [34][20/59]|Loss: 6.0088e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.430	|DiceScore_myo:  0.754	|DiceScore_lv:  0.899	
+Epoch: [34][30/59]|Loss: 5.9665e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.443	|DiceScore_myo:  0.754	|DiceScore_lv:  0.899	
+Epoch: [34][40/59]|Loss: 5.9744e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.440	|DiceScore_myo:  0.757	|DiceScore_lv:  0.899	
+Epoch: [34][50/59]|Loss: 5.9738e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.441	|DiceScore_myo:  0.754	|DiceScore_lv:  0.899	
+Epoch: [34][ 0/33]|DiceScore_rv:  0.566	|DiceScore_myo:  0.770	|DiceScore_lv:  0.928	
+Epoch: [34][10/33]|DiceScore_rv:  0.476	|DiceScore_myo:  0.727	|DiceScore_lv:  0.891	
+Epoch: [34][20/33]|DiceScore_rv:  0.470	|DiceScore_myo:  0.732	|DiceScore_lv:  0.896	
+Epoch: [34][30/33]|DiceScore_rv:  0.461	|DiceScore_myo:  0.738	|DiceScore_lv:  0.896	
+2023-10-01 00:16:02,865 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.6018586488172278
+2023-10-01 00:16:02,865 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [35][ 0/59]|Loss: 5.9859e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.448	|DiceScore_myo:  0.702	|DiceScore_lv:  0.891	
+Epoch: [35][10/59]|Loss: 5.9153e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.463	|DiceScore_myo:  0.744	|DiceScore_lv:  0.892	
+Epoch: [35][20/59]|Loss: 5.8899e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.474	|DiceScore_myo:  0.738	|DiceScore_lv:  0.895	
+Epoch: [35][30/59]|Loss: 5.9144e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.465	|DiceScore_myo:  0.742	|DiceScore_lv:  0.896	
+Epoch: [35][40/59]|Loss: 5.8938e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.467	|DiceScore_myo:  0.752	|DiceScore_lv:  0.901	
+Epoch: [35][50/59]|Loss: 5.9192e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.460	|DiceScore_myo:  0.749	|DiceScore_lv:  0.901	
+Epoch: [35][ 0/33]|DiceScore_rv:  0.342	|DiceScore_myo:  0.737	|DiceScore_lv:  0.902	
+Epoch: [35][10/33]|DiceScore_rv:  0.440	|DiceScore_myo:  0.761	|DiceScore_lv:  0.911	
+Epoch: [35][20/33]|DiceScore_rv:  0.467	|DiceScore_myo:  0.774	|DiceScore_lv:  0.922	
+Epoch: [35][30/33]|DiceScore_rv:  0.461	|DiceScore_myo:  0.768	|DiceScore_lv:  0.915	
+2023-10-01 00:18:04,236 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5953153333619007
+2023-10-01 00:18:04,236 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [36][ 0/59]|Loss: 5.8407e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.467	|DiceScore_myo:  0.771	|DiceScore_lv:  0.916	
+Epoch: [36][10/59]|Loss: 5.8060e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.479	|DiceScore_myo:  0.768	|DiceScore_lv:  0.919	
+Epoch: [36][20/59]|Loss: 5.8851e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.463	|DiceScore_myo:  0.756	|DiceScore_lv:  0.913	
+Epoch: [36][30/59]|Loss: 5.8609e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.471	|DiceScore_myo:  0.756	|DiceScore_lv:  0.913	
+Epoch: [36][40/59]|Loss: 5.8930e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.465	|DiceScore_myo:  0.754	|DiceScore_lv:  0.904	
+Epoch: [36][50/59]|Loss: 5.9474e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.451	|DiceScore_myo:  0.749	|DiceScore_lv:  0.898	
+Epoch: [36][ 0/33]|DiceScore_rv:  0.366	|DiceScore_myo:  0.682	|DiceScore_lv:  0.920	
+Epoch: [36][10/33]|DiceScore_rv:  0.415	|DiceScore_myo:  0.700	|DiceScore_lv:  0.884	
+Epoch: [36][20/33]|DiceScore_rv:  0.437	|DiceScore_myo:  0.718	|DiceScore_lv:  0.885	
+Epoch: [36][30/33]|DiceScore_rv:  0.437	|DiceScore_myo:  0.719	|DiceScore_lv:  0.890	
+2023-10-01 00:20:05,416 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [37][ 0/59]|Loss: 6.0979e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.404	|DiceScore_myo:  0.733	|DiceScore_lv:  0.912	
+Epoch: [37][10/59]|Loss: 5.9591e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.455	|DiceScore_myo:  0.725	|DiceScore_lv:  0.894	
+Epoch: [37][20/59]|Loss: 5.9839e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.448	|DiceScore_myo:  0.733	|DiceScore_lv:  0.886	
+Epoch: [37][30/59]|Loss: 5.9893e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.447	|DiceScore_myo:  0.731	|DiceScore_lv:  0.886	
+Epoch: [37][40/59]|Loss: 5.9587e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.455	|DiceScore_myo:  0.738	|DiceScore_lv:  0.886	
+Epoch: [37][50/59]|Loss: 5.9484e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.456	|DiceScore_myo:  0.743	|DiceScore_lv:  0.889	
+Epoch: [37][ 0/33]|DiceScore_rv:  0.486	|DiceScore_myo:  0.788	|DiceScore_lv:  0.918	
+Epoch: [37][10/33]|DiceScore_rv:  0.500	|DiceScore_myo:  0.755	|DiceScore_lv:  0.909	
+Epoch: [37][20/33]|DiceScore_rv:  0.478	|DiceScore_myo:  0.755	|DiceScore_lv:  0.909	
+Epoch: [37][30/33]|DiceScore_rv:  0.488	|DiceScore_myo:  0.761	|DiceScore_lv:  0.908	
+2023-10-01 00:22:06,673 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5875583717148305
+2023-10-01 00:22:06,673 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [38][ 0/59]|Loss: 6.0856e-01	|DiceScore_bg:  0.983	|DiceScore_rv:  0.442	|DiceScore_myo:  0.670	|DiceScore_lv:  0.864	
+Epoch: [38][10/59]|Loss: 5.8767e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.464	|DiceScore_myo:  0.757	|DiceScore_lv:  0.914	
+Epoch: [38][20/59]|Loss: 5.9201e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.452	|DiceScore_myo:  0.758	|DiceScore_lv:  0.906	
+Epoch: [38][30/59]|Loss: 5.9073e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.457	|DiceScore_myo:  0.762	|DiceScore_lv:  0.906	
+Epoch: [38][40/59]|Loss: 5.8627e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.472	|DiceScore_myo:  0.762	|DiceScore_lv:  0.901	
+Epoch: [38][50/59]|Loss: 5.8865e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.467	|DiceScore_myo:  0.758	|DiceScore_lv:  0.901	
+Epoch: [38][ 0/33]|DiceScore_rv:  0.516	|DiceScore_myo:  0.762	|DiceScore_lv:  0.907	
+Epoch: [38][10/33]|DiceScore_rv:  0.500	|DiceScore_myo:  0.768	|DiceScore_lv:  0.910	
+Epoch: [38][20/33]|DiceScore_rv:  0.495	|DiceScore_myo:  0.775	|DiceScore_lv:  0.911	
+Epoch: [38][30/33]|DiceScore_rv:  0.502	|DiceScore_myo:  0.771	|DiceScore_lv:  0.909	
+2023-10-01 00:24:07,998 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5809149444205827
+2023-10-01 00:24:07,998 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [39][ 0/59]|Loss: 5.6880e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.524	|DiceScore_myo:  0.765	|DiceScore_lv:  0.919	
+Epoch: [39][10/59]|Loss: 5.7935e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.482	|DiceScore_myo:  0.794	|DiceScore_lv:  0.908	
+Epoch: [39][20/59]|Loss: 5.8034e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.483	|DiceScore_myo:  0.783	|DiceScore_lv:  0.907	
+Epoch: [39][30/59]|Loss: 5.8185e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.483	|DiceScore_myo:  0.772	|DiceScore_lv:  0.904	
+Epoch: [39][40/59]|Loss: 5.8355e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.480	|DiceScore_myo:  0.764	|DiceScore_lv:  0.903	
+Epoch: [39][50/59]|Loss: 5.8207e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.484	|DiceScore_myo:  0.764	|DiceScore_lv:  0.904	
+Epoch: [39][ 0/33]|DiceScore_rv:  0.502	|DiceScore_myo:  0.752	|DiceScore_lv:  0.895	
+Epoch: [39][10/33]|DiceScore_rv:  0.520	|DiceScore_myo:  0.775	|DiceScore_lv:  0.922	
+Epoch: [39][20/33]|DiceScore_rv:  0.509	|DiceScore_myo:  0.775	|DiceScore_lv:  0.914	
+Epoch: [39][30/33]|DiceScore_rv:  0.501	|DiceScore_myo:  0.772	|DiceScore_lv:  0.913	
+2023-10-01 00:26:09,207 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [40][ 0/59]|Loss: 5.9380e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.460	|DiceScore_myo:  0.757	|DiceScore_lv:  0.861	
+Epoch: [40][10/59]|Loss: 5.7383e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.501	|DiceScore_myo:  0.786	|DiceScore_lv:  0.911	
+Epoch: [40][20/59]|Loss: 5.7545e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.500	|DiceScore_myo:  0.779	|DiceScore_lv:  0.906	
+Epoch: [40][30/59]|Loss: 5.7995e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.492	|DiceScore_myo:  0.763	|DiceScore_lv:  0.903	
+Epoch: [40][40/59]|Loss: 5.8150e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.488	|DiceScore_myo:  0.758	|DiceScore_lv:  0.905	
+Epoch: [40][50/59]|Loss: 5.8462e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.480	|DiceScore_myo:  0.753	|DiceScore_lv:  0.905	
+Epoch: [40][ 0/33]|DiceScore_rv:  0.496	|DiceScore_myo:  0.667	|DiceScore_lv:  0.895	
+Epoch: [40][10/33]|DiceScore_rv:  0.476	|DiceScore_myo:  0.730	|DiceScore_lv:  0.908	
+Epoch: [40][20/33]|DiceScore_rv:  0.477	|DiceScore_myo:  0.745	|DiceScore_lv:  0.909	
+Epoch: [40][30/33]|DiceScore_rv:  0.470	|DiceScore_myo:  0.744	|DiceScore_lv:  0.909	
+2023-10-01 00:28:10,408 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [41][ 0/59]|Loss: 5.9496e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.433	|DiceScore_myo:  0.781	|DiceScore_lv:  0.921	
+Epoch: [41][10/59]|Loss: 5.8375e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.472	|DiceScore_myo:  0.774	|DiceScore_lv:  0.908	
+Epoch: [41][20/59]|Loss: 5.8173e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.475	|DiceScore_myo:  0.787	|DiceScore_lv:  0.907	
+Epoch: [41][30/59]|Loss: 5.8151e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.475	|DiceScore_myo:  0.789	|DiceScore_lv:  0.914	
+Epoch: [41][40/59]|Loss: 5.7962e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.480	|DiceScore_myo:  0.792	|DiceScore_lv:  0.916	
+Epoch: [41][50/59]|Loss: 5.8024e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.478	|DiceScore_myo:  0.787	|DiceScore_lv:  0.916	
+Epoch: [41][ 0/33]|DiceScore_rv:  0.470	|DiceScore_myo:  0.763	|DiceScore_lv:  0.937	
+Epoch: [41][10/33]|DiceScore_rv:  0.500	|DiceScore_myo:  0.743	|DiceScore_lv:  0.914	
+Epoch: [41][20/33]|DiceScore_rv:  0.491	|DiceScore_myo:  0.735	|DiceScore_lv:  0.909	
+Epoch: [41][30/33]|DiceScore_rv:  0.486	|DiceScore_myo:  0.742	|DiceScore_lv:  0.913	
+2023-10-01 00:30:11,646 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [42][ 0/59]|Loss: 5.9309e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.440	|DiceScore_myo:  0.772	|DiceScore_lv:  0.922	
+Epoch: [42][10/59]|Loss: 5.9554e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.454	|DiceScore_myo:  0.737	|DiceScore_lv:  0.894	
+Epoch: [42][20/59]|Loss: 5.8564e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.478	|DiceScore_myo:  0.749	|DiceScore_lv:  0.905	
+Epoch: [42][30/59]|Loss: 5.8237e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.484	|DiceScore_myo:  0.757	|DiceScore_lv:  0.908	
+Epoch: [42][40/59]|Loss: 5.8150e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.487	|DiceScore_myo:  0.758	|DiceScore_lv:  0.908	
+Epoch: [42][50/59]|Loss: 5.7903e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.493	|DiceScore_myo:  0.763	|DiceScore_lv:  0.908	
+Epoch: [42][ 0/33]|DiceScore_rv:  0.575	|DiceScore_myo:  0.771	|DiceScore_lv:  0.942	
+Epoch: [42][10/33]|DiceScore_rv:  0.525	|DiceScore_myo:  0.786	|DiceScore_lv:  0.925	
+Epoch: [42][20/33]|DiceScore_rv:  0.527	|DiceScore_myo:  0.785	|DiceScore_lv:  0.923	
+Epoch: [42][30/33]|DiceScore_rv:  0.528	|DiceScore_myo:  0.783	|DiceScore_lv:  0.919	
+2023-10-01 00:32:13,400 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5728677411684462
+2023-10-01 00:32:13,401 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [43][ 0/59]|Loss: 5.4034e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.594	|DiceScore_myo:  0.830	|DiceScore_lv:  0.876	
+Epoch: [43][10/59]|Loss: 5.7823e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.477	|DiceScore_myo:  0.803	|DiceScore_lv:  0.911	
+Epoch: [43][20/59]|Loss: 5.7813e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.480	|DiceScore_myo:  0.793	|DiceScore_lv:  0.917	
+Epoch: [43][30/59]|Loss: 5.8071e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.477	|DiceScore_myo:  0.781	|DiceScore_lv:  0.916	
+Epoch: [43][40/59]|Loss: 5.7969e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.484	|DiceScore_myo:  0.773	|DiceScore_lv:  0.917	
+Epoch: [43][50/59]|Loss: 5.7811e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.490	|DiceScore_myo:  0.772	|DiceScore_lv:  0.916	
+Epoch: [43][ 0/33]|DiceScore_rv:  0.552	|DiceScore_myo:  0.768	|DiceScore_lv:  0.917	
+Epoch: [43][10/33]|DiceScore_rv:  0.501	|DiceScore_myo:  0.750	|DiceScore_lv:  0.901	
+Epoch: [43][20/33]|DiceScore_rv:  0.511	|DiceScore_myo:  0.754	|DiceScore_lv:  0.911	
+Epoch: [43][30/33]|DiceScore_rv:  0.504	|DiceScore_myo:  0.751	|DiceScore_lv:  0.910	
+2023-10-01 00:34:14,763 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [44][ 0/59]|Loss: 5.8383e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.461	|DiceScore_myo:  0.818	|DiceScore_lv:  0.907	
+Epoch: [44][10/59]|Loss: 5.6738e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.522	|DiceScore_myo:  0.778	|DiceScore_lv:  0.910	
+Epoch: [44][20/59]|Loss: 5.7473e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.501	|DiceScore_myo:  0.775	|DiceScore_lv:  0.910	
+Epoch: [44][30/59]|Loss: 5.7229e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.507	|DiceScore_myo:  0.780	|DiceScore_lv:  0.911	
+Epoch: [44][40/59]|Loss: 5.7254e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.504	|DiceScore_myo:  0.785	|DiceScore_lv:  0.913	
+Epoch: [44][50/59]|Loss: 5.6878e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.513	|DiceScore_myo:  0.793	|DiceScore_lv:  0.915	
+Epoch: [44][ 0/33]|DiceScore_rv:  0.456	|DiceScore_myo:  0.710	|DiceScore_lv:  0.906	
+Epoch: [44][10/33]|DiceScore_rv:  0.485	|DiceScore_myo:  0.738	|DiceScore_lv:  0.907	
+Epoch: [44][20/33]|DiceScore_rv:  0.491	|DiceScore_myo:  0.752	|DiceScore_lv:  0.909	
+Epoch: [44][30/33]|DiceScore_rv:  0.501	|DiceScore_myo:  0.756	|DiceScore_lv:  0.911	
+2023-10-01 00:36:16,021 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [45][ 0/59]|Loss: 6.0827e-01	|DiceScore_bg:  0.984	|DiceScore_rv:  0.414	|DiceScore_myo:  0.739	|DiceScore_lv:  0.909	
+Epoch: [45][10/59]|Loss: 5.8330e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.477	|DiceScore_myo:  0.773	|DiceScore_lv:  0.902	
+Epoch: [45][20/59]|Loss: 5.8200e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.474	|DiceScore_myo:  0.786	|DiceScore_lv:  0.912	
+Epoch: [45][30/59]|Loss: 5.7734e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.484	|DiceScore_myo:  0.793	|DiceScore_lv:  0.912	
+Epoch: [45][40/59]|Loss: 5.7816e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.482	|DiceScore_myo:  0.792	|DiceScore_lv:  0.916	
+Epoch: [45][50/59]|Loss: 5.7434e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.493	|DiceScore_myo:  0.796	|DiceScore_lv:  0.918	
+Epoch: [45][ 0/33]|DiceScore_rv:  0.579	|DiceScore_myo:  0.773	|DiceScore_lv:  0.904	
+Epoch: [45][10/33]|DiceScore_rv:  0.544	|DiceScore_myo:  0.795	|DiceScore_lv:  0.927	
+Epoch: [45][20/33]|DiceScore_rv:  0.536	|DiceScore_myo:  0.790	|DiceScore_lv:  0.924	
+Epoch: [45][30/33]|DiceScore_rv:  0.532	|DiceScore_myo:  0.789	|DiceScore_lv:  0.924	
+2023-10-01 00:38:17,480 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5727130830467764
+2023-10-01 00:38:17,480 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [46][ 0/59]|Loss: 5.6031e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.532	|DiceScore_myo:  0.798	|DiceScore_lv:  0.924	
+Epoch: [46][10/59]|Loss: 5.7411e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.498	|DiceScore_myo:  0.784	|DiceScore_lv:  0.921	
+Epoch: [46][20/59]|Loss: 5.7086e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.507	|DiceScore_myo:  0.788	|DiceScore_lv:  0.921	
+Epoch: [46][30/59]|Loss: 5.7306e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.505	|DiceScore_myo:  0.781	|DiceScore_lv:  0.914	
+Epoch: [46][40/59]|Loss: 5.7525e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.497	|DiceScore_myo:  0.782	|DiceScore_lv:  0.912	
+Epoch: [46][50/59]|Loss: 5.7344e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.501	|DiceScore_myo:  0.783	|DiceScore_lv:  0.913	
+Epoch: [46][ 0/33]|DiceScore_rv:  0.496	|DiceScore_myo:  0.729	|DiceScore_lv:  0.920	
+Epoch: [46][10/33]|DiceScore_rv:  0.475	|DiceScore_myo:  0.762	|DiceScore_lv:  0.910	
+Epoch: [46][20/33]|DiceScore_rv:  0.476	|DiceScore_myo:  0.765	|DiceScore_lv:  0.915	
+Epoch: [46][30/33]|DiceScore_rv:  0.489	|DiceScore_myo:  0.766	|DiceScore_lv:  0.918	
+2023-10-01 00:40:18,835 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [47][ 0/59]|Loss: 5.5223e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.539	|DiceScore_myo:  0.839	|DiceScore_lv:  0.921	
+Epoch: [47][10/59]|Loss: 5.6940e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.508	|DiceScore_myo:  0.796	|DiceScore_lv:  0.916	
+Epoch: [47][20/59]|Loss: 5.6745e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.514	|DiceScore_myo:  0.799	|DiceScore_lv:  0.918	
+Epoch: [47][30/59]|Loss: 5.6913e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.509	|DiceScore_myo:  0.797	|DiceScore_lv:  0.916	
+Epoch: [47][40/59]|Loss: 5.7042e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.507	|DiceScore_myo:  0.794	|DiceScore_lv:  0.914	
+Epoch: [47][50/59]|Loss: 5.6904e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.511	|DiceScore_myo:  0.797	|DiceScore_lv:  0.913	
+Epoch: [47][ 0/33]|DiceScore_rv:  0.578	|DiceScore_myo:  0.801	|DiceScore_lv:  0.942	
+Epoch: [47][10/33]|DiceScore_rv:  0.528	|DiceScore_myo:  0.812	|DiceScore_lv:  0.933	
+Epoch: [47][20/33]|DiceScore_rv:  0.507	|DiceScore_myo:  0.799	|DiceScore_lv:  0.928	
+Epoch: [47][30/33]|DiceScore_rv:  0.503	|DiceScore_myo:  0.798	|DiceScore_lv:  0.927	
+2023-10-01 00:42:20,154 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [48][ 0/59]|Loss: 5.2968e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.605	|DiceScore_myo:  0.863	|DiceScore_lv:  0.931	
+Epoch: [48][10/59]|Loss: 5.6985e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.501	|DiceScore_myo:  0.811	|DiceScore_lv:  0.914	
+Epoch: [48][20/59]|Loss: 5.6678e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.512	|DiceScore_myo:  0.804	|DiceScore_lv:  0.918	
+Epoch: [48][30/59]|Loss: 5.6812e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.511	|DiceScore_myo:  0.798	|DiceScore_lv:  0.919	
+Epoch: [48][40/59]|Loss: 5.6797e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.511	|DiceScore_myo:  0.800	|DiceScore_lv:  0.920	
+Epoch: [48][50/59]|Loss: 5.6479e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.518	|DiceScore_myo:  0.804	|DiceScore_lv:  0.922	
+Epoch: [48][ 0/33]|DiceScore_rv:  0.542	|DiceScore_myo:  0.798	|DiceScore_lv:  0.914	
+Epoch: [48][10/33]|DiceScore_rv:  0.559	|DiceScore_myo:  0.777	|DiceScore_lv:  0.922	
+Epoch: [48][20/33]|DiceScore_rv:  0.542	|DiceScore_myo:  0.783	|DiceScore_lv:  0.923	
+Epoch: [48][30/33]|DiceScore_rv:  0.552	|DiceScore_myo:  0.791	|DiceScore_lv:  0.927	
+2023-10-01 00:44:21,597 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5669161711195102
+2023-10-01 00:44:21,597 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [49][ 0/59]|Loss: 5.8007e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.509	|DiceScore_myo:  0.751	|DiceScore_lv:  0.845	
+Epoch: [49][10/59]|Loss: 5.7141e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.499	|DiceScore_myo:  0.797	|DiceScore_lv:  0.916	
+Epoch: [49][20/59]|Loss: 5.6877e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.509	|DiceScore_myo:  0.794	|DiceScore_lv:  0.918	
+Epoch: [49][30/59]|Loss: 5.6553e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.519	|DiceScore_myo:  0.799	|DiceScore_lv:  0.920	
+Epoch: [49][40/59]|Loss: 5.6459e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.522	|DiceScore_myo:  0.798	|DiceScore_lv:  0.923	
+Epoch: [49][50/59]|Loss: 5.6442e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.522	|DiceScore_myo:  0.798	|DiceScore_lv:  0.923	
+Epoch: [49][ 0/33]|DiceScore_rv:  0.639	|DiceScore_myo:  0.836	|DiceScore_lv:  0.958	
+Epoch: [49][10/33]|DiceScore_rv:  0.520	|DiceScore_myo:  0.813	|DiceScore_lv:  0.939	
+Epoch: [49][20/33]|DiceScore_rv:  0.521	|DiceScore_myo:  0.806	|DiceScore_lv:  0.937	
+Epoch: [49][30/33]|DiceScore_rv:  0.521	|DiceScore_myo:  0.804	|DiceScore_lv:  0.931	
+2023-10-01 00:46:23,076 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [50][ 0/59]|Loss: 6.0454e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.388	|DiceScore_myo:  0.802	|DiceScore_lv:  0.944	
+Epoch: [50][10/59]|Loss: 5.7679e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.473	|DiceScore_myo:  0.805	|DiceScore_lv:  0.934	
+Epoch: [50][20/59]|Loss: 5.8058e-01	|DiceScore_bg:  0.986	|DiceScore_rv:  0.467	|DiceScore_myo:  0.798	|DiceScore_lv:  0.925	
+Epoch: [50][30/59]|Loss: 5.7718e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.479	|DiceScore_myo:  0.798	|DiceScore_lv:  0.926	
+Epoch: [50][40/59]|Loss: 5.7283e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.496	|DiceScore_myo:  0.794	|DiceScore_lv:  0.922	
+Epoch: [50][50/59]|Loss: 5.6927e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.505	|DiceScore_myo:  0.799	|DiceScore_lv:  0.924	
+Epoch: [50][ 0/33]|DiceScore_rv:  0.546	|DiceScore_myo:  0.805	|DiceScore_lv:  0.915	
+Epoch: [50][10/33]|DiceScore_rv:  0.530	|DiceScore_myo:  0.796	|DiceScore_lv:  0.923	
+Epoch: [50][20/33]|DiceScore_rv:  0.530	|DiceScore_myo:  0.795	|DiceScore_lv:  0.925	
+Epoch: [50][30/33]|DiceScore_rv:  0.546	|DiceScore_myo:  0.804	|DiceScore_lv:  0.930	
+2023-10-01 00:48:24,486 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5633378932465589
+2023-10-01 00:48:24,486 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [51][ 0/59]|Loss: 5.4186e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.553	|DiceScore_myo:  0.873	|DiceScore_lv:  0.957	
+Epoch: [51][10/59]|Loss: 5.5706e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.534	|DiceScore_myo:  0.821	|DiceScore_lv:  0.929	
+Epoch: [51][20/59]|Loss: 5.5997e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.524	|DiceScore_myo:  0.828	|DiceScore_lv:  0.927	
+Epoch: [51][30/59]|Loss: 5.6292e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.518	|DiceScore_myo:  0.819	|DiceScore_lv:  0.927	
+Epoch: [51][40/59]|Loss: 5.6349e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.519	|DiceScore_myo:  0.811	|DiceScore_lv:  0.925	
+Epoch: [51][50/59]|Loss: 5.6243e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.525	|DiceScore_myo:  0.807	|DiceScore_lv:  0.924	
+Epoch: [51][ 0/33]|DiceScore_rv:  0.489	|DiceScore_myo:  0.757	|DiceScore_lv:  0.917	
+Epoch: [51][10/33]|DiceScore_rv:  0.562	|DiceScore_myo:  0.787	|DiceScore_lv:  0.926	
+Epoch: [51][20/33]|DiceScore_rv:  0.545	|DiceScore_myo:  0.791	|DiceScore_lv:  0.923	
+Epoch: [51][30/33]|DiceScore_rv:  0.536	|DiceScore_myo:  0.791	|DiceScore_lv:  0.923	
+2023-10-01 00:50:25,830 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [52][ 0/59]|Loss: 5.7517e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.473	|DiceScore_myo:  0.844	|DiceScore_lv:  0.952	
+Epoch: [52][10/59]|Loss: 5.6178e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.516	|DiceScore_myo:  0.826	|DiceScore_lv:  0.933	
+Epoch: [52][20/59]|Loss: 5.6578e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.507	|DiceScore_myo:  0.816	|DiceScore_lv:  0.930	
+Epoch: [52][30/59]|Loss: 5.6544e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.512	|DiceScore_myo:  0.810	|DiceScore_lv:  0.928	
+Epoch: [52][40/59]|Loss: 5.6357e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.519	|DiceScore_myo:  0.808	|DiceScore_lv:  0.927	
+Epoch: [52][50/59]|Loss: 5.6357e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.519	|DiceScore_myo:  0.808	|DiceScore_lv:  0.926	
+Epoch: [52][ 0/33]|DiceScore_rv:  0.557	|DiceScore_myo:  0.808	|DiceScore_lv:  0.941	
+Epoch: [52][10/33]|DiceScore_rv:  0.545	|DiceScore_myo:  0.794	|DiceScore_lv:  0.911	
+Epoch: [52][20/33]|DiceScore_rv:  0.539	|DiceScore_myo:  0.796	|DiceScore_lv:  0.919	
+Epoch: [52][30/33]|DiceScore_rv:  0.533	|DiceScore_myo:  0.797	|DiceScore_lv:  0.919	
+2023-10-01 00:52:27,447 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [53][ 0/59]|Loss: 5.6311e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.494	|DiceScore_myo:  0.863	|DiceScore_lv:  0.942	
+Epoch: [53][10/59]|Loss: 5.6200e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.519	|DiceScore_myo:  0.825	|DiceScore_lv:  0.922	
+Epoch: [53][20/59]|Loss: 5.6418e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.514	|DiceScore_myo:  0.821	|DiceScore_lv:  0.923	
+Epoch: [53][30/59]|Loss: 5.6516e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.514	|DiceScore_myo:  0.815	|DiceScore_lv:  0.922	
+Epoch: [53][40/59]|Loss: 5.6192e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.524	|DiceScore_myo:  0.813	|DiceScore_lv:  0.925	
+Epoch: [53][50/59]|Loss: 5.6206e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.524	|DiceScore_myo:  0.812	|DiceScore_lv:  0.923	
+Epoch: [53][ 0/33]|DiceScore_rv:  0.529	|DiceScore_myo:  0.770	|DiceScore_lv:  0.916	
+Epoch: [53][10/33]|DiceScore_rv:  0.571	|DiceScore_myo:  0.812	|DiceScore_lv:  0.923	
+Epoch: [53][20/33]|DiceScore_rv:  0.581	|DiceScore_myo:  0.816	|DiceScore_lv:  0.926	
+Epoch: [53][30/33]|DiceScore_rv:  0.577	|DiceScore_myo:  0.817	|DiceScore_lv:  0.925	
+2023-10-01 00:54:29,997 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5544262953217851
+2023-10-01 00:54:29,997 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [54][ 0/59]|Loss: 5.6451e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.496	|DiceScore_myo:  0.845	|DiceScore_lv:  0.936	
+Epoch: [54][10/59]|Loss: 5.5602e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.541	|DiceScore_myo:  0.817	|DiceScore_lv:  0.922	
+Epoch: [54][20/59]|Loss: 5.5873e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.532	|DiceScore_myo:  0.817	|DiceScore_lv:  0.925	
+Epoch: [54][30/59]|Loss: 5.5728e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.538	|DiceScore_myo:  0.813	|DiceScore_lv:  0.922	
+Epoch: [54][40/59]|Loss: 5.5698e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.538	|DiceScore_myo:  0.818	|DiceScore_lv:  0.924	
+Epoch: [54][50/59]|Loss: 5.6165e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.526	|DiceScore_myo:  0.810	|DiceScore_lv:  0.922	
+Epoch: [54][ 0/33]|DiceScore_rv:  0.528	|DiceScore_myo:  0.788	|DiceScore_lv:  0.933	
+Epoch: [54][10/33]|DiceScore_rv:  0.523	|DiceScore_myo:  0.772	|DiceScore_lv:  0.917	
+Epoch: [54][20/33]|DiceScore_rv:  0.525	|DiceScore_myo:  0.780	|DiceScore_lv:  0.923	
+Epoch: [54][30/33]|DiceScore_rv:  0.514	|DiceScore_myo:  0.774	|DiceScore_lv:  0.919	
+2023-10-01 00:56:31,772 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [55][ 0/59]|Loss: 6.0438e-01	|DiceScore_bg:  0.985	|DiceScore_rv:  0.422	|DiceScore_myo:  0.765	|DiceScore_lv:  0.878	
+Epoch: [55][10/59]|Loss: 5.7350e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.500	|DiceScore_myo:  0.777	|DiceScore_lv:  0.918	
+Epoch: [55][20/59]|Loss: 5.6750e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.516	|DiceScore_myo:  0.786	|DiceScore_lv:  0.921	
+Epoch: [55][30/59]|Loss: 5.6756e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.513	|DiceScore_myo:  0.794	|DiceScore_lv:  0.922	
+Epoch: [55][40/59]|Loss: 5.6419e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.519	|DiceScore_myo:  0.804	|DiceScore_lv:  0.923	
+Epoch: [55][50/59]|Loss: 5.6631e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.517	|DiceScore_myo:  0.796	|DiceScore_lv:  0.917	
+Epoch: [55][ 0/33]|DiceScore_rv:  0.431	|DiceScore_myo:  0.772	|DiceScore_lv:  0.898	
+Epoch: [55][10/33]|DiceScore_rv:  0.468	|DiceScore_myo:  0.765	|DiceScore_lv:  0.902	
+Epoch: [55][20/33]|DiceScore_rv:  0.481	|DiceScore_myo:  0.768	|DiceScore_lv:  0.901	
+Epoch: [55][30/33]|DiceScore_rv:  0.494	|DiceScore_myo:  0.767	|DiceScore_lv:  0.902	
+2023-10-01 00:58:33,522 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [56][ 0/59]|Loss: 5.7618e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.478	|DiceScore_myo:  0.822	|DiceScore_lv:  0.900	
+Epoch: [56][10/59]|Loss: 5.5497e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.547	|DiceScore_myo:  0.811	|DiceScore_lv:  0.918	
+Epoch: [56][20/59]|Loss: 5.6103e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.535	|DiceScore_myo:  0.800	|DiceScore_lv:  0.908	
+Epoch: [56][30/59]|Loss: 5.6157e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.531	|DiceScore_myo:  0.804	|DiceScore_lv:  0.915	
+Epoch: [56][40/59]|Loss: 5.6088e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.532	|DiceScore_myo:  0.806	|DiceScore_lv:  0.917	
+Epoch: [56][50/59]|Loss: 5.6069e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.532	|DiceScore_myo:  0.808	|DiceScore_lv:  0.919	
+Epoch: [56][ 0/33]|DiceScore_rv:  0.515	|DiceScore_myo:  0.795	|DiceScore_lv:  0.915	
+Epoch: [56][10/33]|DiceScore_rv:  0.536	|DiceScore_myo:  0.802	|DiceScore_lv:  0.923	
+Epoch: [56][20/33]|DiceScore_rv:  0.550	|DiceScore_myo:  0.804	|DiceScore_lv:  0.922	
+Epoch: [56][30/33]|DiceScore_rv:  0.548	|DiceScore_myo:  0.805	|DiceScore_lv:  0.923	
+2023-10-01 01:00:36,249 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [57][ 0/59]|Loss: 5.9344e-01	|DiceScore_bg:  0.987	|DiceScore_rv:  0.446	|DiceScore_myo:  0.759	|DiceScore_lv:  0.898	
+Epoch: [57][10/59]|Loss: 5.6872e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.514	|DiceScore_myo:  0.792	|DiceScore_lv:  0.915	
+Epoch: [57][20/59]|Loss: 5.7008e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.510	|DiceScore_myo:  0.788	|DiceScore_lv:  0.916	
+Epoch: [57][30/59]|Loss: 5.6617e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.520	|DiceScore_myo:  0.793	|DiceScore_lv:  0.917	
+Epoch: [57][40/59]|Loss: 5.6261e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.528	|DiceScore_myo:  0.802	|DiceScore_lv:  0.919	
+Epoch: [57][50/59]|Loss: 5.6583e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.520	|DiceScore_myo:  0.797	|DiceScore_lv:  0.916	
+Epoch: [57][ 0/33]|DiceScore_rv:  0.627	|DiceScore_myo:  0.791	|DiceScore_lv:  0.919	
+Epoch: [57][10/33]|DiceScore_rv:  0.576	|DiceScore_myo:  0.794	|DiceScore_lv:  0.922	
+Epoch: [57][20/33]|DiceScore_rv:  0.556	|DiceScore_myo:  0.797	|DiceScore_lv:  0.924	
+Epoch: [57][30/33]|DiceScore_rv:  0.553	|DiceScore_myo:  0.801	|DiceScore_lv:  0.925	
+2023-10-01 01:02:39,634 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [58][ 0/59]|Loss: 5.5330e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.532	|DiceScore_myo:  0.851	|DiceScore_lv:  0.941	
+Epoch: [58][10/59]|Loss: 5.4818e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.554	|DiceScore_myo:  0.832	|DiceScore_lv:  0.940	
+Epoch: [58][20/59]|Loss: 5.5123e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.549	|DiceScore_myo:  0.831	|DiceScore_lv:  0.934	
+Epoch: [58][30/59]|Loss: 5.5313e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.545	|DiceScore_myo:  0.825	|DiceScore_lv:  0.933	
+Epoch: [58][40/59]|Loss: 5.5247e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.545	|DiceScore_myo:  0.827	|DiceScore_lv:  0.933	
+Epoch: [58][50/59]|Loss: 5.5162e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.548	|DiceScore_myo:  0.828	|DiceScore_lv:  0.932	
+Epoch: [58][ 0/33]|DiceScore_rv:  0.641	|DiceScore_myo:  0.801	|DiceScore_lv:  0.948	
+Epoch: [58][10/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.783	|DiceScore_lv:  0.924	
+Epoch: [58][20/33]|DiceScore_rv:  0.576	|DiceScore_myo:  0.783	|DiceScore_lv:  0.923	
+Epoch: [58][30/33]|DiceScore_rv:  0.581	|DiceScore_myo:  0.784	|DiceScore_lv:  0.924	
+2023-10-01 01:04:42,295 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [59][ 0/59]|Loss: 5.3230e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.612	|DiceScore_myo:  0.823	|DiceScore_lv:  0.937	
+Epoch: [59][10/59]|Loss: 5.3911e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.589	|DiceScore_myo:  0.824	|DiceScore_lv:  0.941	
+Epoch: [59][20/59]|Loss: 5.4714e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.564	|DiceScore_myo:  0.816	|DiceScore_lv:  0.942	
+Epoch: [59][30/59]|Loss: 5.5258e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.550	|DiceScore_myo:  0.810	|DiceScore_lv:  0.936	
+Epoch: [59][40/59]|Loss: 5.5567e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.541	|DiceScore_myo:  0.812	|DiceScore_lv:  0.932	
+Epoch: [59][50/59]|Loss: 5.5529e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.541	|DiceScore_myo:  0.815	|DiceScore_lv:  0.932	
+Epoch: [59][ 0/33]|DiceScore_rv:  0.536	|DiceScore_myo:  0.745	|DiceScore_lv:  0.937	
+Epoch: [59][10/33]|DiceScore_rv:  0.553	|DiceScore_myo:  0.783	|DiceScore_lv:  0.924	
+Epoch: [59][20/33]|DiceScore_rv:  0.548	|DiceScore_myo:  0.787	|DiceScore_lv:  0.923	
+Epoch: [59][30/33]|DiceScore_rv:  0.544	|DiceScore_myo:  0.785	|DiceScore_lv:  0.922	
+2023-10-01 01:06:44,501 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @0.0001
+Epoch: [60][ 0/59]|Loss: 5.4248e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.591	|DiceScore_myo:  0.792	|DiceScore_lv:  0.921	
+Epoch: [60][10/59]|Loss: 5.6822e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.510	|DiceScore_myo:  0.790	|DiceScore_lv:  0.927	
+Epoch: [60][20/59]|Loss: 5.6210e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.527	|DiceScore_myo:  0.795	|DiceScore_lv:  0.928	
+Epoch: [60][30/59]|Loss: 5.6347e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.523	|DiceScore_myo:  0.797	|DiceScore_lv:  0.927	
+Epoch: [60][40/59]|Loss: 5.6440e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.518	|DiceScore_myo:  0.801	|DiceScore_lv:  0.927	
+Epoch: [60][50/59]|Loss: 5.6427e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.517	|DiceScore_myo:  0.805	|DiceScore_lv:  0.926	
+Epoch: [60][ 0/33]|DiceScore_rv:  0.478	|DiceScore_myo:  0.743	|DiceScore_lv:  0.926	
+Epoch: [60][10/33]|DiceScore_rv:  0.551	|DiceScore_myo:  0.786	|DiceScore_lv:  0.920	
+Epoch: [60][20/33]|DiceScore_rv:  0.548	|DiceScore_myo:  0.799	|DiceScore_lv:  0.922	
+Epoch: [60][30/33]|DiceScore_rv:  0.557	|DiceScore_myo:  0.802	|DiceScore_lv:  0.925	
+2023-10-01 01:08:46,531 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [61][ 0/59]|Loss: 5.6547e-01	|DiceScore_bg:  0.988	|DiceScore_rv:  0.516	|DiceScore_myo:  0.804	|DiceScore_lv:  0.918	
+Epoch: [61][10/59]|Loss: 5.6027e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.520	|DiceScore_myo:  0.831	|DiceScore_lv:  0.931	
+Epoch: [61][20/59]|Loss: 5.5667e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.533	|DiceScore_myo:  0.827	|DiceScore_lv:  0.929	
+Epoch: [61][30/59]|Loss: 5.5467e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.538	|DiceScore_myo:  0.828	|DiceScore_lv:  0.931	
+Epoch: [61][40/59]|Loss: 5.5255e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.544	|DiceScore_myo:  0.830	|DiceScore_lv:  0.931	
+Epoch: [61][50/59]|Loss: 5.5251e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.545	|DiceScore_myo:  0.829	|DiceScore_lv:  0.930	
+Epoch: [61][ 0/33]|DiceScore_rv:  0.486	|DiceScore_myo:  0.802	|DiceScore_lv:  0.907	
+Epoch: [61][10/33]|DiceScore_rv:  0.543	|DiceScore_myo:  0.806	|DiceScore_lv:  0.930	
+Epoch: [61][20/33]|DiceScore_rv:  0.542	|DiceScore_myo:  0.803	|DiceScore_lv:  0.923	
+Epoch: [61][30/33]|DiceScore_rv:  0.551	|DiceScore_myo:  0.803	|DiceScore_lv:  0.923	
+2023-10-01 01:10:50,560 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [62][ 0/59]|Loss: 5.3348e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.594	|DiceScore_myo:  0.851	|DiceScore_lv:  0.938	
+Epoch: [62][10/59]|Loss: 5.4875e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.553	|DiceScore_myo:  0.831	|DiceScore_lv:  0.934	
+Epoch: [62][20/59]|Loss: 5.4976e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.552	|DiceScore_myo:  0.829	|DiceScore_lv:  0.936	
+Epoch: [62][30/59]|Loss: 5.4901e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.553	|DiceScore_myo:  0.833	|DiceScore_lv:  0.936	
+Epoch: [62][40/59]|Loss: 5.4922e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.551	|DiceScore_myo:  0.835	|DiceScore_lv:  0.937	
+Epoch: [62][50/59]|Loss: 5.5006e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.549	|DiceScore_myo:  0.834	|DiceScore_lv:  0.935	
+Epoch: [62][ 0/33]|DiceScore_rv:  0.570	|DiceScore_myo:  0.828	|DiceScore_lv:  0.935	
+Epoch: [62][10/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.829	|DiceScore_lv:  0.941	
+Epoch: [62][20/33]|DiceScore_rv:  0.587	|DiceScore_myo:  0.818	|DiceScore_lv:  0.935	
+Epoch: [62][30/33]|DiceScore_rv:  0.579	|DiceScore_myo:  0.814	|DiceScore_lv:  0.929	
+2023-10-01 01:12:53,922 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5519486205517353
+2023-10-01 01:12:53,923 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [63][ 0/59]|Loss: 5.4095e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.556	|DiceScore_myo:  0.871	|DiceScore_lv:  0.958	
+Epoch: [63][10/59]|Loss: 5.5290e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.549	|DiceScore_myo:  0.815	|DiceScore_lv:  0.925	
+Epoch: [63][20/59]|Loss: 5.5072e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.553	|DiceScore_myo:  0.822	|DiceScore_lv:  0.929	
+Epoch: [63][30/59]|Loss: 5.4702e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.562	|DiceScore_myo:  0.829	|DiceScore_lv:  0.932	
+Epoch: [63][40/59]|Loss: 5.4847e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.557	|DiceScore_myo:  0.831	|DiceScore_lv:  0.933	
+Epoch: [63][50/59]|Loss: 5.4752e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.558	|DiceScore_myo:  0.832	|DiceScore_lv:  0.935	
+Epoch: [63][ 0/33]|DiceScore_rv:  0.603	|DiceScore_myo:  0.835	|DiceScore_lv:  0.939	
+Epoch: [63][10/33]|DiceScore_rv:  0.560	|DiceScore_myo:  0.815	|DiceScore_lv:  0.933	
+Epoch: [63][20/33]|DiceScore_rv:  0.576	|DiceScore_myo:  0.815	|DiceScore_lv:  0.929	
+Epoch: [63][30/33]|DiceScore_rv:  0.577	|DiceScore_myo:  0.812	|DiceScore_lv:  0.928	
+2023-10-01 01:14:58,022 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5518464755295174
+2023-10-01 01:14:58,023 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [64][ 0/59]|Loss: 5.3404e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.596	|DiceScore_myo:  0.838	|DiceScore_lv:  0.948	
+Epoch: [64][10/59]|Loss: 5.4115e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.835	|DiceScore_lv:  0.932	
+Epoch: [64][20/59]|Loss: 5.4903e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.554	|DiceScore_myo:  0.835	|DiceScore_lv:  0.931	
+Epoch: [64][30/59]|Loss: 5.4746e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.558	|DiceScore_myo:  0.836	|DiceScore_lv:  0.933	
+Epoch: [64][40/59]|Loss: 5.4762e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.558	|DiceScore_myo:  0.834	|DiceScore_lv:  0.932	
+Epoch: [64][50/59]|Loss: 5.4721e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.560	|DiceScore_myo:  0.834	|DiceScore_lv:  0.933	
+Epoch: [64][ 0/33]|DiceScore_rv:  0.578	|DiceScore_myo:  0.865	|DiceScore_lv:  0.950	
+Epoch: [64][10/33]|DiceScore_rv:  0.577	|DiceScore_myo:  0.810	|DiceScore_lv:  0.930	
+Epoch: [64][20/33]|DiceScore_rv:  0.570	|DiceScore_myo:  0.810	|DiceScore_lv:  0.928	
+Epoch: [64][30/33]|DiceScore_rv:  0.572	|DiceScore_myo:  0.811	|DiceScore_lv:  0.928	
+2023-10-01 01:17:02,000 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [65][ 0/59]|Loss: 5.4794e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.569	|DiceScore_myo:  0.807	|DiceScore_lv:  0.915	
+Epoch: [65][10/59]|Loss: 5.5260e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.541	|DiceScore_myo:  0.840	|DiceScore_lv:  0.933	
+Epoch: [65][20/59]|Loss: 5.4899e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.556	|DiceScore_myo:  0.831	|DiceScore_lv:  0.929	
+Epoch: [65][30/59]|Loss: 5.4648e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.561	|DiceScore_myo:  0.838	|DiceScore_lv:  0.933	
+Epoch: [65][40/59]|Loss: 5.4696e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.559	|DiceScore_myo:  0.837	|DiceScore_lv:  0.933	
+Epoch: [65][50/59]|Loss: 5.4617e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.561	|DiceScore_myo:  0.838	|DiceScore_lv:  0.933	
+Epoch: [65][ 0/33]|DiceScore_rv:  0.547	|DiceScore_myo:  0.803	|DiceScore_lv:  0.921	
+Epoch: [65][10/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.815	|DiceScore_lv:  0.929	
+Epoch: [65][20/33]|DiceScore_rv:  0.579	|DiceScore_myo:  0.815	|DiceScore_lv:  0.927	
+Epoch: [65][30/33]|DiceScore_rv:  0.579	|DiceScore_myo:  0.817	|DiceScore_lv:  0.928	
+2023-10-01 01:19:04,977 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5516068556370985
+2023-10-01 01:19:04,977 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [66][ 0/59]|Loss: 5.6814e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.507	|DiceScore_myo:  0.825	|DiceScore_lv:  0.914	
+Epoch: [66][10/59]|Loss: 5.5460e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.542	|DiceScore_myo:  0.826	|DiceScore_lv:  0.929	
+Epoch: [66][20/59]|Loss: 5.4931e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.554	|DiceScore_myo:  0.832	|DiceScore_lv:  0.932	
+Epoch: [66][30/59]|Loss: 5.4694e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.558	|DiceScore_myo:  0.838	|DiceScore_lv:  0.936	
+Epoch: [66][40/59]|Loss: 5.4724e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.558	|DiceScore_myo:  0.836	|DiceScore_lv:  0.936	
+Epoch: [66][50/59]|Loss: 5.4623e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.562	|DiceScore_myo:  0.835	|DiceScore_lv:  0.936	
+Epoch: [66][ 0/33]|DiceScore_rv:  0.635	|DiceScore_myo:  0.849	|DiceScore_lv:  0.944	
+Epoch: [66][10/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.832	|DiceScore_lv:  0.933	
+Epoch: [66][20/33]|DiceScore_rv:  0.585	|DiceScore_myo:  0.827	|DiceScore_lv:  0.933	
+Epoch: [66][30/33]|DiceScore_rv:  0.582	|DiceScore_myo:  0.821	|DiceScore_lv:  0.932	
+2023-10-01 01:21:07,967 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5488671795671018
+2023-10-01 01:21:07,967 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [67][ 0/59]|Loss: 5.5325e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.534	|DiceScore_myo:  0.852	|DiceScore_lv:  0.940	
+Epoch: [67][10/59]|Loss: 5.5304e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.545	|DiceScore_myo:  0.828	|DiceScore_lv:  0.932	
+Epoch: [67][20/59]|Loss: 5.5472e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.539	|DiceScore_myo:  0.830	|DiceScore_lv:  0.932	
+Epoch: [67][30/59]|Loss: 5.4968e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.552	|DiceScore_myo:  0.835	|DiceScore_lv:  0.934	
+Epoch: [67][40/59]|Loss: 5.4984e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.550	|DiceScore_myo:  0.836	|DiceScore_lv:  0.935	
+Epoch: [67][50/59]|Loss: 5.4769e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.557	|DiceScore_myo:  0.837	|DiceScore_lv:  0.935	
+Epoch: [67][ 0/33]|DiceScore_rv:  0.622	|DiceScore_myo:  0.841	|DiceScore_lv:  0.963	
+Epoch: [67][10/33]|DiceScore_rv:  0.575	|DiceScore_myo:  0.823	|DiceScore_lv:  0.941	
+Epoch: [67][20/33]|DiceScore_rv:  0.587	|DiceScore_myo:  0.823	|DiceScore_lv:  0.934	
+Epoch: [67][30/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.819	|DiceScore_lv:  0.931	
+2023-10-01 01:23:10,467 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5476334305816454
+2023-10-01 01:23:10,467 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [68][ 0/59]|Loss: 5.4918e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.559	|DiceScore_myo:  0.845	|DiceScore_lv:  0.930	
+Epoch: [68][10/59]|Loss: 5.3883e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.840	|DiceScore_lv:  0.943	
+Epoch: [68][20/59]|Loss: 5.4070e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.575	|DiceScore_myo:  0.843	|DiceScore_lv:  0.941	
+Epoch: [68][30/59]|Loss: 5.4110e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.576	|DiceScore_myo:  0.840	|DiceScore_lv:  0.939	
+Epoch: [68][40/59]|Loss: 5.4204e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.572	|DiceScore_myo:  0.843	|DiceScore_lv:  0.938	
+Epoch: [68][50/59]|Loss: 5.4246e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.570	|DiceScore_myo:  0.844	|DiceScore_lv:  0.938	
+Epoch: [68][ 0/33]|DiceScore_rv:  0.575	|DiceScore_myo:  0.827	|DiceScore_lv:  0.939	
+Epoch: [68][10/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.821	|DiceScore_lv:  0.927	
+Epoch: [68][20/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.823	|DiceScore_lv:  0.931	
+Epoch: [68][30/33]|DiceScore_rv:  0.585	|DiceScore_myo:  0.817	|DiceScore_lv:  0.929	
+2023-10-01 01:25:12,986 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [69][ 0/59]|Loss: 5.2696e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.605	|DiceScore_myo:  0.865	|DiceScore_lv:  0.958	
+Epoch: [69][10/59]|Loss: 5.3742e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.845	|DiceScore_lv:  0.943	
+Epoch: [69][20/59]|Loss: 5.4053e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.838	|DiceScore_lv:  0.942	
+Epoch: [69][30/59]|Loss: 5.4332e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.570	|DiceScore_myo:  0.835	|DiceScore_lv:  0.938	
+Epoch: [69][40/59]|Loss: 5.4538e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.563	|DiceScore_myo:  0.838	|DiceScore_lv:  0.937	
+Epoch: [69][50/59]|Loss: 5.4569e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.562	|DiceScore_myo:  0.837	|DiceScore_lv:  0.936	
+Epoch: [69][ 0/33]|DiceScore_rv:  0.557	|DiceScore_myo:  0.851	|DiceScore_lv:  0.935	
+Epoch: [69][10/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.830	|DiceScore_lv:  0.933	
+Epoch: [69][20/33]|DiceScore_rv:  0.585	|DiceScore_myo:  0.820	|DiceScore_lv:  0.929	
+Epoch: [69][30/33]|DiceScore_rv:  0.587	|DiceScore_myo:  0.821	|DiceScore_lv:  0.931	
+2023-10-01 01:27:15,687 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [70][ 0/59]|Loss: 5.9096e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.432	|DiceScore_myo:  0.814	|DiceScore_lv:  0.930	
+Epoch: [70][10/59]|Loss: 5.4929e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.551	|DiceScore_myo:  0.842	|DiceScore_lv:  0.940	
+Epoch: [70][20/59]|Loss: 5.4211e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.568	|DiceScore_myo:  0.848	|DiceScore_lv:  0.946	
+Epoch: [70][30/59]|Loss: 5.4176e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.572	|DiceScore_myo:  0.843	|DiceScore_lv:  0.942	
+Epoch: [70][40/59]|Loss: 5.4310e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.567	|DiceScore_myo:  0.843	|DiceScore_lv:  0.942	
+Epoch: [70][50/59]|Loss: 5.4347e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.568	|DiceScore_myo:  0.839	|DiceScore_lv:  0.938	
+Epoch: [70][ 0/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.815	|DiceScore_lv:  0.899	
+Epoch: [70][10/33]|DiceScore_rv:  0.596	|DiceScore_myo:  0.820	|DiceScore_lv:  0.927	
+Epoch: [70][20/33]|DiceScore_rv:  0.591	|DiceScore_myo:  0.818	|DiceScore_lv:  0.929	
+Epoch: [70][30/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.816	|DiceScore_lv:  0.929	
+2023-10-01 01:29:17,924 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [71][ 0/59]|Loss: 5.7832e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.471	|DiceScore_myo:  0.828	|DiceScore_lv:  0.909	
+Epoch: [71][10/59]|Loss: 5.4377e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.568	|DiceScore_myo:  0.839	|DiceScore_lv:  0.941	
+Epoch: [71][20/59]|Loss: 5.3808e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.583	|DiceScore_myo:  0.843	|DiceScore_lv:  0.943	
+Epoch: [71][30/59]|Loss: 5.4402e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.567	|DiceScore_myo:  0.837	|DiceScore_lv:  0.939	
+Epoch: [71][40/59]|Loss: 5.4298e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.570	|DiceScore_myo:  0.838	|DiceScore_lv:  0.938	
+Epoch: [71][50/59]|Loss: 5.4372e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.569	|DiceScore_myo:  0.835	|DiceScore_lv:  0.936	
+Epoch: [71][ 0/33]|DiceScore_rv:  0.636	|DiceScore_myo:  0.843	|DiceScore_lv:  0.948	
+Epoch: [71][10/33]|DiceScore_rv:  0.586	|DiceScore_myo:  0.826	|DiceScore_lv:  0.936	
+Epoch: [71][20/33]|DiceScore_rv:  0.593	|DiceScore_myo:  0.818	|DiceScore_lv:  0.930	
+Epoch: [71][30/33]|DiceScore_rv:  0.594	|DiceScore_myo:  0.821	|DiceScore_lv:  0.932	
+2023-10-01 01:31:19,934 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5460752042730564
+2023-10-01 01:31:19,934 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [72][ 0/59]|Loss: 5.3487e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.582	|DiceScore_myo:  0.873	|DiceScore_lv:  0.949	
+Epoch: [72][10/59]|Loss: 5.3107e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.598	|DiceScore_myo:  0.856	|DiceScore_lv:  0.946	
+Epoch: [72][20/59]|Loss: 5.4005e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.573	|DiceScore_myo:  0.850	|DiceScore_lv:  0.942	
+Epoch: [72][30/59]|Loss: 5.4428e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.563	|DiceScore_myo:  0.844	|DiceScore_lv:  0.940	
+Epoch: [72][40/59]|Loss: 5.4653e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.559	|DiceScore_myo:  0.839	|DiceScore_lv:  0.936	
+Epoch: [72][50/59]|Loss: 5.4414e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.565	|DiceScore_myo:  0.842	|DiceScore_lv:  0.938	
+Epoch: [72][ 0/33]|DiceScore_rv:  0.593	|DiceScore_myo:  0.842	|DiceScore_lv:  0.961	
+Epoch: [72][10/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.821	|DiceScore_lv:  0.935	
+Epoch: [72][20/33]|DiceScore_rv:  0.590	|DiceScore_myo:  0.824	|DiceScore_lv:  0.933	
+Epoch: [72][30/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.824	|DiceScore_lv:  0.932	
+2023-10-01 01:33:22,554 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [73][ 0/59]|Loss: 5.5719e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.524	|DiceScore_myo:  0.841	|DiceScore_lv:  0.943	
+Epoch: [73][10/59]|Loss: 5.4214e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.572	|DiceScore_myo:  0.836	|DiceScore_lv:  0.939	
+Epoch: [73][20/59]|Loss: 5.4121e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.573	|DiceScore_myo:  0.845	|DiceScore_lv:  0.939	
+Epoch: [73][30/59]|Loss: 5.4565e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.562	|DiceScore_myo:  0.840	|DiceScore_lv:  0.935	
+Epoch: [73][40/59]|Loss: 5.4473e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.562	|DiceScore_myo:  0.844	|DiceScore_lv:  0.938	
+Epoch: [73][50/59]|Loss: 5.4327e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.568	|DiceScore_myo:  0.842	|DiceScore_lv:  0.938	
+Epoch: [73][ 0/33]|DiceScore_rv:  0.565	|DiceScore_myo:  0.719	|DiceScore_lv:  0.883	
+Epoch: [73][10/33]|DiceScore_rv:  0.597	|DiceScore_myo:  0.812	|DiceScore_lv:  0.929	
+Epoch: [73][20/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.821	|DiceScore_lv:  0.935	
+Epoch: [73][30/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.820	|DiceScore_lv:  0.933	
+2023-10-01 01:35:25,023 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5455515589774458
+2023-10-01 01:35:25,024 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [74][ 0/59]|Loss: 5.3000e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.624	|DiceScore_myo:  0.798	|DiceScore_lv:  0.949	
+Epoch: [74][10/59]|Loss: 5.4853e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.558	|DiceScore_myo:  0.829	|DiceScore_lv:  0.928	
+Epoch: [74][20/59]|Loss: 5.4987e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.554	|DiceScore_myo:  0.830	|DiceScore_lv:  0.931	
+Epoch: [74][30/59]|Loss: 5.4707e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.562	|DiceScore_myo:  0.831	|DiceScore_lv:  0.932	
+Epoch: [74][40/59]|Loss: 5.4314e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.571	|DiceScore_myo:  0.836	|DiceScore_lv:  0.935	
+Epoch: [74][50/59]|Loss: 5.4092e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.576	|DiceScore_myo:  0.840	|DiceScore_lv:  0.938	
+Epoch: [74][ 0/33]|DiceScore_rv:  0.637	|DiceScore_myo:  0.837	|DiceScore_lv:  0.956	
+Epoch: [74][10/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.836	|DiceScore_lv:  0.941	
+Epoch: [74][20/33]|DiceScore_rv:  0.596	|DiceScore_myo:  0.823	|DiceScore_lv:  0.935	
+Epoch: [74][30/33]|DiceScore_rv:  0.594	|DiceScore_myo:  0.823	|DiceScore_lv:  0.932	
+2023-10-01 01:37:27,087 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [75][ 0/59]|Loss: 5.2035e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.638	|DiceScore_myo:  0.837	|DiceScore_lv:  0.947	
+Epoch: [75][10/59]|Loss: 5.4367e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.572	|DiceScore_myo:  0.836	|DiceScore_lv:  0.935	
+Epoch: [75][20/59]|Loss: 5.4497e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.562	|DiceScore_myo:  0.846	|DiceScore_lv:  0.938	
+Epoch: [75][30/59]|Loss: 5.4435e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.565	|DiceScore_myo:  0.844	|DiceScore_lv:  0.938	
+Epoch: [75][40/59]|Loss: 5.4261e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.571	|DiceScore_myo:  0.843	|DiceScore_lv:  0.938	
+Epoch: [75][50/59]|Loss: 5.4092e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.575	|DiceScore_myo:  0.845	|DiceScore_lv:  0.939	
+Epoch: [75][ 0/33]|DiceScore_rv:  0.571	|DiceScore_myo:  0.808	|DiceScore_lv:  0.950	
+Epoch: [75][10/33]|DiceScore_rv:  0.576	|DiceScore_myo:  0.808	|DiceScore_lv:  0.923	
+Epoch: [75][20/33]|DiceScore_rv:  0.580	|DiceScore_myo:  0.815	|DiceScore_lv:  0.930	
+Epoch: [75][30/33]|DiceScore_rv:  0.586	|DiceScore_myo:  0.822	|DiceScore_lv:  0.933	
+2023-10-01 01:39:29,069 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [76][ 0/59]|Loss: 5.3257e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.890	|DiceScore_lv:  0.949	
+Epoch: [76][10/59]|Loss: 5.3753e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.576	|DiceScore_myo:  0.860	|DiceScore_lv:  0.947	
+Epoch: [76][20/59]|Loss: 5.3779e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.852	|DiceScore_lv:  0.943	
+Epoch: [76][30/59]|Loss: 5.3844e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.853	|DiceScore_lv:  0.943	
+Epoch: [76][40/59]|Loss: 5.3906e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.576	|DiceScore_myo:  0.851	|DiceScore_lv:  0.942	
+Epoch: [76][50/59]|Loss: 5.4155e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.571	|DiceScore_myo:  0.847	|DiceScore_lv:  0.938	
+Epoch: [76][ 0/33]|DiceScore_rv:  0.660	|DiceScore_myo:  0.843	|DiceScore_lv:  0.935	
+Epoch: [76][10/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.820	|DiceScore_lv:  0.936	
+Epoch: [76][20/33]|DiceScore_rv:  0.587	|DiceScore_myo:  0.819	|DiceScore_lv:  0.932	
+Epoch: [76][30/33]|DiceScore_rv:  0.591	|DiceScore_myo:  0.821	|DiceScore_lv:  0.932	
+2023-10-01 01:41:31,699 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [77][ 0/59]|Loss: 5.3799e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.593	|DiceScore_myo:  0.828	|DiceScore_lv:  0.941	
+Epoch: [77][10/59]|Loss: 5.4198e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.574	|DiceScore_myo:  0.836	|DiceScore_lv:  0.936	
+Epoch: [77][20/59]|Loss: 5.3869e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.842	|DiceScore_lv:  0.939	
+Epoch: [77][30/59]|Loss: 5.3973e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.837	|DiceScore_lv:  0.936	
+Epoch: [77][40/59]|Loss: 5.3860e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.837	|DiceScore_lv:  0.938	
+Epoch: [77][50/59]|Loss: 5.3941e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.839	|DiceScore_lv:  0.939	
+Epoch: [77][ 0/33]|DiceScore_rv:  0.593	|DiceScore_myo:  0.834	|DiceScore_lv:  0.953	
+Epoch: [77][10/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.818	|DiceScore_lv:  0.930	
+Epoch: [77][20/33]|DiceScore_rv:  0.589	|DiceScore_myo:  0.826	|DiceScore_lv:  0.932	
+Epoch: [77][30/33]|DiceScore_rv:  0.587	|DiceScore_myo:  0.825	|DiceScore_lv:  0.932	
+2023-10-01 01:43:33,962 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [78][ 0/59]|Loss: 5.2019e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.635	|DiceScore_myo:  0.873	|DiceScore_lv:  0.925	
+Epoch: [78][10/59]|Loss: 5.4165e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.575	|DiceScore_myo:  0.839	|DiceScore_lv:  0.930	
+Epoch: [78][20/59]|Loss: 5.3934e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.847	|DiceScore_lv:  0.935	
+Epoch: [78][30/59]|Loss: 5.4308e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.570	|DiceScore_myo:  0.841	|DiceScore_lv:  0.935	
+Epoch: [78][40/59]|Loss: 5.4128e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.573	|DiceScore_myo:  0.845	|DiceScore_lv:  0.938	
+Epoch: [78][50/59]|Loss: 5.4109e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.573	|DiceScore_myo:  0.847	|DiceScore_lv:  0.939	
+Epoch: [78][ 0/33]|DiceScore_rv:  0.582	|DiceScore_myo:  0.799	|DiceScore_lv:  0.941	
+Epoch: [78][10/33]|DiceScore_rv:  0.596	|DiceScore_myo:  0.827	|DiceScore_lv:  0.938	
+Epoch: [78][20/33]|DiceScore_rv:  0.593	|DiceScore_myo:  0.825	|DiceScore_lv:  0.939	
+Epoch: [78][30/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.827	|DiceScore_lv:  0.934	
+2023-10-01 01:45:35,961 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5450440260637794
+2023-10-01 01:45:35,962 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [79][ 0/59]|Loss: 5.2966e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.602	|DiceScore_myo:  0.872	|DiceScore_lv:  0.936	
+Epoch: [79][10/59]|Loss: 5.4227e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.573	|DiceScore_myo:  0.841	|DiceScore_lv:  0.936	
+Epoch: [79][20/59]|Loss: 5.3822e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.583	|DiceScore_myo:  0.844	|DiceScore_lv:  0.938	
+Epoch: [79][30/59]|Loss: 5.3723e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.587	|DiceScore_myo:  0.842	|DiceScore_lv:  0.937	
+Epoch: [79][40/59]|Loss: 5.4006e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.576	|DiceScore_myo:  0.845	|DiceScore_lv:  0.940	
+Epoch: [79][50/59]|Loss: 5.4036e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.576	|DiceScore_myo:  0.844	|DiceScore_lv:  0.938	
+Epoch: [79][ 0/33]|DiceScore_rv:  0.619	|DiceScore_myo:  0.863	|DiceScore_lv:  0.965	
+Epoch: [79][10/33]|DiceScore_rv:  0.595	|DiceScore_myo:  0.828	|DiceScore_lv:  0.933	
+Epoch: [79][20/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.826	|DiceScore_lv:  0.931	
+Epoch: [79][30/33]|DiceScore_rv:  0.591	|DiceScore_myo:  0.824	|DiceScore_lv:  0.932	
+2023-10-01 01:47:37,785 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [80][ 0/59]|Loss: 5.2760e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.595	|DiceScore_myo:  0.888	|DiceScore_lv:  0.964	
+Epoch: [80][10/59]|Loss: 5.3790e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.582	|DiceScore_myo:  0.849	|DiceScore_lv:  0.935	
+Epoch: [80][20/59]|Loss: 5.4388e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.565	|DiceScore_myo:  0.849	|DiceScore_lv:  0.939	
+Epoch: [80][30/59]|Loss: 5.4472e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.562	|DiceScore_myo:  0.849	|DiceScore_lv:  0.938	
+Epoch: [80][40/59]|Loss: 5.4291e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.567	|DiceScore_myo:  0.848	|DiceScore_lv:  0.937	
+Epoch: [80][50/59]|Loss: 5.4131e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.572	|DiceScore_myo:  0.847	|DiceScore_lv:  0.939	
+Epoch: [80][ 0/33]|DiceScore_rv:  0.512	|DiceScore_myo:  0.833	|DiceScore_lv:  0.931	
+Epoch: [80][10/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.833	|DiceScore_lv:  0.935	
+Epoch: [80][20/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.829	|DiceScore_lv:  0.930	
+Epoch: [80][30/33]|DiceScore_rv:  0.593	|DiceScore_myo:  0.829	|DiceScore_lv:  0.935	
+2023-10-01 01:49:39,519 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [81][ 0/59]|Loss: 5.2185e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.628	|DiceScore_myo:  0.851	|DiceScore_lv:  0.957	
+Epoch: [81][10/59]|Loss: 5.3735e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.845	|DiceScore_lv:  0.940	
+Epoch: [81][20/59]|Loss: 5.3955e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.578	|DiceScore_myo:  0.847	|DiceScore_lv:  0.938	
+Epoch: [81][30/59]|Loss: 5.4061e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.574	|DiceScore_myo:  0.848	|DiceScore_lv:  0.938	
+Epoch: [81][40/59]|Loss: 5.4336e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.567	|DiceScore_myo:  0.845	|DiceScore_lv:  0.936	
+Epoch: [81][50/59]|Loss: 5.4126e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.572	|DiceScore_myo:  0.846	|DiceScore_lv:  0.938	
+Epoch: [81][ 0/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.856	|DiceScore_lv:  0.942	
+Epoch: [81][10/33]|DiceScore_rv:  0.580	|DiceScore_myo:  0.824	|DiceScore_lv:  0.933	
+Epoch: [81][20/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.824	|DiceScore_lv:  0.934	
+Epoch: [81][30/33]|DiceScore_rv:  0.594	|DiceScore_myo:  0.819	|DiceScore_lv:  0.931	
+2023-10-01 01:51:41,308 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [82][ 0/59]|Loss: 5.3215e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.613	|DiceScore_myo:  0.828	|DiceScore_lv:  0.928	
+Epoch: [82][10/59]|Loss: 5.3776e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.589	|DiceScore_myo:  0.834	|DiceScore_lv:  0.930	
+Epoch: [82][20/59]|Loss: 5.4180e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.574	|DiceScore_myo:  0.839	|DiceScore_lv:  0.936	
+Epoch: [82][30/59]|Loss: 5.4432e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.565	|DiceScore_myo:  0.841	|DiceScore_lv:  0.937	
+Epoch: [82][40/59]|Loss: 5.4155e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.573	|DiceScore_myo:  0.844	|DiceScore_lv:  0.939	
+Epoch: [82][50/59]|Loss: 5.3985e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.578	|DiceScore_myo:  0.845	|DiceScore_lv:  0.939	
+Epoch: [82][ 0/33]|DiceScore_rv:  0.567	|DiceScore_myo:  0.818	|DiceScore_lv:  0.929	
+Epoch: [82][10/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.829	|DiceScore_lv:  0.935	
+Epoch: [82][20/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.824	|DiceScore_lv:  0.934	
+Epoch: [82][30/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.828	|DiceScore_lv:  0.933	
+2023-10-01 01:53:43,374 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5428393147948984
+2023-10-01 01:53:43,375 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [83][ 0/59]|Loss: 5.0703e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.668	|DiceScore_myo:  0.867	|DiceScore_lv:  0.944	
+Epoch: [83][10/59]|Loss: 5.3708e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.576	|DiceScore_myo:  0.859	|DiceScore_lv:  0.952	
+Epoch: [83][20/59]|Loss: 5.4249e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.569	|DiceScore_myo:  0.847	|DiceScore_lv:  0.941	
+Epoch: [83][30/59]|Loss: 5.3833e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.851	|DiceScore_lv:  0.943	
+Epoch: [83][40/59]|Loss: 5.3665e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.853	|DiceScore_lv:  0.944	
+Epoch: [83][50/59]|Loss: 5.3773e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.851	|DiceScore_lv:  0.942	
+Epoch: [83][ 0/33]|DiceScore_rv:  0.616	|DiceScore_myo:  0.829	|DiceScore_lv:  0.928	
+Epoch: [83][10/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.826	|DiceScore_lv:  0.939	
+Epoch: [83][20/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.824	|DiceScore_lv:  0.935	
+Epoch: [83][30/33]|DiceScore_rv:  0.597	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+2023-10-01 01:55:45,390 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [84][ 0/59]|Loss: 5.1842e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.625	|DiceScore_myo:  0.868	|DiceScore_lv:  0.962	
+Epoch: [84][10/59]|Loss: 5.3991e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.847	|DiceScore_lv:  0.939	
+Epoch: [84][20/59]|Loss: 5.3759e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.582	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [84][30/59]|Loss: 5.3928e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.852	|DiceScore_lv:  0.941	
+Epoch: [84][40/59]|Loss: 5.3837e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.578	|DiceScore_myo:  0.854	|DiceScore_lv:  0.942	
+Epoch: [84][50/59]|Loss: 5.3751e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.582	|DiceScore_myo:  0.852	|DiceScore_lv:  0.941	
+Epoch: [84][ 0/33]|DiceScore_rv:  0.580	|DiceScore_myo:  0.813	|DiceScore_lv:  0.912	
+Epoch: [84][10/33]|DiceScore_rv:  0.598	|DiceScore_myo:  0.824	|DiceScore_lv:  0.932	
+Epoch: [84][20/33]|DiceScore_rv:  0.595	|DiceScore_myo:  0.826	|DiceScore_lv:  0.931	
+Epoch: [84][30/33]|DiceScore_rv:  0.597	|DiceScore_myo:  0.827	|DiceScore_lv:  0.932	
+2023-10-01 01:57:47,340 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [85][ 0/59]|Loss: 5.3496e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.607	|DiceScore_myo:  0.829	|DiceScore_lv:  0.917	
+Epoch: [85][10/59]|Loss: 5.3510e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.593	|DiceScore_myo:  0.842	|DiceScore_lv:  0.941	
+Epoch: [85][20/59]|Loss: 5.3817e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.585	|DiceScore_myo:  0.840	|DiceScore_lv:  0.937	
+Epoch: [85][30/59]|Loss: 5.3716e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.587	|DiceScore_myo:  0.843	|DiceScore_lv:  0.938	
+Epoch: [85][40/59]|Loss: 5.3846e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.582	|DiceScore_myo:  0.845	|DiceScore_lv:  0.938	
+Epoch: [85][50/59]|Loss: 5.3895e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.845	|DiceScore_lv:  0.938	
+Epoch: [85][ 0/33]|DiceScore_rv:  0.547	|DiceScore_myo:  0.821	|DiceScore_lv:  0.928	
+Epoch: [85][10/33]|DiceScore_rv:  0.582	|DiceScore_myo:  0.826	|DiceScore_lv:  0.931	
+Epoch: [85][20/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.828	|DiceScore_lv:  0.937	
+Epoch: [85][30/33]|DiceScore_rv:  0.598	|DiceScore_myo:  0.829	|DiceScore_lv:  0.935	
+2023-10-01 01:59:49,156 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [86][ 0/59]|Loss: 5.5504e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.539	|DiceScore_myo:  0.834	|DiceScore_lv:  0.895	
+Epoch: [86][10/59]|Loss: 5.3477e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.591	|DiceScore_myo:  0.849	|DiceScore_lv:  0.938	
+Epoch: [86][20/59]|Loss: 5.3767e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.845	|DiceScore_lv:  0.935	
+Epoch: [86][30/59]|Loss: 5.4000e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.841	|DiceScore_lv:  0.936	
+Epoch: [86][40/59]|Loss: 5.3959e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.843	|DiceScore_lv:  0.939	
+Epoch: [86][50/59]|Loss: 5.3888e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.846	|DiceScore_lv:  0.938	
+Epoch: [86][ 0/33]|DiceScore_rv:  0.557	|DiceScore_myo:  0.825	|DiceScore_lv:  0.947	
+Epoch: [86][10/33]|DiceScore_rv:  0.615	|DiceScore_myo:  0.833	|DiceScore_lv:  0.939	
+Epoch: [86][20/33]|DiceScore_rv:  0.616	|DiceScore_myo:  0.832	|DiceScore_lv:  0.937	
+Epoch: [86][30/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.829	|DiceScore_lv:  0.936	
+2023-10-01 02:01:51,785 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [87][ 0/59]|Loss: 5.3306e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.586	|DiceScore_myo:  0.863	|DiceScore_lv:  0.959	
+Epoch: [87][10/59]|Loss: 5.3847e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.848	|DiceScore_lv:  0.942	
+Epoch: [87][20/59]|Loss: 5.3607e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.585	|DiceScore_myo:  0.852	|DiceScore_lv:  0.944	
+Epoch: [87][30/59]|Loss: 5.3705e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.851	|DiceScore_lv:  0.941	
+Epoch: [87][40/59]|Loss: 5.4069e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.574	|DiceScore_myo:  0.847	|DiceScore_lv:  0.939	
+Epoch: [87][50/59]|Loss: 5.3979e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.846	|DiceScore_lv:  0.940	
+Epoch: [87][ 0/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.818	|DiceScore_lv:  0.937	
+Epoch: [87][10/33]|DiceScore_rv:  0.596	|DiceScore_myo:  0.820	|DiceScore_lv:  0.937	
+Epoch: [87][20/33]|DiceScore_rv:  0.582	|DiceScore_myo:  0.814	|DiceScore_lv:  0.930	
+Epoch: [87][30/33]|DiceScore_rv:  0.583	|DiceScore_myo:  0.813	|DiceScore_lv:  0.931	
+2023-10-01 02:03:53,819 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [88][ 0/59]|Loss: 5.3950e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.824	|DiceScore_lv:  0.948	
+Epoch: [88][10/59]|Loss: 5.4586e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.564	|DiceScore_myo:  0.835	|DiceScore_lv:  0.935	
+Epoch: [88][20/59]|Loss: 5.4129e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.576	|DiceScore_myo:  0.837	|DiceScore_lv:  0.932	
+Epoch: [88][30/59]|Loss: 5.3928e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.842	|DiceScore_lv:  0.935	
+Epoch: [88][40/59]|Loss: 5.4078e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.574	|DiceScore_myo:  0.846	|DiceScore_lv:  0.938	
+Epoch: [88][50/59]|Loss: 5.3912e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.846	|DiceScore_lv:  0.938	
+Epoch: [88][ 0/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.831	|DiceScore_lv:  0.933	
+Epoch: [88][10/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.828	|DiceScore_lv:  0.933	
+Epoch: [88][20/33]|DiceScore_rv:  0.610	|DiceScore_myo:  0.833	|DiceScore_lv:  0.934	
+Epoch: [88][30/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.831	|DiceScore_lv:  0.936	
+2023-10-01 02:05:55,589 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1e-05
+Epoch: [89][ 0/59]|Loss: 5.3616e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.584	|DiceScore_myo:  0.865	|DiceScore_lv:  0.960	
+Epoch: [89][10/59]|Loss: 5.3115e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.601	|DiceScore_myo:  0.849	|DiceScore_lv:  0.943	
+Epoch: [89][20/59]|Loss: 5.3945e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.578	|DiceScore_myo:  0.848	|DiceScore_lv:  0.939	
+Epoch: [89][30/59]|Loss: 5.3870e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.848	|DiceScore_lv:  0.939	
+Epoch: [89][40/59]|Loss: 5.3925e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.845	|DiceScore_lv:  0.937	
+Epoch: [89][50/59]|Loss: 5.4017e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.845	|DiceScore_lv:  0.935	
+Epoch: [89][ 0/33]|DiceScore_rv:  0.572	|DiceScore_myo:  0.854	|DiceScore_lv:  0.932	
+Epoch: [89][10/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.816	|DiceScore_lv:  0.935	
+Epoch: [89][20/33]|DiceScore_rv:  0.597	|DiceScore_myo:  0.818	|DiceScore_lv:  0.932	
+Epoch: [89][30/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.824	|DiceScore_lv:  0.934	
+2023-10-01 02:07:58,169 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [90][ 0/59]|Loss: 5.1431e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.652	|DiceScore_myo:  0.852	|DiceScore_lv:  0.947	
+Epoch: [90][10/59]|Loss: 5.4563e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.563	|DiceScore_myo:  0.841	|DiceScore_lv:  0.938	
+Epoch: [90][20/59]|Loss: 5.3927e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.847	|DiceScore_lv:  0.941	
+Epoch: [90][30/59]|Loss: 5.3847e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.847	|DiceScore_lv:  0.938	
+Epoch: [90][40/59]|Loss: 5.3920e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.847	|DiceScore_lv:  0.937	
+Epoch: [90][50/59]|Loss: 5.3832e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.847	|DiceScore_lv:  0.938	
+Epoch: [90][ 0/33]|DiceScore_rv:  0.633	|DiceScore_myo:  0.858	|DiceScore_lv:  0.959	
+Epoch: [90][10/33]|DiceScore_rv:  0.598	|DiceScore_myo:  0.814	|DiceScore_lv:  0.930	
+Epoch: [90][20/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+Epoch: [90][30/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.822	|DiceScore_lv:  0.933	
+2023-10-01 02:10:00,114 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [91][ 0/59]|Loss: 5.4092e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.573	|DiceScore_myo:  0.836	|DiceScore_lv:  0.937	
+Epoch: [91][10/59]|Loss: 5.4013e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.576	|DiceScore_myo:  0.851	|DiceScore_lv:  0.940	
+Epoch: [91][20/59]|Loss: 5.3814e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.582	|DiceScore_myo:  0.850	|DiceScore_lv:  0.934	
+Epoch: [91][30/59]|Loss: 5.3714e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.851	|DiceScore_lv:  0.938	
+Epoch: [91][40/59]|Loss: 5.3891e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.849	|DiceScore_lv:  0.938	
+Epoch: [91][50/59]|Loss: 5.3788e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.582	|DiceScore_myo:  0.848	|DiceScore_lv:  0.938	
+Epoch: [91][ 0/33]|DiceScore_rv:  0.621	|DiceScore_myo:  0.849	|DiceScore_lv:  0.924	
+Epoch: [91][10/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.833	|DiceScore_lv:  0.935	
+Epoch: [91][20/33]|DiceScore_rv:  0.595	|DiceScore_myo:  0.830	|DiceScore_lv:  0.936	
+Epoch: [91][30/33]|DiceScore_rv:  0.594	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+2023-10-01 02:12:02,165 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [92][ 0/59]|Loss: 5.6786e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.505	|DiceScore_myo:  0.816	|DiceScore_lv:  0.919	
+Epoch: [92][10/59]|Loss: 5.3849e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.848	|DiceScore_lv:  0.941	
+Epoch: [92][20/59]|Loss: 5.3870e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.578	|DiceScore_myo:  0.852	|DiceScore_lv:  0.942	
+Epoch: [92][30/59]|Loss: 5.3938e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.576	|DiceScore_myo:  0.850	|DiceScore_lv:  0.939	
+Epoch: [92][40/59]|Loss: 5.3889e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.849	|DiceScore_lv:  0.939	
+Epoch: [92][50/59]|Loss: 5.3909e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.846	|DiceScore_lv:  0.939	
+Epoch: [92][ 0/33]|DiceScore_rv:  0.573	|DiceScore_myo:  0.823	|DiceScore_lv:  0.928	
+Epoch: [92][10/33]|DiceScore_rv:  0.591	|DiceScore_myo:  0.826	|DiceScore_lv:  0.932	
+Epoch: [92][20/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.826	|DiceScore_lv:  0.936	
+Epoch: [92][30/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+2023-10-01 02:14:04,188 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [93][ 0/59]|Loss: 5.5916e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.525	|DiceScore_myo:  0.821	|DiceScore_lv:  0.935	
+Epoch: [93][10/59]|Loss: 5.4790e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.556	|DiceScore_myo:  0.834	|DiceScore_lv:  0.933	
+Epoch: [93][20/59]|Loss: 5.4150e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.574	|DiceScore_myo:  0.842	|DiceScore_lv:  0.935	
+Epoch: [93][30/59]|Loss: 5.4103e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.575	|DiceScore_myo:  0.844	|DiceScore_lv:  0.937	
+Epoch: [93][40/59]|Loss: 5.3763e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.847	|DiceScore_lv:  0.939	
+Epoch: [93][50/59]|Loss: 5.3749e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.848	|DiceScore_lv:  0.939	
+Epoch: [93][ 0/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.820	|DiceScore_lv:  0.907	
+Epoch: [93][10/33]|DiceScore_rv:  0.585	|DiceScore_myo:  0.825	|DiceScore_lv:  0.930	
+Epoch: [93][20/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.826	|DiceScore_lv:  0.931	
+Epoch: [93][30/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.825	|DiceScore_lv:  0.933	
+2023-10-01 02:16:06,128 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [94][ 0/59]|Loss: 5.5374e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.537	|DiceScore_myo:  0.846	|DiceScore_lv:  0.943	
+Epoch: [94][10/59]|Loss: 5.4441e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.564	|DiceScore_myo:  0.846	|DiceScore_lv:  0.938	
+Epoch: [94][20/59]|Loss: 5.4037e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.838	|DiceScore_lv:  0.935	
+Epoch: [94][30/59]|Loss: 5.4016e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.578	|DiceScore_myo:  0.844	|DiceScore_lv:  0.936	
+Epoch: [94][40/59]|Loss: 5.4067e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.842	|DiceScore_lv:  0.936	
+Epoch: [94][50/59]|Loss: 5.3855e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.847	|DiceScore_lv:  0.938	
+Epoch: [94][ 0/33]|DiceScore_rv:  0.689	|DiceScore_myo:  0.819	|DiceScore_lv:  0.948	
+Epoch: [94][10/33]|DiceScore_rv:  0.620	|DiceScore_myo:  0.826	|DiceScore_lv:  0.932	
+Epoch: [94][20/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.823	|DiceScore_lv:  0.932	
+Epoch: [94][30/33]|DiceScore_rv:  0.602	|DiceScore_myo:  0.824	|DiceScore_lv:  0.933	
+2023-10-01 02:18:08,753 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [95][ 0/59]|Loss: 5.6410e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.513	|DiceScore_myo:  0.842	|DiceScore_lv:  0.923	
+Epoch: [95][10/59]|Loss: 5.4303e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.570	|DiceScore_myo:  0.846	|DiceScore_lv:  0.937	
+Epoch: [95][20/59]|Loss: 5.3703e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.586	|DiceScore_myo:  0.847	|DiceScore_lv:  0.938	
+Epoch: [95][30/59]|Loss: 5.3603e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.851	|DiceScore_lv:  0.940	
+Epoch: [95][40/59]|Loss: 5.3630e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.850	|DiceScore_lv:  0.939	
+Epoch: [95][50/59]|Loss: 5.3788e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.583	|DiceScore_myo:  0.847	|DiceScore_lv:  0.937	
+Epoch: [95][ 0/33]|DiceScore_rv:  0.561	|DiceScore_myo:  0.753	|DiceScore_lv:  0.918	
+Epoch: [95][10/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.813	|DiceScore_lv:  0.927	
+Epoch: [95][20/33]|DiceScore_rv:  0.603	|DiceScore_myo:  0.821	|DiceScore_lv:  0.935	
+Epoch: [95][30/33]|DiceScore_rv:  0.603	|DiceScore_myo:  0.823	|DiceScore_lv:  0.934	
+2023-10-01 02:20:10,824 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [96][ 0/59]|Loss: 5.1955e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.640	|DiceScore_myo:  0.825	|DiceScore_lv:  0.947	
+Epoch: [96][10/59]|Loss: 5.3470e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.848	|DiceScore_lv:  0.940	
+Epoch: [96][20/59]|Loss: 5.3779e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.844	|DiceScore_lv:  0.936	
+Epoch: [96][30/59]|Loss: 5.3776e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.844	|DiceScore_lv:  0.938	
+Epoch: [96][40/59]|Loss: 5.3907e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.846	|DiceScore_lv:  0.938	
+Epoch: [96][50/59]|Loss: 5.3780e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.583	|DiceScore_myo:  0.846	|DiceScore_lv:  0.937	
+Epoch: [96][ 0/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.822	|DiceScore_lv:  0.913	
+Epoch: [96][10/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.822	|DiceScore_lv:  0.932	
+Epoch: [96][20/33]|DiceScore_rv:  0.615	|DiceScore_myo:  0.826	|DiceScore_lv:  0.932	
+Epoch: [96][30/33]|DiceScore_rv:  0.614	|DiceScore_myo:  0.829	|DiceScore_lv:  0.936	
+2023-10-01 02:22:13,579 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5414704908597507
+2023-10-01 02:22:13,579 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [97][ 0/59]|Loss: 5.3146e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.865	|DiceScore_lv:  0.951	
+Epoch: [97][10/59]|Loss: 5.3929e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.579	|DiceScore_myo:  0.848	|DiceScore_lv:  0.939	
+Epoch: [97][20/59]|Loss: 5.3903e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.582	|DiceScore_myo:  0.841	|DiceScore_lv:  0.937	
+Epoch: [97][30/59]|Loss: 5.3955e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.840	|DiceScore_lv:  0.938	
+Epoch: [97][40/59]|Loss: 5.3884e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.582	|DiceScore_myo:  0.843	|DiceScore_lv:  0.937	
+Epoch: [97][50/59]|Loss: 5.3818e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.583	|DiceScore_myo:  0.846	|DiceScore_lv:  0.938	
+Epoch: [97][ 0/33]|DiceScore_rv:  0.612	|DiceScore_myo:  0.830	|DiceScore_lv:  0.945	
+Epoch: [97][10/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.816	|DiceScore_lv:  0.933	
+Epoch: [97][20/33]|DiceScore_rv:  0.596	|DiceScore_myo:  0.822	|DiceScore_lv:  0.930	
+Epoch: [97][30/33]|DiceScore_rv:  0.595	|DiceScore_myo:  0.823	|DiceScore_lv:  0.933	
+2023-10-01 02:24:15,621 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [98][ 0/59]|Loss: 5.5650e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.529	|DiceScore_myo:  0.851	|DiceScore_lv:  0.928	
+Epoch: [98][10/59]|Loss: 5.3701e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.581	|DiceScore_myo:  0.857	|DiceScore_lv:  0.944	
+Epoch: [98][20/59]|Loss: 5.3962e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.847	|DiceScore_lv:  0.938	
+Epoch: [98][30/59]|Loss: 5.3661e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.847	|DiceScore_lv:  0.941	
+Epoch: [98][40/59]|Loss: 5.3859e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.580	|DiceScore_myo:  0.848	|DiceScore_lv:  0.941	
+Epoch: [98][50/59]|Loss: 5.3945e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.578	|DiceScore_myo:  0.847	|DiceScore_lv:  0.938	
+Epoch: [98][ 0/33]|DiceScore_rv:  0.639	|DiceScore_myo:  0.835	|DiceScore_lv:  0.949	
+Epoch: [98][10/33]|DiceScore_rv:  0.610	|DiceScore_myo:  0.826	|DiceScore_lv:  0.940	
+Epoch: [98][20/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.824	|DiceScore_lv:  0.937	
+Epoch: [98][30/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.826	|DiceScore_lv:  0.935	
+2023-10-01 02:26:17,552 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [99][ 0/59]|Loss: 5.6939e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.504	|DiceScore_myo:  0.806	|DiceScore_lv:  0.906	
+Epoch: [99][10/59]|Loss: 5.4057e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.575	|DiceScore_myo:  0.848	|DiceScore_lv:  0.934	
+Epoch: [99][20/59]|Loss: 5.3665e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.850	|DiceScore_lv:  0.936	
+Epoch: [99][30/59]|Loss: 5.3756e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.583	|DiceScore_myo:  0.849	|DiceScore_lv:  0.939	
+Epoch: [99][40/59]|Loss: 5.3538e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.851	|DiceScore_lv:  0.940	
+Epoch: [99][50/59]|Loss: 5.3472e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.851	|DiceScore_lv:  0.941	
+Epoch: [99][ 0/33]|DiceScore_rv:  0.622	|DiceScore_myo:  0.826	|DiceScore_lv:  0.935	
+Epoch: [99][10/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.824	|DiceScore_lv:  0.933	
+Epoch: [99][20/33]|DiceScore_rv:  0.598	|DiceScore_myo:  0.824	|DiceScore_lv:  0.933	
+Epoch: [99][30/33]|DiceScore_rv:  0.593	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+2023-10-01 02:28:19,249 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [100][ 0/59]|Loss: 5.5815e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.536	|DiceScore_myo:  0.809	|DiceScore_lv:  0.906	
+Epoch: [100][10/59]|Loss: 5.4031e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.575	|DiceScore_myo:  0.848	|DiceScore_lv:  0.936	
+Epoch: [100][20/59]|Loss: 5.3801e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.582	|DiceScore_myo:  0.848	|DiceScore_lv:  0.939	
+Epoch: [100][30/59]|Loss: 5.3663e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.588	|DiceScore_myo:  0.845	|DiceScore_lv:  0.935	
+Epoch: [100][40/59]|Loss: 5.3601e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.848	|DiceScore_lv:  0.937	
+Epoch: [100][50/59]|Loss: 5.3610e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.849	|DiceScore_lv:  0.938	
+Epoch: [100][ 0/33]|DiceScore_rv:  0.639	|DiceScore_myo:  0.811	|DiceScore_lv:  0.920	
+Epoch: [100][10/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.827	|DiceScore_lv:  0.939	
+Epoch: [100][20/33]|DiceScore_rv:  0.603	|DiceScore_myo:  0.822	|DiceScore_lv:  0.935	
+Epoch: [100][30/33]|DiceScore_rv:  0.602	|DiceScore_myo:  0.822	|DiceScore_lv:  0.933	
+2023-10-01 02:30:20,938 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [101][ 0/59]|Loss: 5.3541e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.583	|DiceScore_myo:  0.851	|DiceScore_lv:  0.927	
+Epoch: [101][10/59]|Loss: 5.3348e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.595	|DiceScore_myo:  0.852	|DiceScore_lv:  0.942	
+Epoch: [101][20/59]|Loss: 5.3558e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.852	|DiceScore_lv:  0.941	
+Epoch: [101][30/59]|Loss: 5.3974e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.849	|DiceScore_lv:  0.937	
+Epoch: [101][40/59]|Loss: 5.3712e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.586	|DiceScore_myo:  0.847	|DiceScore_lv:  0.937	
+Epoch: [101][50/59]|Loss: 5.3924e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.844	|DiceScore_lv:  0.935	
+Epoch: [101][ 0/33]|DiceScore_rv:  0.575	|DiceScore_myo:  0.811	|DiceScore_lv:  0.943	
+Epoch: [101][10/33]|DiceScore_rv:  0.585	|DiceScore_myo:  0.817	|DiceScore_lv:  0.932	
+Epoch: [101][20/33]|DiceScore_rv:  0.603	|DiceScore_myo:  0.831	|DiceScore_lv:  0.938	
+Epoch: [101][30/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+2023-10-01 02:32:22,702 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [102][ 0/59]|Loss: 5.3113e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.612	|DiceScore_myo:  0.830	|DiceScore_lv:  0.928	
+Epoch: [102][10/59]|Loss: 5.4111e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.575	|DiceScore_myo:  0.845	|DiceScore_lv:  0.941	
+Epoch: [102][20/59]|Loss: 5.3882e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.578	|DiceScore_myo:  0.851	|DiceScore_lv:  0.941	
+Epoch: [102][30/59]|Loss: 5.3794e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.580	|DiceScore_myo:  0.852	|DiceScore_lv:  0.942	
+Epoch: [102][40/59]|Loss: 5.3643e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.853	|DiceScore_lv:  0.941	
+Epoch: [102][50/59]|Loss: 5.3498e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.849	|DiceScore_lv:  0.940	
+Epoch: [102][ 0/33]|DiceScore_rv:  0.568	|DiceScore_myo:  0.845	|DiceScore_lv:  0.946	
+Epoch: [102][10/33]|DiceScore_rv:  0.621	|DiceScore_myo:  0.826	|DiceScore_lv:  0.939	
+Epoch: [102][20/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.823	|DiceScore_lv:  0.936	
+Epoch: [102][30/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.826	|DiceScore_lv:  0.936	
+2023-10-01 02:34:24,497 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [103][ 0/59]|Loss: 5.3930e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.582	|DiceScore_myo:  0.843	|DiceScore_lv:  0.940	
+Epoch: [103][10/59]|Loss: 5.4206e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.565	|DiceScore_myo:  0.860	|DiceScore_lv:  0.943	
+Epoch: [103][20/59]|Loss: 5.3795e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.580	|DiceScore_myo:  0.852	|DiceScore_lv:  0.942	
+Epoch: [103][30/59]|Loss: 5.3792e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.581	|DiceScore_myo:  0.854	|DiceScore_lv:  0.939	
+Epoch: [103][40/59]|Loss: 5.3750e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.583	|DiceScore_myo:  0.851	|DiceScore_lv:  0.939	
+Epoch: [103][50/59]|Loss: 5.3666e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.852	|DiceScore_lv:  0.939	
+Epoch: [103][ 0/33]|DiceScore_rv:  0.668	|DiceScore_myo:  0.798	|DiceScore_lv:  0.924	
+Epoch: [103][10/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.819	|DiceScore_lv:  0.928	
+Epoch: [103][20/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.825	|DiceScore_lv:  0.929	
+Epoch: [103][30/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.827	|DiceScore_lv:  0.934	
+2023-10-01 02:36:26,269 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [104][ 0/59]|Loss: 5.3096e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.624	|DiceScore_myo:  0.803	|DiceScore_lv:  0.931	
+Epoch: [104][10/59]|Loss: 5.3346e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.853	|DiceScore_lv:  0.948	
+Epoch: [104][20/59]|Loss: 5.3554e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.851	|DiceScore_lv:  0.943	
+Epoch: [104][30/59]|Loss: 5.3565e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.854	|DiceScore_lv:  0.942	
+Epoch: [104][40/59]|Loss: 5.3683e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.852	|DiceScore_lv:  0.942	
+Epoch: [104][50/59]|Loss: 5.3610e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [104][ 0/33]|DiceScore_rv:  0.638	|DiceScore_myo:  0.840	|DiceScore_lv:  0.940	
+Epoch: [104][10/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.819	|DiceScore_lv:  0.928	
+Epoch: [104][20/33]|DiceScore_rv:  0.595	|DiceScore_myo:  0.825	|DiceScore_lv:  0.931	
+Epoch: [104][30/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.827	|DiceScore_lv:  0.932	
+2023-10-01 02:38:28,055 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [105][ 0/59]|Loss: 5.4286e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.603	|DiceScore_myo:  0.798	|DiceScore_lv:  0.902	
+Epoch: [105][10/59]|Loss: 5.3482e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.598	|DiceScore_myo:  0.839	|DiceScore_lv:  0.930	
+Epoch: [105][20/59]|Loss: 5.3367e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.598	|DiceScore_myo:  0.845	|DiceScore_lv:  0.934	
+Epoch: [105][30/59]|Loss: 5.3603e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.851	|DiceScore_lv:  0.937	
+Epoch: [105][40/59]|Loss: 5.3792e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.582	|DiceScore_myo:  0.849	|DiceScore_lv:  0.937	
+Epoch: [105][50/59]|Loss: 5.3729e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.849	|DiceScore_lv:  0.938	
+Epoch: [105][ 0/33]|DiceScore_rv:  0.576	|DiceScore_myo:  0.716	|DiceScore_lv:  0.896	
+Epoch: [105][10/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.811	|DiceScore_lv:  0.932	
+Epoch: [105][20/33]|DiceScore_rv:  0.595	|DiceScore_myo:  0.821	|DiceScore_lv:  0.932	
+Epoch: [105][30/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+2023-10-01 02:40:29,703 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [106][ 0/59]|Loss: 5.2300e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.614	|DiceScore_myo:  0.875	|DiceScore_lv:  0.960	
+Epoch: [106][10/59]|Loss: 5.4551e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.562	|DiceScore_myo:  0.838	|DiceScore_lv:  0.938	
+Epoch: [106][20/59]|Loss: 5.4305e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.567	|DiceScore_myo:  0.845	|DiceScore_lv:  0.937	
+Epoch: [106][30/59]|Loss: 5.4074e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.573	|DiceScore_myo:  0.848	|DiceScore_lv:  0.940	
+Epoch: [106][40/59]|Loss: 5.3880e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.848	|DiceScore_lv:  0.941	
+Epoch: [106][50/59]|Loss: 5.3886e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.845	|DiceScore_lv:  0.939	
+Epoch: [106][ 0/33]|DiceScore_rv:  0.618	|DiceScore_myo:  0.857	|DiceScore_lv:  0.941	
+Epoch: [106][10/33]|DiceScore_rv:  0.610	|DiceScore_myo:  0.824	|DiceScore_lv:  0.938	
+Epoch: [106][20/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.821	|DiceScore_lv:  0.936	
+Epoch: [106][30/33]|DiceScore_rv:  0.594	|DiceScore_myo:  0.823	|DiceScore_lv:  0.933	
+2023-10-01 02:42:31,346 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [107][ 0/59]|Loss: 5.5509e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.503	|DiceScore_myo:  0.895	|DiceScore_lv:  0.959	
+Epoch: [107][10/59]|Loss: 5.4697e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.558	|DiceScore_myo:  0.842	|DiceScore_lv:  0.926	
+Epoch: [107][20/59]|Loss: 5.4096e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.840	|DiceScore_lv:  0.934	
+Epoch: [107][30/59]|Loss: 5.4115e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.574	|DiceScore_myo:  0.844	|DiceScore_lv:  0.935	
+Epoch: [107][40/59]|Loss: 5.3918e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.843	|DiceScore_lv:  0.937	
+Epoch: [107][50/59]|Loss: 5.3845e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.582	|DiceScore_myo:  0.846	|DiceScore_lv:  0.937	
+Epoch: [107][ 0/33]|DiceScore_rv:  0.636	|DiceScore_myo:  0.835	|DiceScore_lv:  0.950	
+Epoch: [107][10/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.830	|DiceScore_lv:  0.937	
+Epoch: [107][20/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.826	|DiceScore_lv:  0.936	
+Epoch: [107][30/33]|DiceScore_rv:  0.602	|DiceScore_myo:  0.825	|DiceScore_lv:  0.935	
+2023-10-01 02:44:33,018 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [108][ 0/59]|Loss: 5.3346e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.589	|DiceScore_myo:  0.870	|DiceScore_lv:  0.944	
+Epoch: [108][10/59]|Loss: 5.3488e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.588	|DiceScore_myo:  0.855	|DiceScore_lv:  0.940	
+Epoch: [108][20/59]|Loss: 5.3431e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.593	|DiceScore_myo:  0.850	|DiceScore_lv:  0.939	
+Epoch: [108][30/59]|Loss: 5.3627e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.851	|DiceScore_lv:  0.941	
+Epoch: [108][40/59]|Loss: 5.4057e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.574	|DiceScore_myo:  0.848	|DiceScore_lv:  0.939	
+Epoch: [108][50/59]|Loss: 5.3856e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.848	|DiceScore_lv:  0.940	
+Epoch: [108][ 0/33]|DiceScore_rv:  0.633	|DiceScore_myo:  0.779	|DiceScore_lv:  0.921	
+Epoch: [108][10/33]|DiceScore_rv:  0.581	|DiceScore_myo:  0.819	|DiceScore_lv:  0.929	
+Epoch: [108][20/33]|DiceScore_rv:  0.602	|DiceScore_myo:  0.828	|DiceScore_lv:  0.935	
+Epoch: [108][30/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.827	|DiceScore_lv:  0.936	
+2023-10-01 02:46:34,736 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [109][ 0/59]|Loss: 5.4536e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.554	|DiceScore_myo:  0.853	|DiceScore_lv:  0.937	
+Epoch: [109][10/59]|Loss: 5.4542e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.567	|DiceScore_myo:  0.835	|DiceScore_lv:  0.924	
+Epoch: [109][20/59]|Loss: 5.4246e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.571	|DiceScore_myo:  0.845	|DiceScore_lv:  0.930	
+Epoch: [109][30/59]|Loss: 5.4240e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.569	|DiceScore_myo:  0.849	|DiceScore_lv:  0.936	
+Epoch: [109][40/59]|Loss: 5.3847e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.580	|DiceScore_myo:  0.850	|DiceScore_lv:  0.938	
+Epoch: [109][50/59]|Loss: 5.3931e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.578	|DiceScore_myo:  0.850	|DiceScore_lv:  0.939	
+Epoch: [109][ 0/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.802	|DiceScore_lv:  0.926	
+Epoch: [109][10/33]|DiceScore_rv:  0.617	|DiceScore_myo:  0.827	|DiceScore_lv:  0.942	
+Epoch: [109][20/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.822	|DiceScore_lv:  0.934	
+Epoch: [109][30/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+2023-10-01 02:48:37,185 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [110][ 0/59]|Loss: 5.3351e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.608	|DiceScore_myo:  0.823	|DiceScore_lv:  0.934	
+Epoch: [110][10/59]|Loss: 5.3368e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.598	|DiceScore_myo:  0.844	|DiceScore_lv:  0.940	
+Epoch: [110][20/59]|Loss: 5.3626e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.844	|DiceScore_lv:  0.938	
+Epoch: [110][30/59]|Loss: 5.3970e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.845	|DiceScore_lv:  0.937	
+Epoch: [110][40/59]|Loss: 5.3938e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.580	|DiceScore_myo:  0.846	|DiceScore_lv:  0.937	
+Epoch: [110][50/59]|Loss: 5.3737e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.849	|DiceScore_lv:  0.939	
+Epoch: [110][ 0/33]|DiceScore_rv:  0.631	|DiceScore_myo:  0.812	|DiceScore_lv:  0.901	
+Epoch: [110][10/33]|DiceScore_rv:  0.618	|DiceScore_myo:  0.828	|DiceScore_lv:  0.939	
+Epoch: [110][20/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.825	|DiceScore_lv:  0.932	
+Epoch: [110][30/33]|DiceScore_rv:  0.609	|DiceScore_myo:  0.828	|DiceScore_lv:  0.934	
+2023-10-01 02:50:38,950 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [111][ 0/59]|Loss: 5.5592e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.526	|DiceScore_myo:  0.856	|DiceScore_lv:  0.929	
+Epoch: [111][10/59]|Loss: 5.3324e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.855	|DiceScore_lv:  0.942	
+Epoch: [111][20/59]|Loss: 5.2861e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.606	|DiceScore_myo:  0.860	|DiceScore_lv:  0.945	
+Epoch: [111][30/59]|Loss: 5.3356e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.859	|DiceScore_lv:  0.945	
+Epoch: [111][40/59]|Loss: 5.3430e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.860	|DiceScore_lv:  0.945	
+Epoch: [111][50/59]|Loss: 5.3671e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.583	|DiceScore_myo:  0.855	|DiceScore_lv:  0.942	
+Epoch: [111][ 0/33]|DiceScore_rv:  0.631	|DiceScore_myo:  0.856	|DiceScore_lv:  0.951	
+Epoch: [111][10/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.824	|DiceScore_lv:  0.938	
+Epoch: [111][20/33]|DiceScore_rv:  0.594	|DiceScore_myo:  0.822	|DiceScore_lv:  0.930	
+Epoch: [111][30/33]|DiceScore_rv:  0.593	|DiceScore_myo:  0.825	|DiceScore_lv:  0.932	
+2023-10-01 02:52:40,672 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [112][ 0/59]|Loss: 5.2025e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.625	|DiceScore_myo:  0.881	|DiceScore_lv:  0.946	
+Epoch: [112][10/59]|Loss: 5.2901e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.603	|DiceScore_myo:  0.859	|DiceScore_lv:  0.945	
+Epoch: [112][20/59]|Loss: 5.3161e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.597	|DiceScore_myo:  0.856	|DiceScore_lv:  0.943	
+Epoch: [112][30/59]|Loss: 5.3393e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.854	|DiceScore_lv:  0.939	
+Epoch: [112][40/59]|Loss: 5.3691e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.850	|DiceScore_lv:  0.938	
+Epoch: [112][50/59]|Loss: 5.3539e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.851	|DiceScore_lv:  0.939	
+Epoch: [112][ 0/33]|DiceScore_rv:  0.565	|DiceScore_myo:  0.805	|DiceScore_lv:  0.935	
+Epoch: [112][10/33]|DiceScore_rv:  0.588	|DiceScore_myo:  0.827	|DiceScore_lv:  0.935	
+Epoch: [112][20/33]|DiceScore_rv:  0.595	|DiceScore_myo:  0.833	|DiceScore_lv:  0.936	
+Epoch: [112][30/33]|DiceScore_rv:  0.598	|DiceScore_myo:  0.830	|DiceScore_lv:  0.934	
+2023-10-01 02:54:42,411 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [113][ 0/59]|Loss: 5.4154e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.574	|DiceScore_myo:  0.829	|DiceScore_lv:  0.939	
+Epoch: [113][10/59]|Loss: 5.3552e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.593	|DiceScore_myo:  0.845	|DiceScore_lv:  0.939	
+Epoch: [113][20/59]|Loss: 5.4022e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.577	|DiceScore_myo:  0.846	|DiceScore_lv:  0.937	
+Epoch: [113][30/59]|Loss: 5.4020e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.575	|DiceScore_myo:  0.848	|DiceScore_lv:  0.938	
+Epoch: [113][40/59]|Loss: 5.3701e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.849	|DiceScore_lv:  0.940	
+Epoch: [113][50/59]|Loss: 5.3767e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.583	|DiceScore_myo:  0.848	|DiceScore_lv:  0.939	
+Epoch: [113][ 0/33]|DiceScore_rv:  0.586	|DiceScore_myo:  0.848	|DiceScore_lv:  0.944	
+Epoch: [113][10/33]|DiceScore_rv:  0.639	|DiceScore_myo:  0.836	|DiceScore_lv:  0.937	
+Epoch: [113][20/33]|DiceScore_rv:  0.620	|DiceScore_myo:  0.834	|DiceScore_lv:  0.939	
+Epoch: [113][30/33]|DiceScore_rv:  0.613	|DiceScore_myo:  0.830	|DiceScore_lv:  0.937	
+2023-10-01 02:56:44,216 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5403493843427846
+2023-10-01 02:56:44,216 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [114][ 0/59]|Loss: 5.6883e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.479	|DiceScore_myo:  0.861	|DiceScore_lv:  0.936	
+Epoch: [114][10/59]|Loss: 5.4344e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.569	|DiceScore_myo:  0.842	|DiceScore_lv:  0.927	
+Epoch: [114][20/59]|Loss: 5.4179e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.571	|DiceScore_myo:  0.848	|DiceScore_lv:  0.934	
+Epoch: [114][30/59]|Loss: 5.3943e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.847	|DiceScore_lv:  0.937	
+Epoch: [114][40/59]|Loss: 5.3575e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.851	|DiceScore_lv:  0.940	
+Epoch: [114][50/59]|Loss: 5.3587e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.849	|DiceScore_lv:  0.940	
+Epoch: [114][ 0/33]|DiceScore_rv:  0.654	|DiceScore_myo:  0.852	|DiceScore_lv:  0.950	
+Epoch: [114][10/33]|DiceScore_rv:  0.610	|DiceScore_myo:  0.825	|DiceScore_lv:  0.929	
+Epoch: [114][20/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.828	|DiceScore_lv:  0.931	
+Epoch: [114][30/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.831	|DiceScore_lv:  0.935	
+2023-10-01 02:58:46,179 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [115][ 0/59]|Loss: 5.3312e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.605	|DiceScore_myo:  0.829	|DiceScore_lv:  0.916	
+Epoch: [115][10/59]|Loss: 5.5225e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.547	|DiceScore_myo:  0.835	|DiceScore_lv:  0.928	
+Epoch: [115][20/59]|Loss: 5.4169e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.573	|DiceScore_myo:  0.844	|DiceScore_lv:  0.938	
+Epoch: [115][30/59]|Loss: 5.3811e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.582	|DiceScore_myo:  0.848	|DiceScore_lv:  0.940	
+Epoch: [115][40/59]|Loss: 5.3802e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.583	|DiceScore_myo:  0.848	|DiceScore_lv:  0.937	
+Epoch: [115][50/59]|Loss: 5.3552e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.849	|DiceScore_lv:  0.940	
+Epoch: [115][ 0/33]|DiceScore_rv:  0.616	|DiceScore_myo:  0.842	|DiceScore_lv:  0.953	
+Epoch: [115][10/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.825	|DiceScore_lv:  0.937	
+Epoch: [115][20/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+Epoch: [115][30/33]|DiceScore_rv:  0.612	|DiceScore_myo:  0.827	|DiceScore_lv:  0.935	
+2023-10-01 03:00:48,360 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [116][ 0/59]|Loss: 5.4575e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.546	|DiceScore_myo:  0.881	|DiceScore_lv:  0.933	
+Epoch: [116][10/59]|Loss: 5.3527e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.590	|DiceScore_myo:  0.847	|DiceScore_lv:  0.934	
+Epoch: [116][20/59]|Loss: 5.3988e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.843	|DiceScore_lv:  0.932	
+Epoch: [116][30/59]|Loss: 5.3848e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.581	|DiceScore_myo:  0.848	|DiceScore_lv:  0.937	
+Epoch: [116][40/59]|Loss: 5.3709e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.846	|DiceScore_lv:  0.938	
+Epoch: [116][50/59]|Loss: 5.3671e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.848	|DiceScore_lv:  0.940	
+Epoch: [116][ 0/33]|DiceScore_rv:  0.624	|DiceScore_myo:  0.834	|DiceScore_lv:  0.953	
+Epoch: [116][10/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.834	|DiceScore_lv:  0.931	
+Epoch: [116][20/33]|DiceScore_rv:  0.610	|DiceScore_myo:  0.832	|DiceScore_lv:  0.936	
+Epoch: [116][30/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.830	|DiceScore_lv:  0.936	
+2023-10-01 03:02:50,507 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [117][ 0/59]|Loss: 5.7293e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.516	|DiceScore_myo:  0.786	|DiceScore_lv:  0.879	
+Epoch: [117][10/59]|Loss: 5.3629e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.849	|DiceScore_lv:  0.940	
+Epoch: [117][20/59]|Loss: 5.3329e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.851	|DiceScore_lv:  0.944	
+Epoch: [117][30/59]|Loss: 5.3225e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.597	|DiceScore_myo:  0.853	|DiceScore_lv:  0.943	
+Epoch: [117][40/59]|Loss: 5.3349e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.852	|DiceScore_lv:  0.943	
+Epoch: [117][50/59]|Loss: 5.3380e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.593	|DiceScore_myo:  0.851	|DiceScore_lv:  0.941	
+Epoch: [117][ 0/33]|DiceScore_rv:  0.613	|DiceScore_myo:  0.833	|DiceScore_lv:  0.927	
+Epoch: [117][10/33]|DiceScore_rv:  0.598	|DiceScore_myo:  0.822	|DiceScore_lv:  0.932	
+Epoch: [117][20/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.822	|DiceScore_lv:  0.932	
+Epoch: [117][30/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.828	|DiceScore_lv:  0.934	
+2023-10-01 03:04:52,660 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [118][ 0/59]|Loss: 5.2745e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.609	|DiceScore_myo:  0.870	|DiceScore_lv:  0.943	
+Epoch: [118][10/59]|Loss: 5.3484e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.595	|DiceScore_myo:  0.843	|DiceScore_lv:  0.933	
+Epoch: [118][20/59]|Loss: 5.3310e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.597	|DiceScore_myo:  0.849	|DiceScore_lv:  0.937	
+Epoch: [118][30/59]|Loss: 5.3706e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.585	|DiceScore_myo:  0.848	|DiceScore_lv:  0.935	
+Epoch: [118][40/59]|Loss: 5.3576e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.849	|DiceScore_lv:  0.938	
+Epoch: [118][50/59]|Loss: 5.3486e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.851	|DiceScore_lv:  0.939	
+Epoch: [118][ 0/33]|DiceScore_rv:  0.542	|DiceScore_myo:  0.785	|DiceScore_lv:  0.849	
+Epoch: [118][10/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.819	|DiceScore_lv:  0.925	
+Epoch: [118][20/33]|DiceScore_rv:  0.591	|DiceScore_myo:  0.823	|DiceScore_lv:  0.930	
+Epoch: [118][30/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.827	|DiceScore_lv:  0.933	
+2023-10-01 03:06:54,869 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [119][ 0/59]|Loss: 5.3386e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.604	|DiceScore_myo:  0.843	|DiceScore_lv:  0.921	
+Epoch: [119][10/59]|Loss: 5.3180e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.597	|DiceScore_myo:  0.857	|DiceScore_lv:  0.950	
+Epoch: [119][20/59]|Loss: 5.3302e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.855	|DiceScore_lv:  0.945	
+Epoch: [119][30/59]|Loss: 5.3774e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.581	|DiceScore_myo:  0.855	|DiceScore_lv:  0.941	
+Epoch: [119][40/59]|Loss: 5.3700e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.852	|DiceScore_lv:  0.939	
+Epoch: [119][50/59]|Loss: 5.3833e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.581	|DiceScore_myo:  0.851	|DiceScore_lv:  0.939	
+Epoch: [119][ 0/33]|DiceScore_rv:  0.528	|DiceScore_myo:  0.846	|DiceScore_lv:  0.950	
+Epoch: [119][10/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.836	|DiceScore_lv:  0.938	
+Epoch: [119][20/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.833	|DiceScore_lv:  0.935	
+Epoch: [119][30/33]|DiceScore_rv:  0.612	|DiceScore_myo:  0.831	|DiceScore_lv:  0.935	
+2023-10-01 03:08:57,001 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [120][ 0/59]|Loss: 5.1792e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.628	|DiceScore_myo:  0.886	|DiceScore_lv:  0.956	
+Epoch: [120][10/59]|Loss: 5.3634e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.853	|DiceScore_lv:  0.945	
+Epoch: [120][20/59]|Loss: 5.3995e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.577	|DiceScore_myo:  0.850	|DiceScore_lv:  0.939	
+Epoch: [120][30/59]|Loss: 5.3693e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.853	|DiceScore_lv:  0.941	
+Epoch: [120][40/59]|Loss: 5.3564e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.850	|DiceScore_lv:  0.941	
+Epoch: [120][50/59]|Loss: 5.3478e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.851	|DiceScore_lv:  0.940	
+Epoch: [120][ 0/33]|DiceScore_rv:  0.585	|DiceScore_myo:  0.864	|DiceScore_lv:  0.947	
+Epoch: [120][10/33]|DiceScore_rv:  0.613	|DiceScore_myo:  0.818	|DiceScore_lv:  0.929	
+Epoch: [120][20/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.827	|DiceScore_lv:  0.933	
+Epoch: [120][30/33]|DiceScore_rv:  0.597	|DiceScore_myo:  0.828	|DiceScore_lv:  0.933	
+2023-10-01 03:10:59,115 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [121][ 0/59]|Loss: 5.3180e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.604	|DiceScore_myo:  0.826	|DiceScore_lv:  0.951	
+Epoch: [121][10/59]|Loss: 5.3588e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.852	|DiceScore_lv:  0.945	
+Epoch: [121][20/59]|Loss: 5.3357e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.593	|DiceScore_myo:  0.853	|DiceScore_lv:  0.945	
+Epoch: [121][30/59]|Loss: 5.3601e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.851	|DiceScore_lv:  0.942	
+Epoch: [121][40/59]|Loss: 5.3715e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [121][50/59]|Loss: 5.3597e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [121][ 0/33]|DiceScore_rv:  0.641	|DiceScore_myo:  0.835	|DiceScore_lv:  0.928	
+Epoch: [121][10/33]|DiceScore_rv:  0.630	|DiceScore_myo:  0.836	|DiceScore_lv:  0.936	
+Epoch: [121][20/33]|DiceScore_rv:  0.620	|DiceScore_myo:  0.829	|DiceScore_lv:  0.938	
+Epoch: [121][30/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.829	|DiceScore_lv:  0.935	
+2023-10-01 03:13:01,333 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [122][ 0/59]|Loss: 5.7156e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.508	|DiceScore_myo:  0.805	|DiceScore_lv:  0.902	
+Epoch: [122][10/59]|Loss: 5.4413e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.567	|DiceScore_myo:  0.841	|DiceScore_lv:  0.931	
+Epoch: [122][20/59]|Loss: 5.4414e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.569	|DiceScore_myo:  0.841	|DiceScore_lv:  0.931	
+Epoch: [122][30/59]|Loss: 5.4308e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.571	|DiceScore_myo:  0.843	|DiceScore_lv:  0.934	
+Epoch: [122][40/59]|Loss: 5.4137e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.573	|DiceScore_myo:  0.846	|DiceScore_lv:  0.937	
+Epoch: [122][50/59]|Loss: 5.3874e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.580	|DiceScore_myo:  0.847	|DiceScore_lv:  0.938	
+Epoch: [122][ 0/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.821	|DiceScore_lv:  0.947	
+Epoch: [122][10/33]|DiceScore_rv:  0.591	|DiceScore_myo:  0.823	|DiceScore_lv:  0.934	
+Epoch: [122][20/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.827	|DiceScore_lv:  0.936	
+Epoch: [122][30/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.827	|DiceScore_lv:  0.935	
+2023-10-01 03:15:03,282 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [123][ 0/59]|Loss: 5.5036e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.547	|DiceScore_myo:  0.868	|DiceScore_lv:  0.928	
+Epoch: [123][10/59]|Loss: 5.3461e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.848	|DiceScore_lv:  0.940	
+Epoch: [123][20/59]|Loss: 5.3570e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.850	|DiceScore_lv:  0.941	
+Epoch: [123][30/59]|Loss: 5.3528e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.852	|DiceScore_lv:  0.941	
+Epoch: [123][40/59]|Loss: 5.3474e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.850	|DiceScore_lv:  0.941	
+Epoch: [123][50/59]|Loss: 5.3473e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.851	|DiceScore_lv:  0.942	
+Epoch: [123][ 0/33]|DiceScore_rv:  0.645	|DiceScore_myo:  0.832	|DiceScore_lv:  0.958	
+Epoch: [123][10/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.813	|DiceScore_lv:  0.926	
+Epoch: [123][20/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.821	|DiceScore_lv:  0.931	
+Epoch: [123][30/33]|DiceScore_rv:  0.603	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+2023-10-01 03:17:05,668 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [124][ 0/59]|Loss: 5.4490e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.569	|DiceScore_myo:  0.823	|DiceScore_lv:  0.935	
+Epoch: [124][10/59]|Loss: 5.4257e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.578	|DiceScore_myo:  0.829	|DiceScore_lv:  0.930	
+Epoch: [124][20/59]|Loss: 5.4015e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.579	|DiceScore_myo:  0.840	|DiceScore_lv:  0.936	
+Epoch: [124][30/59]|Loss: 5.3829e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.582	|DiceScore_myo:  0.845	|DiceScore_lv:  0.939	
+Epoch: [124][40/59]|Loss: 5.3580e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.849	|DiceScore_lv:  0.940	
+Epoch: [124][50/59]|Loss: 5.3605e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.850	|DiceScore_lv:  0.941	
+Epoch: [124][ 0/33]|DiceScore_rv:  0.633	|DiceScore_myo:  0.826	|DiceScore_lv:  0.915	
+Epoch: [124][10/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.834	|DiceScore_lv:  0.941	
+Epoch: [124][20/33]|DiceScore_rv:  0.610	|DiceScore_myo:  0.827	|DiceScore_lv:  0.939	
+Epoch: [124][30/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.826	|DiceScore_lv:  0.936	
+2023-10-01 03:19:08,420 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [125][ 0/59]|Loss: 5.3316e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.595	|DiceScore_myo:  0.855	|DiceScore_lv:  0.957	
+Epoch: [125][10/59]|Loss: 5.3131e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.602	|DiceScore_myo:  0.851	|DiceScore_lv:  0.944	
+Epoch: [125][20/59]|Loss: 5.3575e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.844	|DiceScore_lv:  0.939	
+Epoch: [125][30/59]|Loss: 5.3709e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.843	|DiceScore_lv:  0.938	
+Epoch: [125][40/59]|Loss: 5.3889e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.581	|DiceScore_myo:  0.845	|DiceScore_lv:  0.937	
+Epoch: [125][50/59]|Loss: 5.3719e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.848	|DiceScore_lv:  0.938	
+Epoch: [125][ 0/33]|DiceScore_rv:  0.638	|DiceScore_myo:  0.837	|DiceScore_lv:  0.945	
+Epoch: [125][10/33]|DiceScore_rv:  0.584	|DiceScore_myo:  0.827	|DiceScore_lv:  0.933	
+Epoch: [125][20/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.825	|DiceScore_lv:  0.933	
+Epoch: [125][30/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.828	|DiceScore_lv:  0.936	
+2023-10-01 03:21:10,672 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [126][ 0/59]|Loss: 5.1424e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.641	|DiceScore_myo:  0.875	|DiceScore_lv:  0.953	
+Epoch: [126][10/59]|Loss: 5.3278e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.856	|DiceScore_lv:  0.946	
+Epoch: [126][20/59]|Loss: 5.3468e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [126][30/59]|Loss: 5.3500e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.851	|DiceScore_lv:  0.942	
+Epoch: [126][40/59]|Loss: 5.3548e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.851	|DiceScore_lv:  0.942	
+Epoch: [126][50/59]|Loss: 5.3678e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.849	|DiceScore_lv:  0.942	
+Epoch: [126][ 0/33]|DiceScore_rv:  0.658	|DiceScore_myo:  0.841	|DiceScore_lv:  0.925	
+Epoch: [126][10/33]|DiceScore_rv:  0.598	|DiceScore_myo:  0.827	|DiceScore_lv:  0.933	
+Epoch: [126][20/33]|DiceScore_rv:  0.614	|DiceScore_myo:  0.827	|DiceScore_lv:  0.936	
+Epoch: [126][30/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.830	|DiceScore_lv:  0.937	
+2023-10-01 03:23:14,345 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [127][ 0/59]|Loss: 5.4937e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.542	|DiceScore_myo:  0.870	|DiceScore_lv:  0.940	
+Epoch: [127][10/59]|Loss: 5.3417e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.854	|DiceScore_lv:  0.946	
+Epoch: [127][20/59]|Loss: 5.3530e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.851	|DiceScore_lv:  0.942	
+Epoch: [127][30/59]|Loss: 5.3432e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [127][40/59]|Loss: 5.3347e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.850	|DiceScore_lv:  0.942	
+Epoch: [127][50/59]|Loss: 5.3355e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.849	|DiceScore_lv:  0.942	
+Epoch: [127][ 0/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.821	|DiceScore_lv:  0.934	
+Epoch: [127][10/33]|DiceScore_rv:  0.615	|DiceScore_myo:  0.831	|DiceScore_lv:  0.938	
+Epoch: [127][20/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.831	|DiceScore_lv:  0.938	
+Epoch: [127][30/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.828	|DiceScore_lv:  0.936	
+2023-10-01 03:25:17,178 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [128][ 0/59]|Loss: 5.2589e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.615	|DiceScore_myo:  0.862	|DiceScore_lv:  0.960	
+Epoch: [128][10/59]|Loss: 5.4176e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.573	|DiceScore_myo:  0.840	|DiceScore_lv:  0.940	
+Epoch: [128][20/59]|Loss: 5.3558e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.589	|DiceScore_myo:  0.847	|DiceScore_lv:  0.942	
+Epoch: [128][30/59]|Loss: 5.3512e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.848	|DiceScore_lv:  0.942	
+Epoch: [128][40/59]|Loss: 5.3515e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.849	|DiceScore_lv:  0.940	
+Epoch: [128][50/59]|Loss: 5.3554e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.850	|DiceScore_lv:  0.941	
+Epoch: [128][ 0/33]|DiceScore_rv:  0.591	|DiceScore_myo:  0.825	|DiceScore_lv:  0.930	
+Epoch: [128][10/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.823	|DiceScore_lv:  0.933	
+Epoch: [128][20/33]|DiceScore_rv:  0.597	|DiceScore_myo:  0.826	|DiceScore_lv:  0.932	
+Epoch: [128][30/33]|DiceScore_rv:  0.602	|DiceScore_myo:  0.828	|DiceScore_lv:  0.935	
+2023-10-01 03:27:19,191 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [129][ 0/59]|Loss: 5.1795e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.657	|DiceScore_myo:  0.815	|DiceScore_lv:  0.926	
+Epoch: [129][10/59]|Loss: 5.3079e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.605	|DiceScore_myo:  0.846	|DiceScore_lv:  0.938	
+Epoch: [129][20/59]|Loss: 5.3385e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.846	|DiceScore_lv:  0.941	
+Epoch: [129][30/59]|Loss: 5.3363e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.596	|DiceScore_myo:  0.845	|DiceScore_lv:  0.939	
+Epoch: [129][40/59]|Loss: 5.3602e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.847	|DiceScore_lv:  0.939	
+Epoch: [129][50/59]|Loss: 5.3541e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [129][ 0/33]|DiceScore_rv:  0.630	|DiceScore_myo:  0.840	|DiceScore_lv:  0.956	
+Epoch: [129][10/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.820	|DiceScore_lv:  0.935	
+Epoch: [129][20/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.823	|DiceScore_lv:  0.932	
+Epoch: [129][30/33]|DiceScore_rv:  0.602	|DiceScore_myo:  0.824	|DiceScore_lv:  0.933	
+2023-10-01 03:29:21,142 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [130][ 0/59]|Loss: 5.5355e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.524	|DiceScore_myo:  0.881	|DiceScore_lv:  0.946	
+Epoch: [130][10/59]|Loss: 5.4416e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.566	|DiceScore_myo:  0.843	|DiceScore_lv:  0.941	
+Epoch: [130][20/59]|Loss: 5.3687e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.844	|DiceScore_lv:  0.941	
+Epoch: [130][30/59]|Loss: 5.3856e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.581	|DiceScore_myo:  0.847	|DiceScore_lv:  0.942	
+Epoch: [130][40/59]|Loss: 5.3676e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.849	|DiceScore_lv:  0.943	
+Epoch: [130][50/59]|Loss: 5.3555e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.850	|DiceScore_lv:  0.942	
+Epoch: [130][ 0/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.811	|DiceScore_lv:  0.929	
+Epoch: [130][10/33]|DiceScore_rv:  0.596	|DiceScore_myo:  0.815	|DiceScore_lv:  0.930	
+Epoch: [130][20/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.824	|DiceScore_lv:  0.934	
+Epoch: [130][30/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.828	|DiceScore_lv:  0.936	
+2023-10-01 03:31:22,954 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [131][ 0/59]|Loss: 5.4774e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.549	|DiceScore_myo:  0.848	|DiceScore_lv:  0.957	
+Epoch: [131][10/59]|Loss: 5.3295e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.598	|DiceScore_myo:  0.851	|DiceScore_lv:  0.938	
+Epoch: [131][20/59]|Loss: 5.3609e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.847	|DiceScore_lv:  0.939	
+Epoch: [131][30/59]|Loss: 5.3951e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [131][40/59]|Loss: 5.3913e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.578	|DiceScore_myo:  0.851	|DiceScore_lv:  0.938	
+Epoch: [131][50/59]|Loss: 5.3761e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.583	|DiceScore_myo:  0.850	|DiceScore_lv:  0.937	
+Epoch: [131][ 0/33]|DiceScore_rv:  0.521	|DiceScore_myo:  0.819	|DiceScore_lv:  0.891	
+Epoch: [131][10/33]|DiceScore_rv:  0.589	|DiceScore_myo:  0.826	|DiceScore_lv:  0.931	
+Epoch: [131][20/33]|DiceScore_rv:  0.602	|DiceScore_myo:  0.828	|DiceScore_lv:  0.936	
+Epoch: [131][30/33]|DiceScore_rv:  0.609	|DiceScore_myo:  0.830	|DiceScore_lv:  0.935	
+2023-10-01 03:33:25,355 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [132][ 0/59]|Loss: 5.5279e-01	|DiceScore_bg:  0.989	|DiceScore_rv:  0.558	|DiceScore_myo:  0.800	|DiceScore_lv:  0.922	
+Epoch: [132][10/59]|Loss: 5.4227e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.575	|DiceScore_myo:  0.840	|DiceScore_lv:  0.930	
+Epoch: [132][20/59]|Loss: 5.3868e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.582	|DiceScore_myo:  0.845	|DiceScore_lv:  0.938	
+Epoch: [132][30/59]|Loss: 5.4093e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.575	|DiceScore_myo:  0.844	|DiceScore_lv:  0.936	
+Epoch: [132][40/59]|Loss: 5.3867e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.581	|DiceScore_myo:  0.848	|DiceScore_lv:  0.937	
+Epoch: [132][50/59]|Loss: 5.3517e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.852	|DiceScore_lv:  0.940	
+Epoch: [132][ 0/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.798	|DiceScore_lv:  0.951	
+Epoch: [132][10/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.827	|DiceScore_lv:  0.936	
+Epoch: [132][20/33]|DiceScore_rv:  0.617	|DiceScore_myo:  0.830	|DiceScore_lv:  0.935	
+Epoch: [132][30/33]|DiceScore_rv:  0.609	|DiceScore_myo:  0.829	|DiceScore_lv:  0.935	
+2023-10-01 03:35:27,097 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [133][ 0/59]|Loss: 5.2273e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.600	|DiceScore_myo:  0.894	|DiceScore_lv:  0.958	
+Epoch: [133][10/59]|Loss: 5.3465e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.855	|DiceScore_lv:  0.939	
+Epoch: [133][20/59]|Loss: 5.3620e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.853	|DiceScore_lv:  0.939	
+Epoch: [133][30/59]|Loss: 5.3701e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.586	|DiceScore_myo:  0.846	|DiceScore_lv:  0.937	
+Epoch: [133][40/59]|Loss: 5.3452e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [133][50/59]|Loss: 5.3473e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [133][ 0/33]|DiceScore_rv:  0.584	|DiceScore_myo:  0.802	|DiceScore_lv:  0.924	
+Epoch: [133][10/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.826	|DiceScore_lv:  0.936	
+Epoch: [133][20/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+Epoch: [133][30/33]|DiceScore_rv:  0.602	|DiceScore_myo:  0.827	|DiceScore_lv:  0.935	
+2023-10-01 03:37:28,781 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [134][ 0/59]|Loss: 5.3200e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.853	|DiceScore_lv:  0.941	
+Epoch: [134][10/59]|Loss: 5.3709e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.583	|DiceScore_myo:  0.849	|DiceScore_lv:  0.943	
+Epoch: [134][20/59]|Loss: 5.3716e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.584	|DiceScore_myo:  0.850	|DiceScore_lv:  0.941	
+Epoch: [134][30/59]|Loss: 5.3572e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.854	|DiceScore_lv:  0.941	
+Epoch: [134][40/59]|Loss: 5.3587e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.852	|DiceScore_lv:  0.939	
+Epoch: [134][50/59]|Loss: 5.3628e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [134][ 0/33]|DiceScore_rv:  0.581	|DiceScore_myo:  0.844	|DiceScore_lv:  0.936	
+Epoch: [134][10/33]|DiceScore_rv:  0.623	|DiceScore_myo:  0.840	|DiceScore_lv:  0.937	
+Epoch: [134][20/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.827	|DiceScore_lv:  0.934	
+Epoch: [134][30/33]|DiceScore_rv:  0.603	|DiceScore_myo:  0.830	|DiceScore_lv:  0.935	
+2023-10-01 03:39:30,517 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [135][ 0/59]|Loss: 5.3675e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.585	|DiceScore_myo:  0.860	|DiceScore_lv:  0.952	
+Epoch: [135][10/59]|Loss: 5.3951e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.580	|DiceScore_myo:  0.845	|DiceScore_lv:  0.936	
+Epoch: [135][20/59]|Loss: 5.3452e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.849	|DiceScore_lv:  0.941	
+Epoch: [135][30/59]|Loss: 5.3628e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.850	|DiceScore_lv:  0.943	
+Epoch: [135][40/59]|Loss: 5.3555e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.851	|DiceScore_lv:  0.942	
+Epoch: [135][50/59]|Loss: 5.3720e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.848	|DiceScore_lv:  0.939	
+Epoch: [135][ 0/33]|DiceScore_rv:  0.624	|DiceScore_myo:  0.830	|DiceScore_lv:  0.939	
+Epoch: [135][10/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.835	|DiceScore_lv:  0.933	
+Epoch: [135][20/33]|DiceScore_rv:  0.617	|DiceScore_myo:  0.831	|DiceScore_lv:  0.936	
+Epoch: [135][30/33]|DiceScore_rv:  0.614	|DiceScore_myo:  0.832	|DiceScore_lv:  0.937	
+2023-10-01 03:41:32,320 | [MainThread] | INFO | AttenUnetTrainer -> Best model saved @ tmp/exp13/checkpoint.pth.tar with loss @0.5387277301501844
+2023-10-01 03:41:32,320 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [136][ 0/59]|Loss: 5.3538e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.579	|DiceScore_myo:  0.873	|DiceScore_lv:  0.949	
+Epoch: [136][10/59]|Loss: 5.3231e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.597	|DiceScore_myo:  0.854	|DiceScore_lv:  0.939	
+Epoch: [136][20/59]|Loss: 5.3491e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.854	|DiceScore_lv:  0.939	
+Epoch: [136][30/59]|Loss: 5.3574e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.852	|DiceScore_lv:  0.940	
+Epoch: [136][40/59]|Loss: 5.3712e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.850	|DiceScore_lv:  0.939	
+Epoch: [136][50/59]|Loss: 5.3580e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.850	|DiceScore_lv:  0.939	
+Epoch: [136][ 0/33]|DiceScore_rv:  0.523	|DiceScore_myo:  0.831	|DiceScore_lv:  0.912	
+Epoch: [136][10/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.830	|DiceScore_lv:  0.927	
+Epoch: [136][20/33]|DiceScore_rv:  0.597	|DiceScore_myo:  0.829	|DiceScore_lv:  0.933	
+Epoch: [136][30/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.828	|DiceScore_lv:  0.936	
+2023-10-01 03:43:34,037 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [137][ 0/59]|Loss: 5.2797e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.596	|DiceScore_myo:  0.879	|DiceScore_lv:  0.954	
+Epoch: [137][10/59]|Loss: 5.3348e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.859	|DiceScore_lv:  0.948	
+Epoch: [137][20/59]|Loss: 5.3559e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.852	|DiceScore_lv:  0.941	
+Epoch: [137][30/59]|Loss: 5.3678e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.582	|DiceScore_myo:  0.855	|DiceScore_lv:  0.942	
+Epoch: [137][40/59]|Loss: 5.3637e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.853	|DiceScore_lv:  0.941	
+Epoch: [137][50/59]|Loss: 5.3586e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.852	|DiceScore_lv:  0.942	
+Epoch: [137][ 0/33]|DiceScore_rv:  0.643	|DiceScore_myo:  0.849	|DiceScore_lv:  0.959	
+Epoch: [137][10/33]|DiceScore_rv:  0.630	|DiceScore_myo:  0.823	|DiceScore_lv:  0.930	
+Epoch: [137][20/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.824	|DiceScore_lv:  0.932	
+Epoch: [137][30/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.827	|DiceScore_lv:  0.934	
+2023-10-01 03:45:35,731 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [138][ 0/59]|Loss: 5.3020e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.612	|DiceScore_myo:  0.840	|DiceScore_lv:  0.928	
+Epoch: [138][10/59]|Loss: 5.2616e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.611	|DiceScore_myo:  0.862	|DiceScore_lv:  0.945	
+Epoch: [138][20/59]|Loss: 5.2842e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.608	|DiceScore_myo:  0.856	|DiceScore_lv:  0.944	
+Epoch: [138][30/59]|Loss: 5.3025e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.601	|DiceScore_myo:  0.855	|DiceScore_lv:  0.945	
+Epoch: [138][40/59]|Loss: 5.3523e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.852	|DiceScore_lv:  0.939	
+Epoch: [138][50/59]|Loss: 5.3539e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.850	|DiceScore_lv:  0.938	
+Epoch: [138][ 0/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.835	|DiceScore_lv:  0.944	
+Epoch: [138][10/33]|DiceScore_rv:  0.612	|DiceScore_myo:  0.827	|DiceScore_lv:  0.935	
+Epoch: [138][20/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.825	|DiceScore_lv:  0.931	
+Epoch: [138][30/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.826	|DiceScore_lv:  0.932	
+2023-10-01 03:47:37,448 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [139][ 0/59]|Loss: 5.2267e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.622	|DiceScore_myo:  0.870	|DiceScore_lv:  0.942	
+Epoch: [139][10/59]|Loss: 5.3605e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.846	|DiceScore_lv:  0.935	
+Epoch: [139][20/59]|Loss: 5.3472e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.593	|DiceScore_myo:  0.847	|DiceScore_lv:  0.937	
+Epoch: [139][30/59]|Loss: 5.3457e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.852	|DiceScore_lv:  0.939	
+Epoch: [139][40/59]|Loss: 5.3258e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.596	|DiceScore_myo:  0.853	|DiceScore_lv:  0.941	
+Epoch: [139][50/59]|Loss: 5.3457e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.852	|DiceScore_lv:  0.941	
+Epoch: [139][ 0/33]|DiceScore_rv:  0.559	|DiceScore_myo:  0.801	|DiceScore_lv:  0.931	
+Epoch: [139][10/33]|DiceScore_rv:  0.590	|DiceScore_myo:  0.816	|DiceScore_lv:  0.936	
+Epoch: [139][20/33]|DiceScore_rv:  0.602	|DiceScore_myo:  0.818	|DiceScore_lv:  0.935	
+Epoch: [139][30/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.826	|DiceScore_lv:  0.933	
+2023-10-01 03:49:39,086 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [140][ 0/59]|Loss: 4.8699e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.723	|DiceScore_myo:  0.879	|DiceScore_lv:  0.936	
+Epoch: [140][10/59]|Loss: 5.2955e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.605	|DiceScore_myo:  0.854	|DiceScore_lv:  0.936	
+Epoch: [140][20/59]|Loss: 5.3520e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.850	|DiceScore_lv:  0.935	
+Epoch: [140][30/59]|Loss: 5.3713e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.849	|DiceScore_lv:  0.937	
+Epoch: [140][40/59]|Loss: 5.3659e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.852	|DiceScore_lv:  0.939	
+Epoch: [140][50/59]|Loss: 5.3570e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [140][ 0/33]|DiceScore_rv:  0.560	|DiceScore_myo:  0.865	|DiceScore_lv:  0.957	
+Epoch: [140][10/33]|DiceScore_rv:  0.592	|DiceScore_myo:  0.826	|DiceScore_lv:  0.935	
+Epoch: [140][20/33]|DiceScore_rv:  0.596	|DiceScore_myo:  0.826	|DiceScore_lv:  0.935	
+Epoch: [140][30/33]|DiceScore_rv:  0.603	|DiceScore_myo:  0.828	|DiceScore_lv:  0.935	
+2023-10-01 03:51:40,901 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [141][ 0/59]|Loss: 5.0330e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.673	|DiceScore_myo:  0.879	|DiceScore_lv:  0.959	
+Epoch: [141][10/59]|Loss: 5.3441e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.847	|DiceScore_lv:  0.941	
+Epoch: [141][20/59]|Loss: 5.2961e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.605	|DiceScore_myo:  0.851	|DiceScore_lv:  0.942	
+Epoch: [141][30/59]|Loss: 5.3207e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.598	|DiceScore_myo:  0.851	|DiceScore_lv:  0.943	
+Epoch: [141][40/59]|Loss: 5.3108e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.600	|DiceScore_myo:  0.854	|DiceScore_lv:  0.944	
+Epoch: [141][50/59]|Loss: 5.3496e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.852	|DiceScore_lv:  0.942	
+Epoch: [141][ 0/33]|DiceScore_rv:  0.577	|DiceScore_myo:  0.840	|DiceScore_lv:  0.932	
+Epoch: [141][10/33]|DiceScore_rv:  0.607	|DiceScore_myo:  0.835	|DiceScore_lv:  0.940	
+Epoch: [141][20/33]|DiceScore_rv:  0.612	|DiceScore_myo:  0.830	|DiceScore_lv:  0.940	
+Epoch: [141][30/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.829	|DiceScore_lv:  0.935	
+2023-10-01 03:53:42,639 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [142][ 0/59]|Loss: 5.1201e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.645	|DiceScore_myo:  0.877	|DiceScore_lv:  0.953	
+Epoch: [142][10/59]|Loss: 5.4302e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.562	|DiceScore_myo:  0.857	|DiceScore_lv:  0.941	
+Epoch: [142][20/59]|Loss: 5.3879e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.576	|DiceScore_myo:  0.857	|DiceScore_lv:  0.942	
+Epoch: [142][30/59]|Loss: 5.3477e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.857	|DiceScore_lv:  0.943	
+Epoch: [142][40/59]|Loss: 5.3596e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.854	|DiceScore_lv:  0.941	
+Epoch: [142][50/59]|Loss: 5.3456e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.854	|DiceScore_lv:  0.942	
+Epoch: [142][ 0/33]|DiceScore_rv:  0.509	|DiceScore_myo:  0.813	|DiceScore_lv:  0.929	
+Epoch: [142][10/33]|DiceScore_rv:  0.590	|DiceScore_myo:  0.824	|DiceScore_lv:  0.929	
+Epoch: [142][20/33]|DiceScore_rv:  0.598	|DiceScore_myo:  0.828	|DiceScore_lv:  0.934	
+Epoch: [142][30/33]|DiceScore_rv:  0.603	|DiceScore_myo:  0.828	|DiceScore_lv:  0.934	
+2023-10-01 03:55:44,481 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [143][ 0/59]|Loss: 5.0064e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.671	|DiceScore_myo:  0.896	|DiceScore_lv:  0.963	
+Epoch: [143][10/59]|Loss: 5.3165e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.599	|DiceScore_myo:  0.854	|DiceScore_lv:  0.940	
+Epoch: [143][20/59]|Loss: 5.3207e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.600	|DiceScore_myo:  0.850	|DiceScore_lv:  0.941	
+Epoch: [143][30/59]|Loss: 5.3407e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.593	|DiceScore_myo:  0.849	|DiceScore_lv:  0.943	
+Epoch: [143][40/59]|Loss: 5.3618e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.850	|DiceScore_lv:  0.942	
+Epoch: [143][50/59]|Loss: 5.3513e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.850	|DiceScore_lv:  0.942	
+Epoch: [143][ 0/33]|DiceScore_rv:  0.627	|DiceScore_myo:  0.844	|DiceScore_lv:  0.950	
+Epoch: [143][10/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.837	|DiceScore_lv:  0.938	
+Epoch: [143][20/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.829	|DiceScore_lv:  0.937	
+Epoch: [143][30/33]|DiceScore_rv:  0.596	|DiceScore_myo:  0.826	|DiceScore_lv:  0.935	
+2023-10-01 03:57:46,233 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [144][ 0/59]|Loss: 5.5227e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.536	|DiceScore_myo:  0.852	|DiceScore_lv:  0.944	
+Epoch: [144][10/59]|Loss: 5.3620e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.851	|DiceScore_lv:  0.941	
+Epoch: [144][20/59]|Loss: 5.3090e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.601	|DiceScore_myo:  0.855	|DiceScore_lv:  0.942	
+Epoch: [144][30/59]|Loss: 5.3436e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.593	|DiceScore_myo:  0.848	|DiceScore_lv:  0.938	
+Epoch: [144][40/59]|Loss: 5.3469e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.849	|DiceScore_lv:  0.940	
+Epoch: [144][50/59]|Loss: 5.3569e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.848	|DiceScore_lv:  0.940	
+Epoch: [144][ 0/33]|DiceScore_rv:  0.560	|DiceScore_myo:  0.771	|DiceScore_lv:  0.888	
+Epoch: [144][10/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.823	|DiceScore_lv:  0.934	
+Epoch: [144][20/33]|DiceScore_rv:  0.617	|DiceScore_myo:  0.829	|DiceScore_lv:  0.937	
+Epoch: [144][30/33]|DiceScore_rv:  0.611	|DiceScore_myo:  0.833	|DiceScore_lv:  0.937	
+2023-10-01 03:59:48,109 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [145][ 0/59]|Loss: 5.4021e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.839	|DiceScore_lv:  0.948	
+Epoch: [145][10/59]|Loss: 5.3119e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.599	|DiceScore_myo:  0.857	|DiceScore_lv:  0.946	
+Epoch: [145][20/59]|Loss: 5.3287e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.857	|DiceScore_lv:  0.942	
+Epoch: [145][30/59]|Loss: 5.3694e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.582	|DiceScore_myo:  0.855	|DiceScore_lv:  0.942	
+Epoch: [145][40/59]|Loss: 5.3453e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.856	|DiceScore_lv:  0.944	
+Epoch: [145][50/59]|Loss: 5.3683e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.583	|DiceScore_myo:  0.854	|DiceScore_lv:  0.941	
+Epoch: [145][ 0/33]|DiceScore_rv:  0.650	|DiceScore_myo:  0.760	|DiceScore_lv:  0.924	
+Epoch: [145][10/33]|DiceScore_rv:  0.627	|DiceScore_myo:  0.831	|DiceScore_lv:  0.939	
+Epoch: [145][20/33]|DiceScore_rv:  0.610	|DiceScore_myo:  0.825	|DiceScore_lv:  0.933	
+Epoch: [145][30/33]|DiceScore_rv:  0.610	|DiceScore_myo:  0.829	|DiceScore_lv:  0.936	
+2023-10-01 04:01:50,054 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [146][ 0/59]|Loss: 5.3136e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.872	|DiceScore_lv:  0.959	
+Epoch: [146][10/59]|Loss: 5.2904e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.600	|DiceScore_myo:  0.867	|DiceScore_lv:  0.950	
+Epoch: [146][20/59]|Loss: 5.2996e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.599	|DiceScore_myo:  0.863	|DiceScore_lv:  0.948	
+Epoch: [146][30/59]|Loss: 5.3441e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.856	|DiceScore_lv:  0.945	
+Epoch: [146][40/59]|Loss: 5.3507e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.853	|DiceScore_lv:  0.944	
+Epoch: [146][50/59]|Loss: 5.3744e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.583	|DiceScore_myo:  0.851	|DiceScore_lv:  0.941	
+Epoch: [146][ 0/33]|DiceScore_rv:  0.593	|DiceScore_myo:  0.851	|DiceScore_lv:  0.914	
+Epoch: [146][10/33]|DiceScore_rv:  0.624	|DiceScore_myo:  0.831	|DiceScore_lv:  0.938	
+Epoch: [146][20/33]|DiceScore_rv:  0.612	|DiceScore_myo:  0.826	|DiceScore_lv:  0.935	
+Epoch: [146][30/33]|DiceScore_rv:  0.612	|DiceScore_myo:  0.827	|DiceScore_lv:  0.937	
+2023-10-01 04:03:52,115 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [147][ 0/59]|Loss: 5.5897e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.534	|DiceScore_myo:  0.827	|DiceScore_lv:  0.893	
+Epoch: [147][10/59]|Loss: 5.3512e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.857	|DiceScore_lv:  0.939	
+Epoch: [147][20/59]|Loss: 5.3622e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.852	|DiceScore_lv:  0.939	
+Epoch: [147][30/59]|Loss: 5.3440e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.849	|DiceScore_lv:  0.941	
+Epoch: [147][40/59]|Loss: 5.3418e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.593	|DiceScore_myo:  0.850	|DiceScore_lv:  0.939	
+Epoch: [147][50/59]|Loss: 5.3392e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.594	|DiceScore_myo:  0.852	|DiceScore_lv:  0.939	
+Epoch: [147][ 0/33]|DiceScore_rv:  0.657	|DiceScore_myo:  0.820	|DiceScore_lv:  0.939	
+Epoch: [147][10/33]|DiceScore_rv:  0.600	|DiceScore_myo:  0.826	|DiceScore_lv:  0.938	
+Epoch: [147][20/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.823	|DiceScore_lv:  0.933	
+Epoch: [147][30/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.823	|DiceScore_lv:  0.934	
+2023-10-01 04:05:54,184 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [148][ 0/59]|Loss: 5.2676e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.620	|DiceScore_myo:  0.857	|DiceScore_lv:  0.932	
+Epoch: [148][10/59]|Loss: 5.3324e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.862	|DiceScore_lv:  0.945	
+Epoch: [148][20/59]|Loss: 5.3536e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.856	|DiceScore_lv:  0.944	
+Epoch: [148][30/59]|Loss: 5.3162e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.598	|DiceScore_myo:  0.856	|DiceScore_lv:  0.945	
+Epoch: [148][40/59]|Loss: 5.3390e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.853	|DiceScore_lv:  0.943	
+Epoch: [148][50/59]|Loss: 5.3401e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.854	|DiceScore_lv:  0.943	
+Epoch: [148][ 0/33]|DiceScore_rv:  0.704	|DiceScore_myo:  0.801	|DiceScore_lv:  0.927	
+Epoch: [148][10/33]|DiceScore_rv:  0.614	|DiceScore_myo:  0.823	|DiceScore_lv:  0.934	
+Epoch: [148][20/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.829	|DiceScore_lv:  0.937	
+Epoch: [148][30/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.826	|DiceScore_lv:  0.935	
+2023-10-01 04:07:56,240 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [149][ 0/59]|Loss: 5.5491e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.545	|DiceScore_myo:  0.830	|DiceScore_lv:  0.923	
+Epoch: [149][10/59]|Loss: 5.2695e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.611	|DiceScore_myo:  0.856	|DiceScore_lv:  0.944	
+Epoch: [149][20/59]|Loss: 5.3060e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.602	|DiceScore_myo:  0.854	|DiceScore_lv:  0.946	
+Epoch: [149][30/59]|Loss: 5.3268e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.595	|DiceScore_myo:  0.854	|DiceScore_lv:  0.945	
+Epoch: [149][40/59]|Loss: 5.3428e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.851	|DiceScore_lv:  0.943	
+Epoch: [149][50/59]|Loss: 5.3408e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.853	|DiceScore_lv:  0.943	
+Epoch: [149][ 0/33]|DiceScore_rv:  0.685	|DiceScore_myo:  0.874	|DiceScore_lv:  0.955	
+Epoch: [149][10/33]|DiceScore_rv:  0.627	|DiceScore_myo:  0.834	|DiceScore_lv:  0.943	
+Epoch: [149][20/33]|DiceScore_rv:  0.618	|DiceScore_myo:  0.830	|DiceScore_lv:  0.937	
+Epoch: [149][30/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.827	|DiceScore_lv:  0.934	
+2023-10-01 04:09:57,960 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [150][ 0/59]|Loss: 5.3004e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.610	|DiceScore_myo:  0.842	|DiceScore_lv:  0.929	
+Epoch: [150][10/59]|Loss: 5.3918e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.583	|DiceScore_myo:  0.839	|DiceScore_lv:  0.933	
+Epoch: [150][20/59]|Loss: 5.3554e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.849	|DiceScore_lv:  0.937	
+Epoch: [150][30/59]|Loss: 5.3368e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.855	|DiceScore_lv:  0.941	
+Epoch: [150][40/59]|Loss: 5.3438e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.854	|DiceScore_lv:  0.942	
+Epoch: [150][50/59]|Loss: 5.3532e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.853	|DiceScore_lv:  0.942	
+Epoch: [150][ 0/33]|DiceScore_rv:  0.646	|DiceScore_myo:  0.844	|DiceScore_lv:  0.954	
+Epoch: [150][10/33]|DiceScore_rv:  0.614	|DiceScore_myo:  0.829	|DiceScore_lv:  0.933	
+Epoch: [150][20/33]|DiceScore_rv:  0.609	|DiceScore_myo:  0.829	|DiceScore_lv:  0.932	
+Epoch: [150][30/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.828	|DiceScore_lv:  0.935	
+2023-10-01 04:11:59,762 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [151][ 0/59]|Loss: 5.5185e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.539	|DiceScore_myo:  0.873	|DiceScore_lv:  0.940	
+Epoch: [151][10/59]|Loss: 5.3255e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.861	|DiceScore_lv:  0.944	
+Epoch: [151][20/59]|Loss: 5.3557e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.857	|DiceScore_lv:  0.940	
+Epoch: [151][30/59]|Loss: 5.3568e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.855	|DiceScore_lv:  0.941	
+Epoch: [151][40/59]|Loss: 5.3716e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.848	|DiceScore_lv:  0.938	
+Epoch: [151][50/59]|Loss: 5.3704e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.585	|DiceScore_myo:  0.848	|DiceScore_lv:  0.939	
+Epoch: [151][ 0/33]|DiceScore_rv:  0.561	|DiceScore_myo:  0.830	|DiceScore_lv:  0.945	
+Epoch: [151][10/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.838	|DiceScore_lv:  0.938	
+Epoch: [151][20/33]|DiceScore_rv:  0.614	|DiceScore_myo:  0.835	|DiceScore_lv:  0.937	
+Epoch: [151][30/33]|DiceScore_rv:  0.606	|DiceScore_myo:  0.831	|DiceScore_lv:  0.935	
+2023-10-01 04:14:01,698 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [152][ 0/59]|Loss: 5.2078e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.618	|DiceScore_myo:  0.891	|DiceScore_lv:  0.957	
+Epoch: [152][10/59]|Loss: 5.4245e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.569	|DiceScore_myo:  0.851	|DiceScore_lv:  0.935	
+Epoch: [152][20/59]|Loss: 5.3826e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.580	|DiceScore_myo:  0.854	|DiceScore_lv:  0.939	
+Epoch: [152][30/59]|Loss: 5.3354e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.593	|DiceScore_myo:  0.854	|DiceScore_lv:  0.941	
+Epoch: [152][40/59]|Loss: 5.3664e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.849	|DiceScore_lv:  0.938	
+Epoch: [152][50/59]|Loss: 5.3593e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.849	|DiceScore_lv:  0.939	
+Epoch: [152][ 0/33]|DiceScore_rv:  0.696	|DiceScore_myo:  0.856	|DiceScore_lv:  0.947	
+Epoch: [152][10/33]|DiceScore_rv:  0.621	|DiceScore_myo:  0.830	|DiceScore_lv:  0.936	
+Epoch: [152][20/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.830	|DiceScore_lv:  0.936	
+Epoch: [152][30/33]|DiceScore_rv:  0.603	|DiceScore_myo:  0.825	|DiceScore_lv:  0.933	
+2023-10-01 04:16:03,369 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [153][ 0/59]|Loss: 5.5699e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.539	|DiceScore_myo:  0.843	|DiceScore_lv:  0.917	
+Epoch: [153][10/59]|Loss: 5.3809e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.582	|DiceScore_myo:  0.847	|DiceScore_lv:  0.941	
+Epoch: [153][20/59]|Loss: 5.4012e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.576	|DiceScore_myo:  0.848	|DiceScore_lv:  0.940	
+Epoch: [153][30/59]|Loss: 5.3634e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.849	|DiceScore_lv:  0.940	
+Epoch: [153][40/59]|Loss: 5.3655e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [153][50/59]|Loss: 5.3530e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.589	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [153][ 0/33]|DiceScore_rv:  0.648	|DiceScore_myo:  0.826	|DiceScore_lv:  0.928	
+Epoch: [153][10/33]|DiceScore_rv:  0.624	|DiceScore_myo:  0.827	|DiceScore_lv:  0.934	
+Epoch: [153][20/33]|DiceScore_rv:  0.614	|DiceScore_myo:  0.827	|DiceScore_lv:  0.932	
+Epoch: [153][30/33]|DiceScore_rv:  0.605	|DiceScore_myo:  0.830	|DiceScore_lv:  0.935	
+2023-10-01 04:18:05,358 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [154][ 0/59]|Loss: 5.2537e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.614	|DiceScore_myo:  0.878	|DiceScore_lv:  0.953	
+Epoch: [154][10/59]|Loss: 5.3338e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.858	|DiceScore_lv:  0.942	
+Epoch: [154][20/59]|Loss: 5.3402e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.591	|DiceScore_myo:  0.854	|DiceScore_lv:  0.942	
+Epoch: [154][30/59]|Loss: 5.3718e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.583	|DiceScore_myo:  0.851	|DiceScore_lv:  0.940	
+Epoch: [154][40/59]|Loss: 5.3656e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.584	|DiceScore_myo:  0.853	|DiceScore_lv:  0.942	
+Epoch: [154][50/59]|Loss: 5.3724e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.583	|DiceScore_myo:  0.849	|DiceScore_lv:  0.940	
+Epoch: [154][ 0/33]|DiceScore_rv:  0.514	|DiceScore_myo:  0.812	|DiceScore_lv:  0.950	
+Epoch: [154][10/33]|DiceScore_rv:  0.598	|DiceScore_myo:  0.818	|DiceScore_lv:  0.930	
+Epoch: [154][20/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.827	|DiceScore_lv:  0.935	
+Epoch: [154][30/33]|DiceScore_rv:  0.613	|DiceScore_myo:  0.828	|DiceScore_lv:  0.935	
+2023-10-01 04:20:07,188 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [155][ 0/59]|Loss: 5.6345e-01	|DiceScore_bg:  0.990	|DiceScore_rv:  0.513	|DiceScore_myo:  0.848	|DiceScore_lv:  0.921	
+Epoch: [155][10/59]|Loss: 5.2641e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.613	|DiceScore_myo:  0.858	|DiceScore_lv:  0.940	
+Epoch: [155][20/59]|Loss: 5.2896e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.608	|DiceScore_myo:  0.851	|DiceScore_lv:  0.939	
+Epoch: [155][30/59]|Loss: 5.3321e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.595	|DiceScore_myo:  0.850	|DiceScore_lv:  0.939	
+Epoch: [155][40/59]|Loss: 5.3613e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.588	|DiceScore_myo:  0.848	|DiceScore_lv:  0.939	
+Epoch: [155][50/59]|Loss: 5.3434e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.849	|DiceScore_lv:  0.941	
+Epoch: [155][ 0/33]|DiceScore_rv:  0.618	|DiceScore_myo:  0.847	|DiceScore_lv:  0.927	
+Epoch: [155][10/33]|DiceScore_rv:  0.610	|DiceScore_myo:  0.830	|DiceScore_lv:  0.935	
+Epoch: [155][20/33]|DiceScore_rv:  0.601	|DiceScore_myo:  0.825	|DiceScore_lv:  0.934	
+Epoch: [155][30/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.829	|DiceScore_lv:  0.934	
+2023-10-01 04:22:09,049 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [156][ 0/59]|Loss: 5.3400e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.605	|DiceScore_myo:  0.845	|DiceScore_lv:  0.931	
+Epoch: [156][10/59]|Loss: 5.3867e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.587	|DiceScore_myo:  0.840	|DiceScore_lv:  0.930	
+Epoch: [156][20/59]|Loss: 5.3729e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.586	|DiceScore_myo:  0.846	|DiceScore_lv:  0.934	
+Epoch: [156][30/59]|Loss: 5.3473e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.850	|DiceScore_lv:  0.938	
+Epoch: [156][40/59]|Loss: 5.3467e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.590	|DiceScore_myo:  0.852	|DiceScore_lv:  0.940	
+Epoch: [156][50/59]|Loss: 5.3426e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.592	|DiceScore_myo:  0.850	|DiceScore_lv:  0.940	
+Epoch: [156][ 0/33]|DiceScore_rv:  0.555	|DiceScore_myo:  0.838	|DiceScore_lv:  0.923	
+Epoch: [156][10/33]|DiceScore_rv:  0.604	|DiceScore_myo:  0.825	|DiceScore_lv:  0.935	
+Epoch: [156][20/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.831	|DiceScore_lv:  0.937	
+Epoch: [156][30/33]|DiceScore_rv:  0.599	|DiceScore_myo:  0.826	|DiceScore_lv:  0.934	
+2023-10-01 04:24:11,038 | [MainThread] | INFO | AttenUnetTrainer -> current learning rate @1.0000000000000002e-06
+Epoch: [157][ 0/59]|Loss: 5.3341e-01	|DiceScore_bg:  0.993	|DiceScore_rv:  0.589	|DiceScore_myo:  0.870	|DiceScore_lv:  0.951	
+Epoch: [157][10/59]|Loss: 5.4443e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.569	|DiceScore_myo:  0.838	|DiceScore_lv:  0.931	
+Epoch: [157][20/59]|Loss: 5.4026e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.577	|DiceScore_myo:  0.846	|DiceScore_lv:  0.936	
+Epoch: [157][30/59]|Loss: 5.3856e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.581	|DiceScore_myo:  0.848	|DiceScore_lv:  0.936	
+Epoch: [157][40/59]|Loss: 5.3786e-01	|DiceScore_bg:  0.991	|DiceScore_rv:  0.583	|DiceScore_myo:  0.847	|DiceScore_lv:  0.936	
+Epoch: [157][50/59]|Loss: 5.3644e-01	|DiceScore_bg:  0.992	|DiceScore_rv:  0.587	|DiceScore_myo:  0.848	|DiceScore_lv:  0.937	
+Epoch: [157][ 0/33]|DiceScore_rv:  0.669	|DiceScore_myo:  0.825	|DiceScore_lv:  0.942	
+Epoch: [157][10/33]|DiceScore_rv:  0.626	|DiceScore_myo:  0.825	|DiceScore_lv:  0.935	
+Epoch: [157][20/33]|DiceScore_rv:  0.608	|DiceScore_myo:  0.826	|DiceScore_lv:  0.933	
+Epoch: [157][30/33]|DiceScore_rv:  0.602	|DiceScore_myo:  0.826	|DiceScore_lv:  0.935	
+2023-10-01 04:26:13,548 | [MainThread] | INFO | AttenUnetTrainer -> Training stopped by reaching 20 iterations with val_loss@ 0.5387277301501844
+2023-10-01 04:26:13,549 | [MainThread] | INFO | AttenUnetTrainer -> Training completed after 318.666786 minutes
+Sun Oct  1 04:26:14 CDT 2023
