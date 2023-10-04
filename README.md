@@ -3,6 +3,16 @@ Segmentation Models for Automated Cardiac Diagnosis Challenge adopted with Atten
 # Model Architecture
 ![Alt text](https://github.com/yangyin3027/ACDC_Segmentation/blob/main/src/examples/attenunet.png)
 Please see the original paper [here](https://arxiv.org/abs/1804.03999) for more details. 
+# Environment Setup
+There are two approaches:
+  1. Using pip
+  ```python
+  pip install -r requirements.txt
+  ```
+  2. Using conda
+  ```
+  conda env create -n [env_name] --file environments.yml
+  ```
 # Train the model
 ```python
 python ./src/main.py --data [data_root_dir] --model-type attenunet --lr 0.001 --init kaiming --loss dicece
