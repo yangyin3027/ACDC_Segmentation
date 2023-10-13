@@ -1,61 +1,63 @@
 from datasets import *
 from network import *
 from metrics_acdc import *
-from nii_acdc import traverse_files
+from losses import dice_coeff
 
 import nibabel as nib
 import torchvision.transforms.functional as F
 import numpy as np
 from math import ceil
 import os
+from glob import glob
 
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 from skimage.util import montage as smon
 
+from tqdm import tqdm
 
 class Process(object):
-    def __init__(self, mean=(55.6606,), std=(79.5647,),
-                 size=224):
-        self.mean = mean
-        self.std = std
-        self.size = 224
-        self.img_size = None
+    def __init__(self, size=None):
+        self.size = size
+        if self.size is None:
+            self.size = 224
+        self.origin_size = None
     
-    def _pad(self, image):
-        h, w = image.shape[-2:]
-        padded = []
-        for i in range(len(image)):
-            img = image[i]
-            if h < w:
-                pad_width = (((w-h)//2, w-h-(w-h)//2), (0, 0))
-            else:
-                pad_width = ((0, 0), ((h-w)//2, h-w-(h-w)//2))
+    def _preprocess(self, image):
+        processed_image = []
+        slices = image.shape[-1]
+        for s in range(slices):
+            img = image[:, :, s]
+            p5, p95 = np.percentile(img, (0.5, 99.5))
+            img = np.clip(img, p5, p95)
+            img = (img - img.min()) / (img.max() - img.min())
             
-            img = np.pad(img, pad_width, mode='reflect')
-            padded.append(img)
-        padded = np.stack(padded)
-
-        return np.stack(padded)
+            img = self._transform(img)
+            processed_image.append(img)
+        
+        processed_image = torch.stack(processed_image)
+        return processed_image
+    
+    def _transform(self, img):
+        transform = transforms.Compose([
+            transforms.ToPILImage(),
+            transforms.Resize((self.size, self.size)),
+            transforms.ToTensor(),
+            transforms.Normalize((0.1365,),(0.1661,))
+        ])
+        img = (img * 255).astype(np.uint8)
+        img = transform(img)
+        return img
 
     def preprocess(self, image):
-        h, w = image.shape[-2: ]
+        h, w = image.shape[:2]
 
-        if h != w:
-            image = self._pad(image)
-
-        if not isinstance(image, torch.Tensor):
-            image = torch.Tensor(image)
-
-        # reserve original img_size
-        self.img_size = (h, w)
-
-        if self.mean is not None and self.std is not None:
-            image = F.normalize(image, self.mean, self.std)
-        if self.size is not None:
-            image = F.resize(image, self.size)
-
+        # memorize original image size
+        self.origin_size = (h, w)
+        # min-max normalization
+        image = self._preprocess(image)
+        # apply tensor and resize transform
         return image
 
     def postprocess(self, preds: torch.tensor):
@@ -66,26 +68,18 @@ class Process(object):
         Returns:
             segmentation_masks: numpy.ndarray
         '''
+        preds = F.resize(preds, self.origin_size, 
+                         interpolation=F.InterpolationMode.BILINEAR,
+                         antialias=False)
         preds = torch.nn.functional.softmax(preds, dim=1)
         preds = torch.argmax(preds, dim=1)
-
-        if self.img_size is not None:
-            h, w = self.img_size
-            preds = F.resize(preds, max(h, w))
-
-            if h > w:
-                start = (h-w)//2
-                end = (h-w)//2 + w
-                preds = preds[:, :, start:end]
-            elif h < w:
-                start = (w-h)//2
-                end = (w-h)//2 + h
-                preds = preds[:, start:end, :]
-        return preds.detach().cpu().numpy()
+        preds = preds.detach().cpu().numpy()
+        return preds
 
 class Inference(object):
     def __init__(self, model, 
                     checkpoint_file=None,
+                    size=None,
                     device=None):
         '''
         Load pretrained model weight to predict mask for inividual 
@@ -110,31 +104,39 @@ class Inference(object):
             else:
                 self.device = device
         else:
-            self.device = device    
+            self.device = device 
+        self.size = size
+        if self.size is None:
+            self.size =  224
+
+    def _predict(self, image):
+        self.model.to(self.device)
+        self.model.eval()
+
+        image = image.to(device=self.device,
+                         dtype=torch.float32)
+        with torch.no_grad():
+            preds = self.model(image)
+        return preds  
     
     def predict(self, image_file, save=False):
         '''
         image_file: nifti file
         save: booleen value
         '''
-        image, affine, header = load_nii(image_file)
+        nimage = nib.load(image_file)
+        image = nimage.get_fdata()
+        affine, header = nimage.affine, nimage.header
 
         # preprocess the image for model
-        process = Process()
+        process = Process(size=self.size)
         processed_image = process.preprocess(image)
-        
-        # perform model prediction
-        self.model.to(self.device)
-        self.model.eval()
-    
-        processed_image = processed_image.to(device=self.device,
-                                             dtype=torch.float32)
 
-        # add channel dimension as 1
-        processed_image.unsqueeze_(1)
+        if processed_image.ndim < 4:
+            processed_image.unsqueeze_(1)
         
-        with torch.no_grad():
-            preds = self.model(processed_image)
+        preds = self._predict(processed_image)
+
         # postprocess the prediction
         pred_masks = process.postprocess(preds)
 
@@ -143,6 +145,20 @@ class Inference(object):
             save_nii(saved_fname, pred_masks.transpose(1,2,0), affine, header)
 
         return pred_masks
+
+    def predict_h5py(self, h5_file):
+        h5f = h5py.File(h5_file, 'r')
+        image = h5f['image'][()].astype(np.float32)
+        image = np.expand_dims(image, -1)
+        process = Process(self.size)
+        processed_image = process.preprocess(image)
+
+        if processed_image.ndim < 4:
+            processed_image.unsqueeze_(1)
+        
+        preds = self._predict(processed_image)
+        preds_masks = process.postprocess(preds)
+        return preds_masks
     
     def plot(self, image_file, save=False):
 
@@ -211,29 +227,41 @@ class Inference(object):
                                        interval=500)
         plt.tight_layout()
         plt.show()
-
         if save:
             anim.save('predicted.mp4')
 
-def compute_metrics(model, checkpoint, image_files):
+def compute_metrics(model, checkpoint, image_files, size=None, fname='ED'):
     image_files = sorted(image_files, key=natural_order)
-    inference = Inference(model, checkpoint)
+    inference = Inference(model, checkpoint,
+                          size=size)
     res = []
-    for i, img_file in enumerate(image_files):
+    for i, img_file in tqdm(enumerate(image_files),
+                            desc=f'Segmentation prediction on {fname}',
+                            total=len(image_files)):
         image, _, _ = load_nii(img_file)
         gt, _, header = load_nii(img_file.replace('.nii.gz', '_gt.nii.gz'))
         zoom = header.get_zooms()
         pred = inference.predict(img_file)
+        gt = gt.astype(np.uint8)
 
         res.append(metrics(gt, pred, zoom))
-        print("{} been processed".format(img_file))
-        print("{} cases have been process".format(i+1))
     
     lst_name_gt = [os.path.basename(gt).split('.')[0] for gt in image_files]
     res = [[n, ] + r for r, n in zip(res, lst_name_gt)]
     df = pd.DataFrame(res, columns=HEADER)
-    df.to_csv('results_{}.csv'.format(time.strftime("%Y%m%d_%H%M%S")), index=False)
+    df.to_csv('{}_{}_{}.csv'.format(fname, model.__class__.__name__,time.strftime("%Y%m%d_%H%M%S")), index=False)
     return df
+
+def traverse_files(path='../ACDC_datasets'):
+    subdirs = [root for root, _, _ in os.walk(path)]
+    files = []
+
+    for dir in subdirs:
+        new_files = glob(dir + '/*.nii.gz')
+        # remove files contain '_4d'
+        new_files = [f for f in new_files if f.find('_4d')==-1]
+        files.extend(new_files)
+    return files
 
 def remove_files(files):
     for f in files:
@@ -242,7 +270,6 @@ def remove_files(files):
 if __name__ == '__main__':
     import argparse
     import random
-    import subprocess
     import os
 
     parser = argparse.ArgumentParser()
@@ -253,42 +280,55 @@ if __name__ == '__main__':
     parser.add_argument('--type', type=str, default='animation',
                         help='inference types: prediction, plot, animation, metrics')
     parser.add_argument('--save', action='store_true', default=False)
+    parser.add_argument('--size', type=int, default=256)
 
     args = parser.parse_args()
 
     files = traverse_files(args.data)
     files = sorted([f for f in files if f.find('_pred') == -1
                    and f.find('_gt') == -1])
+    files_ed = [f for f in files if f.find('_frame01') != -1]
+    files_es = [f for f in files if f not in files_ed]
 
-    model = AttenUnet()
+    model = UNet()
 
     if args.type == 'plot':
 
         random.seed(args.seed)
         image_file = files[random.randint(0, len(files))]
 
-        inference = Inference(model, args.checkpoint)
+        inference = Inference(model, args.checkpoint,
+                              size=args.size)
         inference.plot(image_file, args.save)
     
     elif args.type == 'animation':
         random.seed(args.seed)
         image_file = files[random.randint(0, len(files))]
 
-        inference = Inference(model, args.checkpoint)
+        inference = Inference(model, args.checkpoint,
+                              size=args.size)
         inference.plot_animation(image_file, args.save)
     
     elif args.type == 'metrics':
 
-        df = compute_metrics(model, args.checkpoint, files)
-        print('Mean Dice LV:\t ', df['Dice LV'].mean())
-        print('Mean Dice RV:\t', df['Dice RV'].mean())
-        print('Mean Dice MYO:\t', df['Dice MYO'].mean())
+        df_ed = compute_metrics(model, args.checkpoint, files_ed,
+                             size=args.size, fname='ED')
+        df_es = compute_metrics(model, args.checkpoint, files_es,
+                             size=args.size, fname='ES')
+        print('ED Mean Dice LV:\t ', df_ed['Dice LV'].mean())
+        print('ED Mean Dice RV:\t', df_ed['Dice RV'].mean())
+        print('ED Mean Dice MYO:\t', df_ed['Dice MYO'].mean())
+
+        print('ES Mean Dice LV:\t ', df_es['Dice LV'].mean())
+        print('ES Mean Dice RV:\t', df_es['Dice RV'].mean())
+        print('ES Mean Dice MYO:\t', df_es['Dice MYO'].mean())
     
     else:
         random.seed(args.seed)
         image_file = files[random.randint(0, len(files))]
 
-        inference = Inference(model, args.checkpoint)
+        inference = Inference(model, args.checkpoint,
+                              size=args.size)
         preds = inference.predict(image_file)
 
         print("{} predicted masks as shape {}".format(image_file, preds.shape))

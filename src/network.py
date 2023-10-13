@@ -26,7 +26,7 @@ class up_conv(nn.Module):
         super(up_conv, self).__init__()
 
         self.up = nn.Sequential(
-            nn.Upsample(scale_factor=2),
+            nn.Upsample(scale_factor=2, mode='bilinear', align_corners=False),
             nn.Conv2d(ch_in, ch_out, kernel_size=3, stride=1, padding=1, bias=True),
             nn.BatchNorm2d(ch_out),
             nn.ReLU(inplace=True)
@@ -99,6 +99,10 @@ class UNet(nn.Module):
         self.conv2 = conv_block(64, 128)
         self.conv3 = conv_block(128, 256)
         self.conv4 = conv_block(256, 512)
+        self.conv5 = conv_block(512, 1024)
+
+        self.up5 = up_conv(1024, 512)
+        self.up_conv5 = conv_block(1024, 512)
 
         self.up4 = up_conv(512, 256)
         self.up_conv4 = conv_block(512, 256)
@@ -110,7 +114,6 @@ class UNet(nn.Module):
         self.up_conv2 = conv_block(128, 64)
 
         self.output = nn.Conv2d(64, num_classes, kernel_size=1, stride=1, padding=0)
-
 
     def forward(self, x):
 
@@ -126,12 +129,72 @@ class UNet(nn.Module):
         x4 = self.maxpool(x3)
         x4 = self.conv4(x4)
 
-        # decoding + concat path
-        d4 = self.up4(x4)
-        d4 = torch.cat((x3, d4), dim=1)
+        x5 = self.maxpool(x4)
+        x5 = self.conv5(x5)
 
+        # decoding + concat path
         # after concat, the channel doubled
         # apply another conv_block to reduce it half
+        d5 = self.up5(x5)
+        d5 = torch.cat((x4, d5), dim=1)
+        d5 = self.up_conv5(d5)
+
+        d4 = self.up4(d5)
+        d4 = torch.cat((x3, d4), dim=1)
+        d4 = self.up_conv4(d4)
+
+        d3 = self.up3(d4)
+        d3 = torch.cat((x2, d3), dim=1)
+        d3 = self.up_conv3(d3)
+
+        d2 = self.up2(d3)
+        d2 = torch.cat((x1, d2), dim=1)
+        d2 = self.up_conv2(d2)
+
+        d1 = self.output(d2)
+        return d1
+
+class UNet_shallow(nn.Module):
+    def __init__(self, num_classes=4, img_channel=1):
+        super().__init__()
+
+        self.maxpool = nn.MaxPool2d((2,2))
+
+        self.conv1 = conv_block(ch_in=img_channel, ch_out=64)
+        self.conv2 = conv_block(64, 128)
+        self.conv3 = conv_block(128, 256)
+        self.conv4 = conv_block(256, 512)
+
+        self.up4 = up_conv(512, 256)
+        self.up_conv4 = conv_block(512, 256)
+
+        self.up3 = up_conv(256, 128)
+        self.up_conv3 = conv_block(256, 128)
+
+        self.up2 = up_conv(128, 64)
+        self.up_conv2 = conv_block(128, 64)
+
+        self.output = nn.Conv2d(64, num_classes, kernel_size=1, stride=1, padding=0)
+
+    def forward(self, x):
+
+        # encoding path
+        x1 = self.conv1(x)
+
+        x2 = self.maxpool(x1)
+        x2 = self.conv2(x2)
+
+        x3 = self.maxpool(x2)
+        x3 = self.conv3(x3)
+
+        x4 = self.maxpool(x3)
+        x4 = self.conv4(x4)
+  
+        # decoding + concat path
+        # after concat, the channel doubled
+        # apply another conv_block to reduce it half     
+        d4 = self.up4(x4)
+        d4 = torch.cat((x3, d4), dim=1)
         d4 = self.up_conv4(d4)
 
         d3 = self.up3(d4)
@@ -277,3 +340,137 @@ class AttenUnetV2(nn.Module):
 
         d1 = self.output(d2)
         return d1
+
+###################################################################
+##                 DF-UNet                ##
+###################################################################
+class SelFuseFeature(nn.Module):
+    def __init__(self, in_ch, shift_n=5, num_classes=4, auxseg=False):
+        super().__init__()
+
+        self.shift_n = shift_n
+        self.num_classes = num_classes
+        self.auxseg = auxseg
+        self.fuse_conv = nn.Sequential(
+            nn.Conv2d(in_ch*2, in_ch, kernel_size=1, padding=0),
+            nn.BatchNorm1d(in_ch),
+            nn.ReLU(inplace=True)
+        )
+        if auxseg:
+            self.auxseg_conv = nn.Conv2d(in_ch, self.num_classes, 1)
+    
+    def forward(self, x, df):
+        N, _, H, W = df.shape
+        magnitude = torch.sqrt(torch.sum(df**2, dim=1))
+        greater_mask = magnitude > 0.5
+        greater_mask = torch.stack([greater_mask, greater_mask], dim=1)
+        df[~greater_mask] = 0
+
+        scale = 1.
+
+        grid = torch.stack(torch.meshgrid(torch.arange(H), torch.arange(W)), dim=0)
+        grid = grid.expand(N, -1, -1, -1).to(x.device, dtype=torch.float).requires_grad_()
+        grid = grid + scale*df
+
+        grid = grid.permute(0, 2, 3, 1).transpose(1, 2)
+        grid_ = grid + 0.
+        grid[..., 0] = 2*grid_[..., 0] / (H-1) - 1
+        grid[..., 1] = 2*grid_[..., 1] / (W-1) - 1
+
+        select_x = x.clone()
+        for _ in range(self.shift_n):
+            select_x = F.grid_sample(select_x, grid, mode='bilinear', padding_mode='border')
+        if self.auxseg:
+            auxseg = self.auxseg_conv(x)
+        else:
+            auxseg = None
+        
+        select_x = self.fuse_conv(torch.cat([x, select_x], dim=1))
+        return select_x, auxseg
+
+class UNet_DF(nn.Module):
+    def __init__(self, num_classes=4, img_channel=1,
+                 selfeat=True, shift_n=5, auxseg=False):
+        super().__init__()
+
+        self.selfeat = selfeat
+        self.shift_n = shift_n
+
+        self.maxpool = nn.MaxPool2d((2,2))
+
+        self.conv1 = conv_block(ch_in=img_channel, ch_out=64)
+        self.conv2 = conv_block(64, 128)
+        self.conv3 = conv_block(128, 256)
+        self.conv4 = conv_block(256, 512)
+        self.conv5 = conv_block(512, 1024)
+
+        self.up5 = up_conv(1024, 512)
+        self.up_conv5 = conv_block(1024, 512)
+
+        self.up4 = up_conv(512, 256)
+        self.up_conv4 = conv_block(512, 256)
+
+        self.up3 = up_conv(256, 128)
+        self.up_conv3 = conv_block(256, 128)
+
+        self.up2 = up_conv(128, 64)
+        self.up_conv2 = conv_block(128, 64)
+
+        # Direct Field
+        self.convdf_1x1 = nn.Conv2d(64, 2, 1, 1, 0)
+
+        if selfeat:
+            self.SelDF = SelFuseFeature(64, auxseg=auxseg, shift_n=shift_n)
+        
+        self.conv_1x1 = nn.Conv2d(64, num_classes, 1, 1, 0)
+    
+    def forward(self, x):
+        # encoding path
+        x1 = self.conv1(x)
+
+        x2 = self.maxpool(x1)
+        x2 = self.conv2(x2)
+
+        x3 = self.maxpool(x2)
+        x3 = self.conv3(x3)
+
+        x4 = self.maxpool(x3)
+        x4 = self.conv4(x4)
+
+        x5 = self.maxpool(x4)
+        x5 = self.conv5(x5)
+
+        # decoding + concat path
+        # after concat, the channel doubled
+        # apply another conv_block to reduce it half
+        d5 = self.up5(x5)
+        d5 = torch.cat((x4, d5), dim=1)
+        d5 = self.up_conv5(d5)
+
+        d4 = self.up4(d5)
+        d4 = torch.cat((x3, d4), dim=1)
+        d4 = self.up_conv4(d4)
+
+        d3 = self.up3(d4)
+        d3 = torch.cat((x2, d3), dim=1)
+        d3 = self.up_conv3(d3)
+
+        d2 = self.up2(d3)
+        d2 = torch.cat((x1, d2), dim=1)
+        d2 = self.up_conv2(d2)
+
+        df = self.convdf_1x1(d2)
+        if self.selfeat:
+            d2_auxseg = self.SelDF(d2, df)
+            d2, auxseg = d2_auxseg
+        else:
+            auxseg = None
+        
+        d1 = self.conv_1x1(d2)
+        return d1, df, auxseg
+        
+if __name__ == '__main__':
+
+    model = UNet()
+    s = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(model.__class__.__name__, f"Total Parameters:\t{s/1e6:.2f} million")

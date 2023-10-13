@@ -40,10 +40,8 @@ import re
 import argparse
 import nibabel as nib
 import pandas as pd
-# from medpy.metric.binary import hd, dc
+from medpy.metric.binary import hd, dc
 import numpy as np
-
-
 
 HEADER = ["Name", "Dice LV", "Volume LV", "Err LV(ml)",
           "Dice RV", "Volume RV", "Err RV(ml)",
@@ -51,11 +49,9 @@ HEADER = ["Name", "Dice LV", "Volume LV", "Err LV(ml)",
 
 
 def dc(gt, pred, eps=1e-6):
-    gt = np.ravel(gt)
-    pred = np.ravel(pred)
 
-    intersection = (gt * pred).sum()
-    union = gt.sum() + pred.sum()
+    intersection = np.sum(pred[gt==1])
+    union = np.sum(gt) + np.sum(pred)
     dice = (2*intersection + eps) / (union + eps)
     return dice
 #
