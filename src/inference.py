@@ -281,6 +281,7 @@ if __name__ == '__main__':
                         help='inference types: prediction, plot, animation, metrics')
     parser.add_argument('--save', action='store_true', default=False)
     parser.add_argument('--size', type=int, default=256)
+    parser.add_argument('--model', type=str, default='attenunet')
 
     args = parser.parse_args()
 
@@ -290,8 +291,17 @@ if __name__ == '__main__':
     files_ed = [f for f in files if f.find('_frame01') != -1]
     files_es = [f for f in files if f not in files_ed]
 
-    model = UNet()
-
+    if args.model == 'attenunet':
+        model = AttenUnet()
+    elif args.model == 'attenunet_shallow':
+        model = AttenUnet_shallow()
+    elif args.model == 'unet':
+        model = UNet()
+    elif args.model == 'unet_shallow':
+        model = UNet_shallow()
+    else:
+        NotImplementedError
+        
     if args.type == 'plot':
 
         random.seed(args.seed)

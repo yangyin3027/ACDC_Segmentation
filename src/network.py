@@ -211,9 +211,9 @@ class UNet_shallow(nn.Module):
 ###################################################################
 ##                         AttenUnet                             ##
 ###################################################################
-class AttenUnet(nn.Module):
+class AttenUnet_shallow(nn.Module):
     def __init__(self, num_classes=4, img_channel=1):
-        super(AttenUnet, self).__init__()
+        super(AttenUnet_shallow, self).__init__()
 
         self.maxpool = nn.MaxPool2d((2,2))
 
@@ -271,9 +271,9 @@ class AttenUnet(nn.Module):
 ###################################################################
 ##                 AttenUnetV2 with Deeper CNN                   ##
 ###################################################################
-class AttenUnetV2(nn.Module):
+class AttenUnet(nn.Module):
     def __init__(self, num_classes=4, img_channel=1):
-        super(AttenUnetV2, self).__init__()
+        super(AttenUnet, self).__init__()
 
         self.maxpool = nn.MaxPool2d((2,2))
 
