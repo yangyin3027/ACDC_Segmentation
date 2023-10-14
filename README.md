@@ -15,11 +15,11 @@ There are two approaches:
   ```
 # Train the model
 ```python
-python ./src/main.py --data [data_root_dir] --model-type attenunet --lr 0.001 --init kaiming --loss dicece
+torchrun --standalone --nnodes=1 --nproc_per_node=3 ./src/main.py --data [data_root_dir] --batch 24 --lr 0.01 --init kaiming --loss dicece
 ```
 # Inference
 ```python
-python ./src/inference.py --plot
+python ./src/inference.py --model attenunet --checkpoint [dir/checkpoint.pth.tar] --type polot --data [data_root_dir]
 ```
 # Examples
 ![Alt text](https://github.com/yangyin3027/ACDC_Segmentation/blob/main/src/examples/predicted.png)
