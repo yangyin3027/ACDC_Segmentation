@@ -155,4 +155,3 @@ def compute_mean_std(dataloader, img_channel=1):
     var = psum_sq / counts - mean**2
     std = torch.sqrt(var)
     return mean, std
-
