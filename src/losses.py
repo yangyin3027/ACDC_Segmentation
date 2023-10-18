@@ -99,7 +99,8 @@ class DiceCELoss(nn.Module):
     def __init__(self, weight=None, softmax=True, eps=1e-6, **kwargs):
         super(DiceCELoss, self).__init__()
         self.dice = DiceLoss(weight=weight, softmax=softmax, eps=eps)
-        self.ce = nn.CrossEntropyLoss(weight=weight, **kwargs)
+        self.ce = nn.CrossEntropyLoss(weight=weight, label_smoothing=0.1,
+                                      **kwargs)
     
     def forward(self, preds, targets):
         loss = self.dice(preds, targets) * 0.2 + self.ce(preds, targets)

@@ -189,7 +189,7 @@ class Inference(object):
             a.axis('off')
         
         if save:
-            fig.savefig('predicted.png', transparent=False,
+            fig.savefig('./src/examples/predicted.png', transparent=False,
                         bbox_inches='tight', pad_inches=0)
         
         plt.tight_layout()
@@ -228,7 +228,7 @@ class Inference(object):
         plt.tight_layout()
         plt.show()
         if save:
-            anim.save('predicted.mp4')
+            anim.save('./src/examples/predicted.mp4')
 
 def compute_metrics(model, checkpoint, image_files, size=None, fname='ED'):
     image_files = sorted(image_files, key=natural_order)
@@ -249,7 +249,7 @@ def compute_metrics(model, checkpoint, image_files, size=None, fname='ED'):
     lst_name_gt = [os.path.basename(gt).split('.')[0] for gt in image_files]
     res = [[n, ] + r for r, n in zip(res, lst_name_gt)]
     df = pd.DataFrame(res, columns=HEADER)
-    df.to_csv('{}_{}_{}.csv'.format(fname, model.__class__.__name__,time.strftime("%Y%m%d_%H%M%S")), index=False)
+    # df.to_csv('{}_{}_{}.csv'.format(fname, model.__class__.__name__,time.strftime("%Y%m%d_%H%M%S")), index=False)
     return df
 
 def traverse_files(path='../ACDC_datasets'):
@@ -282,6 +282,7 @@ if __name__ == '__main__':
     parser.add_argument('--save', action='store_true', default=False)
     parser.add_argument('--size', type=int, default=256)
     parser.add_argument('--model', type=str, default='attenunet')
+    parser.add_argument('--fname', type=str, default='result')
 
     args = parser.parse_args()
 
@@ -325,6 +326,20 @@ if __name__ == '__main__':
                              size=args.size, fname='ED')
         df_es = compute_metrics(model, args.checkpoint, files_es,
                              size=args.size, fname='ES')
+        df_ed['mean Dice LV'] = df_ed['Dice LV'].mean()
+        df_ed['mean Dice RV'] = df_ed['Dice RV'].mean()
+        df_ed['mean Dice MYO'] = df_ed['Dice MYO'].mean()
+
+        df_es['mean Dice LV'] = df_es['Dice LV'].mean()
+        df_es['mean Dice RV'] = df_es['Dice RV'].mean()
+        df_es['mean Dice MYO'] = df_es['Dice MYO'].mean()
+
+        dirname = os.path.dirname(args.checkpoint)
+        fname = os.path.join(dirname, args.fname)
+        df_ed.to_csv(f'{fname}_ed.csv')
+        df_es.to_csv(f'{fname}_es.csv')
+        print(f'{fname} results saved!')
+        
         print('ED Mean Dice LV:\t ', df_ed['Dice LV'].mean())
         print('ED Mean Dice RV:\t', df_ed['Dice RV'].mean())
         print('ED Mean Dice MYO:\t', df_ed['Dice MYO'].mean())
