@@ -124,34 +124,3 @@ def optimizer_to_gpu(optim, device):
                     subparam.data = subparam.data.to(device)
                     if subparam._grad is not None:
                         subparam._grad.data = subparam._grad.data.to(device)
-
-def compute_class_weights(dataloader):
-    '''Adapted from sklearn.utils.weights.compute_class_weights
-    using n_samples/(n_classes * np.bincount(y))
-    '''
-    class_weights = []
-    for _, labels in dataloader:
-        classes, freqs = torch.unique(labels, return_counts=True)
-        weights = labels.numel()/(classes.numel() * freqs)
-        class_weights.append(weights[classes])
-    
-    class_weights = torch.stack(class_weights)
-    return class_weights.mean(0)
-
-def compute_mean_std(dataloader, img_channel=1):
-    '''compute mean and std for batch of images 
-    for data normalization
-    '''
-    psum = torch.zeros(img_channel, dtype=torch.float32)
-    psum_sq = torch.zeros(img_channel, dtype=torch.float32)
-    counts = 0.0
-
-    for data, _ in dataloader:
-        psum += data.sum(dim=[0, 2, 3])
-        psum_sq += (data**2).sum(dim=[0, 2, 3])
-        counts += data.size(0) * data.size(2) * data.size(3)
-    
-    mean = psum / counts
-    var = psum_sq / counts - mean**2
-    std = torch.sqrt(var)
-    return mean, std

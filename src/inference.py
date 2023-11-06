@@ -1,4 +1,4 @@
-from datasets import *
+import scipy.ndimage as ndim
 from network import *
 from metrics_acdc import *
 from losses import dice_coeff
@@ -16,50 +16,27 @@ import matplotlib.animation as animation
 from skimage.util import montage as smon
 
 from tqdm import tqdm
+from math import ceil
 
 class Process(object):
-    def __init__(self, size=None):
+    def __init__(self, size=256):
         self.size = size
-        if self.size is None:
-            self.size = 224
+        if not isinstance(self.size, (tuple, list)):
+            self.size = tuple((self.size, self.size))
         self.origin_size = None
     
-    def _preprocess(self, image):
-        processed_image = []
-        slices = image.shape[-1]
-        for s in range(slices):
-            img = image[:, :, s]
-            p5, p95 = np.percentile(img, (0.5, 99.5))
-            img = np.clip(img, p5, p95)
-            img = (img - img.min()) / (img.max() - img.min())
-            
-            img = self._transform(img)
-            processed_image.append(img)
-        
-        processed_image = torch.stack(processed_image)
-        return processed_image
-    
-    def _transform(self, img):
-        transform = transforms.Compose([
-            transforms.ToPILImage(),
-            transforms.Resize((self.size, self.size)),
-            transforms.ToTensor(),
-            transforms.Normalize((0.1365,),(0.1661,))
-        ])
-        img = (img * 255).astype(np.uint8)
-        img = transform(img)
-        return img
-
     def preprocess(self, image):
-        h, w = image.shape[:2]
+        p5, p95 = np.percentile(image, (0.5, 99.5))
+        image = np.clip(image, p5, p95)
+        image = (image - np.min(image, axis=(0,1))) / (np.max(image, axis=(0,1)) - np.min(image, axis=(0,1)))
+        self.origin_size = image.shape[:-1]
 
-        # memorize original image size
-        self.origin_size = (h, w)
-        # min-max normalization
-        image = self._preprocess(image)
-        # apply tensor and resize transform
+        image = torch.from_numpy(image).permute(-1, 0, 1)
+        if self.origin_size[0] != self.size[0] or self.origin_size[1] != self.size[1]:         
+            image = F.resize(image, self.size,
+                             antialias=False)
         return image
-
+    
     def postprocess(self, preds: torch.tensor):
         '''
         Args:
@@ -69,7 +46,7 @@ class Process(object):
             segmentation_masks: numpy.ndarray
         '''
         preds = F.resize(preds, self.origin_size, 
-                         interpolation=F.InterpolationMode.BILINEAR,
+                         interpolation=F.InterpolationMode.NEAREST,
                          antialias=False)
         preds = torch.nn.functional.softmax(preds, dim=1)
         preds = torch.argmax(preds, dim=1)
@@ -79,7 +56,8 @@ class Process(object):
 class Inference(object):
     def __init__(self, model, 
                     checkpoint_file=None,
-                    size=None,
+                    size=256,
+                    batch_size=16,
                     device=None):
         '''
         Load pretrained model weight to predict mask for inividual 
@@ -106,8 +84,7 @@ class Inference(object):
         else:
             self.device = device 
         self.size = size
-        if self.size is None:
-            self.size =  224
+        self.batch_size = batch_size
 
     def _predict(self, image):
         self.model.to(self.device)
@@ -134,8 +111,18 @@ class Inference(object):
 
         if processed_image.ndim < 4:
             processed_image.unsqueeze_(1)
-        
-        preds = self._predict(processed_image)
+                
+        if processed_image.shape[0] > self.batch_size:
+            chunk_size = ceil(processed_image.shape[0]/self.batch_size)
+            processed_image = torch.chunk(processed_image, chunk_size, dim=0)
+
+            preds = []
+            for images in processed_image:
+                preds.append(self._predict(images))
+
+            preds = torch.cat(preds, dim=0)
+        else:
+            preds = self._predict(processed_image)
 
         # postprocess the prediction
         pred_masks = process.postprocess(preds)
@@ -145,32 +132,31 @@ class Inference(object):
             save_nii(saved_fname, pred_masks.transpose(1,2,0), affine, header)
 
         return pred_masks
-
-    def predict_h5py(self, h5_file):
-        h5f = h5py.File(h5_file, 'r')
-        image = h5f['image'][()].astype(np.float32)
-        image = np.expand_dims(image, -1)
-        process = Process(self.size)
-        processed_image = process.preprocess(image)
-
-        if processed_image.ndim < 4:
-            processed_image.unsqueeze_(1)
-        
-        preds = self._predict(processed_image)
-        preds_masks = process.postprocess(preds)
-        return preds_masks
     
-    def plot(self, image_file, save=False):
+    def plot(self, image_file, gt_file, save=False):
 
         image, _, _ = load_nii(image_file)
-        gt, _, _ = load_nii(image_file.replace('.nii.gz', '_gt.nii.gz'))
+        gt, _, _ = load_nii(gt_file)
+        
+        # reorient labels
+        gt[gt==3.] = 2.0
+        gt[gt==6.] = 3.0
+        gt[gt==7.] = 4.0
+        gt[gt==8.] = 5.0
+        gt[gt==11.] = 6.0
+        gt[gt>6.] = 0.
+
         pred = self.predict(image_file)
 
         # make a montage image
-        grid_shape = (2, ceil(len(image)/2))
-        mimage = smon(image, grid_shape=grid_shape, fill=0)
-        mgt = smon(gt, grid_shape=grid_shape, fill=0)
-        mpred = smon(pred, grid_shape=grid_shape, fill=0)
+        if len(image)//2 <= 10:
+            grid_shape = (2, ceil(len(image)/2))
+        else:
+            grid_shape = (ceil(len(image)/10), 10)
+
+        mimage = smon(image.transpose(0,2,1), grid_shape=grid_shape, fill=0)
+        mgt = smon(gt.transpose(0,2, 1), grid_shape=grid_shape, fill=0)
+        mpred = smon(pred.transpose(0, 2, 1), grid_shape=grid_shape, fill=0)
 
         gt_ma = np.ma.masked_where(mgt==0, mgt)
         pred_ma = np.ma.masked_where(mpred==0, mpred)
@@ -195,21 +181,30 @@ class Inference(object):
         plt.tight_layout()
         plt.show()
     
-    def plot_animation(self, image_file, save=False):
+    def plot_animation(self, image_file, gt_file, save=False):
 
         image, _, _ = load_nii(image_file)
-        gt, _, _ = load_nii(image_file.replace('.nii.gz', '_gt.nii.gz'))
+        gt, _, _ = load_nii(gt_file)
         pred = self.predict(image_file)
 
-        gt_ma = np.ma.masked_where(gt==0, gt)
-        pred_ma = np.ma.masked_where(pred==0, pred)
+        # reorient labels
+        gt[gt==3.] = 2.0
+        gt[gt==6.] = 3.0
+        gt[gt==7.] = 4.0
+        gt[gt==8.] = 5.0
+        gt[gt==11.] = 6.0
+        gt[gt>6.] = 0.
+ 
+
+        gt_ma = np.ma.masked_where(gt!=3., gt)
+        pred_ma = np.ma.masked_where(pred!=3, pred)
 
         fig, axes = plt.subplots(1, 2, layout='constrained')
-        aximg_0 = axes[0].imshow(image[0], cmap='gray')
-        aximg_1 = axes[1].imshow(image[0], cmap='gray')
+        aximg_0 = axes[0].imshow(image[-1], cmap='gray')
+        aximg_1 = axes[1].imshow(image[-1], cmap='gray')
         
-        axgt = axes[0].imshow(gt_ma[0], alpha=0.7, cmap='jet')
-        axpred = axes[1].imshow(pred_ma[0], alpha=0.7, cmap='jet')
+        axgt = axes[0].imshow(gt_ma[-1], alpha=0.7, cmap='jet')
+        axpred = axes[1].imshow(pred_ma[-1], alpha=0.7, cmap='jet')
 
         axes[0].set_title('Ground Truth Segmentation')
         axes[1].set_title('Predicted Segmentation')
@@ -223,14 +218,13 @@ class Inference(object):
             axpred.set_data(pred_ma[frame])
         
         anim = animation.FuncAnimation(fig=fig, func=update,
-                                       frames=range(len(image)),
+                                       frames=range(len(image)-1, -1, -1),
                                        interval=500)
-        plt.tight_layout()
         plt.show()
         if save:
             anim.save('./src/examples/predicted.mp4')
 
-def compute_metrics(model, checkpoint, image_files, size=None, fname='ED'):
+def compute_metrics(model, checkpoint, image_files, gt_file, size=None, fname='ED'):
     image_files = sorted(image_files, key=natural_order)
     inference = Inference(model, checkpoint,
                           size=size)
@@ -239,7 +233,7 @@ def compute_metrics(model, checkpoint, image_files, size=None, fname='ED'):
                             desc=f'Segmentation prediction on {fname}',
                             total=len(image_files)):
         image, _, _ = load_nii(img_file)
-        gt, _, header = load_nii(img_file.replace('.nii.gz', '_gt.nii.gz'))
+        gt, _, header = load_nii(gt_file)
         zoom = header.get_zooms()
         pred = inference.predict(img_file)
         gt = gt.astype(np.uint8)
@@ -252,14 +246,19 @@ def compute_metrics(model, checkpoint, image_files, size=None, fname='ED'):
     # df.to_csv('{}_{}_{}.csv'.format(fname, model.__class__.__name__,time.strftime("%Y%m%d_%H%M%S")), index=False)
     return df
 
-def traverse_files(path='../ACDC_datasets'):
+def traverse_files(path='../ACDC_datasets', data='acdc'):
     subdirs = [root for root, _, _ in os.walk(path)]
     files = []
 
     for dir in subdirs:
         new_files = glob(dir + '/*.nii.gz')
         # remove files contain '_4d'
-        new_files = [f for f in new_files if f.find('_4d')==-1]
+        if data == 'acdc':
+            new_file = [f for f in new_files 
+                        if (f.find('_4d')==-1 and f.find('_gt')==-1)]
+        elif data == 'synapse':
+            new_files = [f for f in new_files 
+                         if f.find('label')==-1]
         files.extend(new_files)
     return files
 
@@ -273,7 +272,7 @@ if __name__ == '__main__':
     import os
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data', type=str, default='../ACDC_datasets/testing')
+    parser.add_argument('--root', type=str, default='../ACDC_datasets/testing')
     parser.add_argument('--seed', type=int, default=50)
     parser.add_argument('--checkpoint', type=str, default='./src/tmp/exp13/checkpoint.pth.tar')
     parser.add_argument('--cpu', action='store_true',default=False )
@@ -283,23 +282,27 @@ if __name__ == '__main__':
     parser.add_argument('--size', type=int, default=256)
     parser.add_argument('--model', type=str, default='attenunet')
     parser.add_argument('--fname', type=str, default='result')
+    parser.add_argument('--num-classes', type=int, default=7)
+    parser.add_argument('--img-channels', type=int, default=1)
+    parser.add_argument('--data-type', type=str, default='synapse')
+    parser.add_argument('--batch-size', type=int, default=16)
 
     args = parser.parse_args()
 
-    files = traverse_files(args.data)
-    files = sorted([f for f in files if f.find('_pred') == -1
-                   and f.find('_gt') == -1])
-    files_ed = [f for f in files if f.find('_frame01') != -1]
-    files_es = [f for f in files if f not in files_ed]
+    files = traverse_files(args.root, data=args.data_type)
+    
+    if args.data_type == 'acdc':
+        files_ed = [f for f in files if f.find('_frame01') != -1]
+        files_es = [f for f in files if f not in files_ed]
 
     if args.model == 'attenunet':
-        model = AttenUnet()
+        model = AttenUnet(args.num_classes, args.img_channels)
     elif args.model == 'attenunet_shallow':
-        model = AttenUnet_shallow()
+        model = AttenUnet_shallow(args.num_classes, args.img_channels)
     elif args.model == 'unet':
-        model = UNet()
+        model = UNet(args.num_classes, args.img_channels)
     elif args.model == 'unet_shallow':
-        model = UNet_shallow()
+        model = UNet_shallow(args.num_classes, args.img_channels)
     else:
         NotImplementedError
         
@@ -309,16 +312,25 @@ if __name__ == '__main__':
         image_file = files[random.randint(0, len(files))]
 
         inference = Inference(model, args.checkpoint,
-                              size=args.size)
-        inference.plot(image_file, args.save)
+                              size=args.size, batch_size=args.batch_size)
+        if args.data_type == 'synapse':
+            gt_file = image_file.replace('img', 'label')
+        elif args.data_type == 'acdc':
+            gt_file = image_file.replace('.nii.gz', '_gt.nii.gz')
+        inference.plot(image_file, gt_file=gt_file, save=args.save)
     
     elif args.type == 'animation':
         random.seed(args.seed)
         image_file = files[random.randint(0, len(files))]
 
         inference = Inference(model, args.checkpoint,
-                              size=args.size)
-        inference.plot_animation(image_file, args.save)
+                              size=args.size,
+                              batch_size=args.batch_size)
+        if args.data_type == 'synapse':
+            gt_file = image_file.replace('img', 'label')
+        elif args.data_type == 'acdc':
+            gt_file = image_file.replace('.nii.gz', '_gt.nii.gz')
+        inference.plot_animation(image_file, gt_file,args.save)
     
     elif args.type == 'metrics':
 

@@ -1,9 +1,7 @@
-from datasets import *
+from datasets.dataloader import *
 from network import *
-from fct import *
 from utils import *
 from losses import *
-from optimizer import GradualWarmUpScheduler
 
 import torch
 from torch import nn
@@ -15,31 +13,31 @@ import numpy as np
 import os
 import time
 import random
+from tqdm import tqdm
 
 import argparse
 from functools import partial
 
-saved_dir = './tmp/AttenDeep256_v3'
+saved_dir = './tmp/Atten_synapse'
 os.makedirs(saved_dir, exist_ok=True)
 
 logger = get_logger('Trainer')
-class_weight = torch.Tensor([0.1, 0.3, 0.3, 0.3])
-# class_weight = class_weight / class_weight.sum()
+# for Synpase, precomputed
+class_weight = torch.Tensor([0.15, 91.2, 47.6, 7.5, 32.1, 110.1, 183.2])
+# class_weight = torch.Tensor([0.1, 0.3, 0.3, 0.3])
+class_weight = class_weight / class_weight.sum()
 # pos_weight = torch.Tensor([0.01, 250., 200., 150.])
 
 
 csvlog = CSVLogger(saved_dir + '/checkpoints.csv', append=True)
 csvlog('epoch', 'training_loss', 'val_loss', "lr",
-      'training_dice_bg', 'train_dice_rv', 'train_dice_myo', 'train_dice_lv',
-      'val_dice_bg', 'val_dice_rv', 'val_dice_myo', 'val_dice_lv')
+      'training_dice_score', 'val_dice_score',)
 
 def initialize_model(args):
     if args.model == 'attenunet':
-        model = AttenUnet(args.n_classes, args.img_channels)
+        model = AttenUnet(args.num_classes, args.img_channels)
     elif args.model == 'unet':
-        model = UNet()
-    elif args.model == 'FCT':
-        model = FCT()
+        model = UNet(args.num_classes, args.img_channels)
     init = partial(init_weights, init_type=args.init)
     model.apply(init)
     
@@ -54,39 +52,33 @@ def initialize_model(args):
     if args.distributed:
         model = nn.parallel.DistributedDataParallel(model, device_ids=[args.local_rank])
       
-    optimizer = torch.optim.SGD(model.parameters(),
+    optimizer = torch.optim.Adam(model.parameters(),
                                 lr=args.lr,
                                 weight_decay=args.weight_decay)   
-    #scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=10,T_mult=1,eta_min=1e-6,last_epoch=-1)
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max')
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=15,T_mult=1,eta_min=1e-6,last_epoch=-1)
+    #scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max')
     warmup_scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda epoch: min(float(epoch+1)/20, 1.))
     
     return model, criterion, optimizer, scheduler, warmup_scheduler
         
 def initialize_dataloader(args):    
-    train_kwargs = dict(base_dir=args.data,
+    train_kwargs = dict(root=args.data,
                         batch_size=args.batch_size,
-                        size=args.img_size)
+                        output_size=args.img_size,
+                        dds=False,)
     if args.distributed:
         cuda_kwargs = {'num_workers': 1,
-                    'pin_memory': True,}
+                    'pin_memory': True,
+                    'dds': True}
         train_kwargs.update(cuda_kwargs)
 
-        train_loader = distributed_dataloader(
-                    split='train', **train_kwargs)
-        val_loader = distributed_dataloader(
-                    split='val', **train_kwargs)
     else:
         if args.device == torch.device('cuda'):
             cuda_kwargs = {'num_workers': 1,
-                        'pin_memory': True,
-                        'shuffle': True}
+                        'pin_memory': True,}
             train_kwargs.update(cuda_kwargs)
     
-        train_loader = dataloader(split='train',
-                                    **train_kwargs)
-        val_loader = dataloader(split='val',
-                                **train_kwargs) 
+        train_loader, val_loader = get_dataloader(**train_kwargs)
     if args.local_rank <=0:
         logger.info(f"data loaded with {len(train_loader.dataset)} training data and {len(val_loader.dataset)} val data")   
     return train_loader, val_loader
@@ -96,103 +88,21 @@ def train_one_epoch(model, train_loader, criterion, optimizer, epoch, args):
     batch_time = AverageMeter('Time', ':6.3f')
     data_time = AverageMeter('Data', ":6.3f")
     losses = AverageMeter('Loss', ':.4e')
-    bg_dice = AverageMeter('DiceScore_bg', ':6.3f')
-    rv_dice = AverageMeter('DiceScore_rv', ':6.3f')
-    myo_dice = AverageMeter('DiceScore_myo', ':6.3f')
-    lv_dice = AverageMeter('DiceScore_lv', ':6.3f')
+    dice_score = AverageMeter('DiceScore', ':6.3f')
     progress = ProgressMeter(
         len(train_loader),
-        [batch_time, data_time, losses, bg_dice, rv_dice, myo_dice,lv_dice],
+        [batch_time, data_time, losses, dice_score],
         prefix='Epoch: [{}]'.format(epoch),
     )
 
     model.train()
     end = time.time()
-    for i, (images, labels) in enumerate(train_loader):
-        # measure data loading time
-        data_time.update(time.time() - end)
-        
-        # move data to right devices in case of distributed or single machine gpu/mps/cpu
-        if args.device == torch.device('cuda:0'):
-            images = images.cuda(args.device, non_blocking=True)
-            labels = labels.cuda(args.device, non_blocking=True)
-        else:
-            images = images.to(args.device)
-            labels = labels.to(args.device)
-
-        # compute ouput
-        # output is just unnormalized logits
-        # CE will just use it as is
-        # Diceloss will add softmax, argmax and one-hot-encoding
-        output = model(images)
-
-        if args.model == 'FCT':
-            down2 = F.interpolate(labels.unsqueeze(1).float(), scale_factor=1/2)
-            down3 = F.interpolate(labels.unsqueeze(1).float(), scale_factor=1/4)
-
-            loss = (criterion(output[2], labels.long()) * 0.57 
-                    + criterion(output[1], down2.squeeze().long()) * 0.29 
-                    + criterion(output[0], down3.squeeze().long()) * 0.14)
-        # bce_pred = F.sigmoid(output)
-        # bce_pred = bce_pred.permute(0, 2, 3, 1)
-        
-        # bce_labels = F.one_hot(labels, num_classes=args.n_classes)
-        # bce_labels = bce_labels.float()
-        else:
-            loss = criterion(output, labels.long())
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-
-        with torch.no_grad():
-            if args.model == 'FCT':
-                output = output[2]
-            dice = dice_coeff(output, labels)    
-        
-        if args.distributed:
-            dist.barrier()
-        if args.local_rank <= 0:
-            losses.update(loss.item())    
-            bg_dice.update(dice[0].item())
-            rv_dice.update(dice[1].item())
-            myo_dice.update(dice[2].item())
-            lv_dice.update(dice[3].item())
-
-            batch_time.update(time.time() - end)
-            end = time.time()
-
-            if i % 10 == 0:
-                progress.display(i)
-
-    res = dict(epoch=epoch, 
-                loss=losses.avg,
-                bg=bg_dice.avg,
-                rv=rv_dice.avg,
-                myo=myo_dice.avg,
-                lv=lv_dice.avg)
-    return res
-    
-
-def validate(model, val_loader, criterion, epoch, args):
-
-    batch_time = AverageMeter('Time', ':6.3f')
-    losses = AverageMeter('Loss', ':.4e')
-    bg_dice = AverageMeter('DiceScore_bg', ':6.3f')
-    rv_dice = AverageMeter('DiceScore_rv', ':6.3f')
-    myo_dice = AverageMeter('DiceScore_myo', ':6.3f')
-    lv_dice = AverageMeter('DiceScore_lv', ':6.3f')
-    progress = ProgressMeter(
-        len(val_loader),
-        [batch_time, losses, bg_dice, rv_dice, myo_dice,lv_dice ],
-        prefix='Epoch: [{}]'.format(epoch),
-    )
-
-    model.eval()
-
-    with torch.no_grad():
-        end = time.time()
-        for i, (images, labels) in enumerate(val_loader):
-
+    with tqdm(train_loader, desc=f'Training epoch {epoch} ->',
+              total = len(train_loader)) as pbar:
+        for i, (images, labels) in enumerate(pbar):
+            # measure data loading time
+            data_time.update(time.time() - end)
+            
             # move data to right devices in case of distributed or single machine gpu/mps/cpu
             if args.device == torch.device('cuda:0'):
                 images = images.cuda(args.device, non_blocking=True)
@@ -200,41 +110,116 @@ def validate(model, val_loader, criterion, epoch, args):
             else:
                 images = images.to(args.device)
                 labels = labels.to(args.device)
-            
+
             # compute ouput
+            # output is just unnormalized logits
+            # CE will just use it as is
+            # Diceloss will add softmax, argmax and one-hot-encoding
             output = model(images)
+
+            if args.model == 'FCT':
+                down2 = F.interpolate(labels.unsqueeze(1).float(), scale_factor=1/2)
+                down3 = F.interpolate(labels.unsqueeze(1).float(), scale_factor=1/4)
+
+                loss = (criterion(output[2], labels.long()) * 0.57 
+                        + criterion(output[1], down2.squeeze().long()) * 0.29 
+                        + criterion(output[0], down3.squeeze().long()) * 0.14)
             # bce_pred = F.sigmoid(output)
             # bce_pred = bce_pred.permute(0, 2, 3, 1)
+            
             # bce_labels = F.one_hot(labels, num_classes=args.n_classes)
             # bce_labels = bce_labels.float()
-            
-            if args.model == 'FCT':
-                output = output[2]
-            loss = criterion(output, labels.long())
-            dice = dice_coeff(output, labels) 
+            else:
+                loss = criterion(output, labels.long())
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+
+            with torch.no_grad():
+                if args.model == 'FCT':
+                    output = output[2]
+                dice = dice_coeff(output, labels)    
             
             if args.distributed:
-                dist.barrier() 
+                dist.barrier()
             if args.local_rank <= 0:
-                losses.update(loss.item())
-                # ious.update(iou.item())
-                bg_dice.update(dice[0].item())
-                rv_dice.update(dice[1].item())
-                myo_dice.update(dice[2].item())
-                lv_dice.update(dice[3].item())
+                losses.update(loss.item())    
+                dice_score.update(torch.mean(dice).item())
 
                 batch_time.update(time.time() - end)
                 end = time.time()
 
-                if i % 10 == 0:
-                    progress.display(i)
+                pbar.set_postfix(time=batch_time.avg,
+                                loss=losses.avg,
+                                 dice_score=dice_score.avg)
+                # if i % 10 == 0:
+                #    progress.display(i)
+
+    res = dict(epoch=epoch, 
+                loss=losses.avg,
+                dice_score=dice_score)
+    return res
+    
+
+def validate(model, val_loader, criterion, epoch, args):
+
+    batch_time = AverageMeter('Time', ':6.3f')
+    losses = AverageMeter('Loss', ':.4e')
+    dice_score = AverageMeter('DiceScore', ':6.3f')
+    progress = ProgressMeter(
+        len(val_loader),
+        [batch_time, losses, dice_score],
+        prefix='Epoch: [{}]'.format(epoch),
+    )
+
+    model.eval()
+
+    with torch.no_grad():
+        end = time.time()
+        with tqdm(val_loader, desc=f'Validation epoch {epoch} ->',
+                  total=len(val_loader)) as pbar:
+            for i, (images, labels) in enumerate(val_loader):
+
+                # move data to right devices in case of distributed or single machine gpu/mps/cpu
+                if args.device == torch.device('cuda:0'):
+                    images = images.cuda(args.device, non_blocking=True)
+                    labels = labels.cuda(args.device, non_blocking=True)
+                else:
+                    images = images.to(args.device)
+                    labels = labels.to(args.device)
+                
+                # compute ouput
+                output = model(images)
+                # bce_pred = F.sigmoid(output)
+                # bce_pred = bce_pred.permute(0, 2, 3, 1)
+                # bce_labels = F.one_hot(labels, num_classes=args.n_classes)
+                # bce_labels = bce_labels.float()
+                
+                if args.model == 'FCT':
+                    output = output[2]
+                loss = criterion(output, labels.long())
+                dice = dice_coeff(output, labels) 
+                
+                if args.distributed:
+                    dist.barrier() 
+                if args.local_rank <= 0:
+                    losses.update(loss.item())
+                    # ious.update(iou.item())
+                    dice_score.update(torch.mean(dice).item())
+
+                    batch_time.update(time.time() - end)
+                    end = time.time()
+
+                    pbar.set_postfix(time=batch_time.avg,
+                                loss=losses.avg,
+                                 dice_score=dice_score.avg)
+
+                    # if i % 10 == 0:
+                    #    progress.display(i)
     
     res = dict(epoch=epoch, 
                 loss=losses.avg,
-                bg = bg_dice.avg,
-                rv = rv_dice.avg,
-                myo = myo_dice.avg,
-                lv = lv_dice.avg)
+                dice_score=dice_score)
     return res
 
 def save_checkpoints(args, model,best_score):
@@ -248,61 +233,65 @@ def save_checkpoints(args, model,best_score):
 
 def train(args, model, train_loader, val_loader, optimizer, criterion, scheduler, warmup_scheduler):
 
-    best_score = float('-inf')
+    best_score = float('inf')
     iteration = 0
     flag = torch.zeros(1).to(args.device)
-    for epoch in range(args.epochs):
-    
-        
-        if args.distributed:
-            train_loader.sampler.set_epoch(epoch)
-            val_loader.sampler.set_epoch(epoch)
-            
-        ##----------------------------------train----------------------------------------##
-        train_res = train_one_epoch(model, train_loader, criterion, optimizer, epoch, args)
-        
-        ##----------------------------------validate-------------------------------------##
-        val_res = validate(model, val_loader, criterion, epoch, args)  
-        val_dice = (val_res['rv'] + val_res['myo'] + val_res['lv'])/3.
-        
-        if epoch <= 20:
-            if args.distributed:
-                dist.barrier()
-            warmup_scheduler.step()
-        
-        lr = optimizer.param_groups[0]['lr']
-        
-        if args.local_rank <= 0:
-            logger.info(f"current learning rate @{lr}")  
 
-            csvlog(f'{epoch}', f"{train_res['loss']}", f"{val_res['loss']}", f"{lr}",
-              f"{train_res['bg']}", f"{train_res['rv']}", f"{train_res['myo']}", f"{train_res['lv']}",
-              f"{val_res['bg']}", f"{val_res['rv']}", f"{val_res['myo']}", f"{val_res['lv']}") 
+    with tqdm(range(args.epochs), desc='Training ->>',
+              total=args.epochs) as pbar:
+        for epoch in pbar:
+        
+            if args.distributed:
+                train_loader.sampler.set_epoch(epoch)
+                val_loader.sampler.set_epoch(epoch)
+                
+            ##----------------------------------train----------------------------------------##
+            train_res = train_one_epoch(model, train_loader, criterion, optimizer, epoch, args)
             
-            if val_dice > best_score:
-                best_score = val_dice
-                save_checkpoints(args, model, best_score)
-                iteration = 0
-            elif iteration <= args.maximum_iteration:
-                iteration += 1
-            else:
-                flag +=1
-                logger.info(f'Training stopped by reaching {args.maximum_iteration} iterations with DICE SCORE@ {best_score}')
-        
-        if args.distributed:
-            dist.all_reduce(flag, op=dist.ReduceOp.SUM)
-        if flag == 1:
-            break
-        
-        if epoch >= 80:
+            ##----------------------------------validate-------------------------------------##
+            val_res = validate(model, val_loader, criterion, epoch, args)
+
             if args.distributed:
                 dist.barrier()
-            scheduler.step(val_dice)
-                                
-        if args.dry_run:
-            logger.info('Training stopped after 1 epoch sanity check')
-            break
+
+            if epoch <= 20:
+                warmup_scheduler.step()
+            else:
+                scheduler.step()
             
+            lr = optimizer.param_groups[0]['lr']
+            
+            if args.local_rank <= 0:
+
+                pbar.set_postfix(lr=f'{lr}',
+                                 train_loss=train_res['loss'],
+                                 train_dice=train_res['dice_score'],
+                                 val_loss=val_res['loss'],
+                                 val_dice=val_res['dice_score'])
+
+                logger.info(f"current learning rate @{lr}")  
+
+                csvlog(f'{epoch}', f"{train_res['loss']}", f"{val_res['loss']}", f"{lr}",
+                f"{train_res['dice_score']}", f"{val_res['dice_score']}") 
+                
+                if val_res['loss'] < best_score:
+                    best_score = val_res['loss']
+                    save_checkpoints(args, model, best_score)
+                    iteration = 0
+                elif iteration <= args.maximum_iteration:
+                    iteration += 1
+                else:
+                    flag +=1
+                    logger.info(f'Training stopped by reaching {args.maximum_iteration} iterations with loss@ {best_score}')
+            
+            if args.distributed:
+                dist.all_reduce(flag, op=dist.ReduceOp.SUM)
+            if flag == 1:
+                break
+                                    
+            if args.dry_run:
+                logger.info('Training stopped after 1 epoch sanity check')
+                break             
 
 def parser_args():
     parser = argparse.ArgumentParser()
@@ -311,7 +300,7 @@ def parser_args():
                         help='path to dataset')
     parser.add_argument('--batch-size', type=int, default=24, metavar='N',
                         help='input batch size for training (default: 16)')
-    parser.add_argument('--n_classes', type=int, default=4, metavar='CLS',
+    parser.add_argument('--num-classes', type=int, default=4, metavar='CLS',
                         help='number of classes for the model (default: 4)')
     parser.add_argument('--img-channels', type=int, default=1, metavar='C',
                         help='number of channels in input images (default: 1)')
