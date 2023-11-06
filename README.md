@@ -1,18 +1,41 @@
-# ACDC_Segmentation
+# Overview
+MedAI is an open-source AI project dedicated to assisting medical professionals with various aspects of medical imaging, including requsition, reconstruction, and processing. Our goal is to provide a collection of AI toolkits that simplify and enhance the medical imaging workflow, making it easier to diagnose and treat patients effectively.
+
+To project is ongoing, and new features will be rolled out periodically... Anyone that is interested is welcomed to join onboard by simply reaching out to project founder and engineer, Jason Yang (yangzn23@gmail.com).
+
+# Table of Contents
+- Getting Started
+- Features
+- Installation
+- Usage
+- Contributing
+- License
+
+# Getting Started
+
+## Installation
+```bash
+# Clone the repository
+git clone https://github.com/yangyin3027/MedAI.git
+# Change directory
+cd MedAI
+# INstall dependencies
+pip install -r requirements.txt
+```
+Installation can also be performed using conda
+```python
+conda env create -n [env_name] --file environments.yml
+```
+
+# Features
+
+## Segmentation
+- ACDC_Segmentation
 Segmentation Models for Automated Cardiac Diagnosis Challenge adopted with Attention Unet Architecture. Part of the code were inspired from [HiLab-git/SSL4MIS](https://github.com/HiLab-git/SSL4MIS.git), and [LeeJunHyun/Image_Segmentation](https://github.com/LeeJunHyun/Image_Segmentation.git). The ACDC datasets and compute metrics code were downloaded and adapted from the [Automated Cardiac Diagnosis Challenge (ACDC)](https://www.creatis.insa-lyon.fr/Challenge/acdc/)
-# Model Architecture
+- Model Architecture
 ![Alt text](https://github.com/yangyin3027/ACDC_Segmentation/blob/main/src/examples/attenunet.png)
 Please see the original paper [here](https://arxiv.org/abs/1804.03999) for more details. 
-# Environment Setup
-There are two approaches:
-  1. Using pip
-  ```python
-  pip install -r requirements.txt
-  ```
-  2. Using conda
-  ```
-  conda env create -n [env_name] --file environments.yml
-  ```
+
 # Train the model
 Tricks to improve training performance:
 - Use combination of CrossentropyLoss and DiceLoss
