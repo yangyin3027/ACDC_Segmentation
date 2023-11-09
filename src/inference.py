@@ -85,6 +85,18 @@ class Inference(object):
             self.device = device 
         self.size = size
         self.batch_size = batch_size
+    
+    def _load_gt(self, gt_file):
+        '''reorient gt labels
+        old labels info of synapse:{1: spleen, 2: right kidney, 3: left kidney, 4: gallbladder,
+            5: esophagus, 6: liver, 7: stomach, 8: aorta, 9: inferior vena cava,
+            10: portal vein and splenic vein, 11: pancreas, 12 right adrenal gland,
+            13: left adrenal gland}
+        '''
+        gt, _, _ = load_nii(gt_file)
+        gt[gt!=6.] = 0.
+        gt[gt==6.] = 1.
+        return gt
 
     def _predict(self, image):
         self.model.to(self.device)
@@ -136,17 +148,15 @@ class Inference(object):
     def plot(self, image_file, gt_file, save=False):
 
         image, _, _ = load_nii(image_file)
-        gt, _, _ = load_nii(gt_file)
-        
-        # reorient labels
-        gt[gt==3.] = 2.0
-        gt[gt==6.] = 3.0
-        gt[gt==7.] = 4.0
-        gt[gt==8.] = 5.0
-        gt[gt==11.] = 6.0
-        gt[gt>6.] = 0.
+        gt = self._load_gt(gt_file)
 
         pred = self.predict(image_file)
+
+        # filter non liver contained slices
+        non_zero_index = [i for i in range(len(gt)) if np.sum(gt[i]) != 0]
+        image = image[non_zero_index]
+        gt = gt[non_zero_index]
+        pred = pred[non_zero_index]
 
         # make a montage image
         if len(image)//2 <= 10:
@@ -154,9 +164,9 @@ class Inference(object):
         else:
             grid_shape = (ceil(len(image)/10), 10)
 
-        mimage = smon(image.transpose(0,2,1), grid_shape=grid_shape, fill=0)
-        mgt = smon(gt.transpose(0,2, 1), grid_shape=grid_shape, fill=0)
-        mpred = smon(pred.transpose(0, 2, 1), grid_shape=grid_shape, fill=0)
+        mimage = smon(image.transpose(0,2,1), grid_shape=grid_shape, fill=0.)
+        mgt = smon(gt.transpose(0,2, 1), grid_shape=grid_shape, fill=0.)
+        mpred = smon(pred.transpose(0, 2, 1), grid_shape=grid_shape, fill=0.)
 
         gt_ma = np.ma.masked_where(mgt==0, mgt)
         pred_ma = np.ma.masked_where(mpred==0, mpred)
@@ -184,20 +194,18 @@ class Inference(object):
     def plot_animation(self, image_file, gt_file, save=False):
 
         image, _, _ = load_nii(image_file)
-        gt, _, _ = load_nii(gt_file)
         pred = self.predict(image_file)
 
-        # reorient labels
-        gt[gt==3.] = 2.0
-        gt[gt==6.] = 3.0
-        gt[gt==7.] = 4.0
-        gt[gt==8.] = 5.0
-        gt[gt==11.] = 6.0
-        gt[gt>6.] = 0.
- 
+        gt = self._load_gt(gt_file)
 
-        gt_ma = np.ma.masked_where(gt!=3., gt)
-        pred_ma = np.ma.masked_where(pred!=3, pred)
+         # filter non liver contained slices
+        non_zero_index = [i for i in range(len(gt)) if np.sum(gt[i]) != 0]
+        image = image[non_zero_index]
+        gt = gt[non_zero_index]
+        pred = pred[non_zero_index]
+
+        gt_ma = np.ma.masked_where(gt==0., gt)
+        pred_ma = np.ma.masked_where(pred==0., pred)
 
         fig, axes = plt.subplots(1, 2, layout='constrained')
         aximg_0 = axes[0].imshow(image[-1], cmap='gray')
