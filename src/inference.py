@@ -145,28 +145,36 @@ class Inference(object):
 
         return pred_masks
     
-    def plot(self, image_file, gt_file, save=False):
+    def plot(self, image_file, gt_file, type='acdc', save=False):
 
         image, _, _ = load_nii(image_file)
-        gt = self._load_gt(gt_file)
+        if type == 'liver':
+            gt = self._load_gt(gt_file)
+        else:
+            gt, _, _ = load_nii(gt_file)
 
         pred = self.predict(image_file)
 
         # filter non liver contained slices
-        non_zero_index = [i for i in range(len(gt)) if np.sum(gt[i]) != 0]
-        image = image[non_zero_index]
-        gt = gt[non_zero_index]
-        pred = pred[non_zero_index]
+        # non_zero_index = [i for i in range(len(gt)) if np.sum(gt[i]) != 0]
+        # image = image[non_zero_index]
+        # gt = gt[non_zero_index]
+        # pred = pred[non_zero_index]
 
         # make a montage image
         if len(image)//2 <= 10:
             grid_shape = (2, ceil(len(image)/2))
         else:
             grid_shape = (ceil(len(image)/10), 10)
+        
+        if type == 'liver':
+            image = image.transpose(0, 2, 1)
+            gt = gt.transpose(0, 2, 1)
+            pred = pred.transpose(0, 2, 1)
 
-        mimage = smon(image.transpose(0,2,1), grid_shape=grid_shape, fill=0.)
-        mgt = smon(gt.transpose(0,2, 1), grid_shape=grid_shape, fill=0.)
-        mpred = smon(pred.transpose(0, 2, 1), grid_shape=grid_shape, fill=0.)
+        mimage = smon(image, grid_shape=grid_shape, fill=0.)
+        mgt = smon(gt, grid_shape=grid_shape, fill=0.)
+        mpred = smon(pred, grid_shape=grid_shape, fill=0.)
 
         gt_ma = np.ma.masked_where(mgt==0, mgt)
         pred_ma = np.ma.masked_where(mpred==0, mpred)
